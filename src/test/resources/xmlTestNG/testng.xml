@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!-- <suite name="TestNgSuite"> -->
-<suite thread-count="1" verbose="1" name="AppiumSauceMobileTestSuite"
-     skipfailedinvocationcounts="false" junit="false" parallel="false"
-     data-provider-thread-count="50" annotations="JDK">
-     
-    <parameter name="useSauceLabGrid" value="true" />
-  	<parameter name="mobileNodeType" value="appium" />
-  	<parameter name="seleniumhost" value="localhost" />
- 	 <parameter name="seleniumport" value="4445" />
- 	 <!-- provide the sauce username , sauceApiKey and tunnel user id -->
- 	 <!-- <parameter name="sauceUserName" value="yourSauceUserName" />
- 	 <parameter name="sauceApiKey" value="yourSauceApiKey" />
- 	 <parameter name="sauceTunnelUserId" value="yourSauceTunnelUserId" /> -->
-  
-<!-- 	<listeners>
-        <listener class-name="com.tongcheng.wireless.ios.utils.MyReporter"></listener>
-    </listeners> -->
+<suite thread-count="1" verbose="1" name="AppiumMobileSuite"
+	skipfailedinvocationcounts="false" junit="false" parallel="false"
+	data-provider-thread-count="50" annotations="JDK">
 
-    <!-- <test name="testname1"> 
-        <classes>
-            <class name="com.tongcheng.wireless.ios.suites.MyTest">
-                <methods>
-                    <include name="test1" />
-                </methods>
-            </class>
-        </classes>
-    </test> -->
-    
+	<!-- <parameter name="mobileNodeType" value="appium" />
+	<parameter name="seleniumhost" value="127.0.0.1" />
+	<parameter name="seleniumport" value="4723" /> -->
+	
+	<test verbose="2" name="appium-mobile-test" annotations="JDK">
+		<classes>
+			<class name="com.jdd.game.android.suites.MyTest">
+				<methods>
+					<include name="test1" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
 </suite>

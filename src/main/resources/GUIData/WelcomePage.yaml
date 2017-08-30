@@ -1,22 +1,19 @@
 baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
-platform: "ios"
+platform: "android"
 defaultLocale: "US"
 elements:
-  shaohouzaishuoUIAElement:
+  shaohouzaishuoUiObject:
     locators:
-      US: "//UIAButton[contains(@name,'稍后再说')]" #欢迎页面-稍后再说
-  lijigengxinUIAElement:
+      US: "//UiButton[contains(@name,'稍后再说')]" #欢迎页面-稍后再说
+  lijigengxinUiObject:
     locators:
-      US: "//UIAButton[contains(@name,'立即更新')]" #欢迎页面-立即更新
-  yunxuUIAElement:
+      US: "//UiButton[contains(@name,'立即更新')]" #欢迎页面-立即更新
+  yunxuUiObject:
     locators:
-      US: "//UIAButton[contains(@name,'允许')]" #欢迎页面-允许
-  buyunxuUIAElement:
+      US: "//UiButton[contains(@name,'允许')]" #欢迎页面-允许
+  buyunxuUiObject:
     locators:
-      US: "//UIAButton[contains(@name,'不允许')]" #欢迎页面-不允许
-  tiaoguoUIAButton:
+      US: "//UiButton[contains(@name,'不允许')]" #欢迎页面-不允许
+  tiaoguoUiObject:
     locators:
-      US: "//UIAButton[contains(@name,'跳过')]" #欢迎页面-跳过
-  lijitiyanUIAElement:
-    locators:
-      US: "//UIAApplication[1]/UIAWindow[1]/UIAScrollView[3]/UIAButton[1]" #欢迎页面-立即体验
+      US: "//UiButton[contains(@name,'跳过')]" #欢迎页面-跳过
