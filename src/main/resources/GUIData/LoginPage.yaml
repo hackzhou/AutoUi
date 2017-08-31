@@ -1,0 +1,28 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  qqLoginUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/btn_qq_login')]" #QQ登录
+  weixinLoginUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/btn_wx_login')]" #微信登录
+  phoneLoginUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_login')]" #手机登录
+  phoneRegisterUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_register')]" #手机注册
+  phoneNumberUiTextView:
+    locators:
+      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_phone_number')]" #手机号码输入框
+  passwordUiTextView:
+    locators:
+      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_pwd')]" #密码输入框
+  forgerPasswordUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/forgerPassword')]" #忘记密码
+  loginUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/login')]" #登录确认

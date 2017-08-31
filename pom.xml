@@ -136,15 +136,5 @@
 			<artifactId>SeLion</artifactId>
 			<version>${selion.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.paypal.selion</groupId>
-			<artifactId>SeLion-Grid</artifactId>
-			<version>${selion.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<version>3.5.2</version>
-		</dependency>
 	</dependencies>
 </project>

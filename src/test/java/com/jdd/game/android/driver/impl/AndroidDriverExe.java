@@ -164,20 +164,14 @@ public class AndroidDriverExe implements IDriverExe {
 
 	@Override
 	public void appendTextField(UiTextView utv, String text) {
-		utv.setText(text);
-		if(this.isTextInPage("完成")){
-			this.tapElementByName("完成", "键盘-完成");
-		}
+		utv.sendKeys(text);
 		this.log("测试输出:《文本(" + text + ")》已追加!");
 	}
 
 	@Override
 	public void clear2SetTextField(UiTextView utv, String text) {
 		this.clearTextField(utv);
-		utv.setText(text);
-		if(this.isTextInPage("完成")){
-			this.tapElementByName("完成", "键盘-完成");
-		}
+		utv.sendKeys(text);
 		this.log("测试输出:《文本(" + text + ")》已替换!");
 	}
 	

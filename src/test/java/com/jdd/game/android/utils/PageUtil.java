@@ -22,14 +22,14 @@ public class PageUtil {
 		return (new WebDriverWait(saad, timeoutInSeconds()).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				try {
-		        	List<?> list = saad.findElementsByXPath(ub.getLocator());
-		        	if(list != null && !list.isEmpty()){
-		        		return true;
-		        	}
-		        	return false;
-		        } catch(NoSuchElementException e) {
-		        	return false;
-		        }
+					List<?> list = saad.findElementsByXPath(ub.getLocator());
+					if(list != null && !list.isEmpty()){
+						return true;
+					}
+					return false;
+				} catch(NoSuchElementException e) {
+					return false;
+				}
 			}
 			@Override
 			public String toString() {

@@ -15,6 +15,7 @@ import com.jdd.game.android.driver.impl.AndroidDriverExe;
 import com.jdd.game.android.exception.AutoException;
 import com.paypal.selion.configuration.Config;
 import com.paypal.selion.platform.grid.browsercapabilities.DefaultCapabilitiesBuilder;
+import io.appium.java_client.remote.MobileCapabilityType;
 
 public class AppDriver {
 	
@@ -45,12 +46,15 @@ public class AppDriver {
 		String port = prop.getProperty("selenium.port");
 		String type = prop.getProperty("mobile.node.type");
 		String timeout = prop.getProperty("execution.timeout");
+		String platform = prop.getProperty("platform.name");
 		if(StringUtils.isBlank(type)){
 			throw new AutoException("配置文件属性[mobile.node.type]不能为空！");
 		}else if(StringUtils.isBlank(host)){
 			throw new AutoException("配置文件属性[selenium.host]不能为空！");
 		}else if(StringUtils.isBlank(port)){
 			throw new AutoException("配置文件属性[selenium.port]不能为空！");
+		}else if(StringUtils.isBlank(platform)){
+			throw new AutoException("配置文件属性[platform.name]不能为空！");
 		}else{
 			if(!this.isAvailablePort(host, Integer.parseInt(port))){
 				throw new AutoException("服务[http://" + host + ":" + port + "/wd/hub]未启动！");
@@ -67,6 +71,7 @@ public class AppDriver {
 		}
 		Config.setConfigProperty(Config.ConfigProperty.EXECUTION_TIMEOUT, timeout);
 		Config.setConfigProperty(Config.ConfigProperty.MOBILE_NODE_TYPE, type);
+		Config.setConfigProperty(Config.ConfigProperty.MOBILE_DEVICE, platform);
 		Config.setConfigProperty(Config.ConfigProperty.SELENIUM_HOST, host);
 		Config.setConfigProperty(Config.ConfigProperty.SELENIUM_PORT,port);
 		StringBuilder className = new StringBuilder(AppDriver.class.getCanonicalName());
@@ -77,20 +82,21 @@ public class AppDriver {
 	
 	@AfterClass
 	public void stop(){
-		if(androidDriverExe != null){
-			androidDriverExe.quitApp();
-		}
 	}
 
 	public static class AndroidCapabilities extends DefaultCapabilitiesBuilder {
 		
 	    @Override
 	    public DesiredCapabilities getCapabilities(DesiredCapabilities capabilities) {
-	    	capabilities.setCapability("automationName", prop.getProperty("mobile.node.type"));
-	    	capabilities.setCapability("platformName", prop.getProperty("platform.name"));
-	    	capabilities.setCapability("platformVersion", prop.getProperty("device.version"));
-	    	capabilities.setCapability("deviceName", prop.getProperty("device.name"));
-	        capabilities.setCapability("udid", prop.getProperty("device.udid"));
+	    	capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, prop.getProperty("mobile.node.type"));
+	    	capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, prop.getProperty("platform.name"));
+	    	capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, prop.getProperty("device.version"));
+	    	capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("device.name"));
+	    	capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, prop.getProperty("command.timeout"));
+	        capabilities.setCapability(MobileCapabilityType.UDID, prop.getProperty("device.udid"));
+	        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+	        capabilities.setCapability("autoWebviewTimeout", prop.getProperty("webview.timeout"));
+	        capabilities.setCapability("unicodeKeyboard", true);
 	        return capabilities;
 	    }
 	}

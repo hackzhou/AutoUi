@@ -1,7 +1,9 @@
 package com.jdd.game.android.report;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,23 +14,26 @@ import org.testng.ISuiteResult;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
-
+import com.jdd.game.android.utils.FileUtil;
 import com.paypal.selion.internal.reports.runtimereport.JsonRuntimeReporterHelper;
 
 public class MyReporter implements IReporter {
 	
-	private static final String TYPETEST = "test";
-	private static final String TYPECONFIG = "config";
+	private static final String TYPE_TEST		= "test";
+	private static final String TYPE_CONFIG		= "config";
+	private static final String PATH_OUT		= File.separator + "historyReporter" + File.separator + "test" + File.separator + "%s" + File.separator;;
+	private static final String INDEX_BACK_OLD	= "../";
+	private static final String INDEX_BACK_NEW	= "../../../";
 
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 		/** 自定义文件输出路径 **/
-		String path = outputDirectory+"/historyReporter/test/" + System.currentTimeMillis() + File.separator;
-		//String path = outputDirectory+"/historyReporter/" + File.separator;
+		String path = outputDirectory + String.format(PATH_OUT, timeDir());
 		
 		boolean bool = false;
-		if(!existsDir(path)){
-			if(createDir(path)){
+		FileUtil fu = new FileUtil();
+		if(!fu.existsDir(path)){
+			if(fu.createDir(path)){
 				bool = true;
 				System.out.println("文件夹已创建: " + path);
 			}else{
@@ -61,12 +66,16 @@ public class MyReporter implements IReporter {
 			                listConfig.addAll(this.listTestResult(testContext.getSkippedConfigurations()));
 			            }
 		            }
-		            insertMethod(list, jrrh, TYPETEST);
-		            insertMethod(listConfig, jrrh, TYPECONFIG);
+		            insertMethod(list, jrrh, TYPE_TEST);
+		            insertMethod(listConfig, jrrh, TYPE_CONFIG);
 		        }
 				jrrh.writeJSON(path, false);
-				if(!deleteFile(path + "index.html")){
-					System.out.println(path + "index.html - 删除失败!");
+//				if(!deleteFile(path + "index.html")){
+//					System.out.println(path + "index.html - 删除失败!");
+//				}
+				String text = fu.readFile(path + "index.html");
+				if(text != null && !text.isEmpty()){
+					fu.writeFile(path + "index.html", text.replace(INDEX_BACK_OLD, INDEX_BACK_NEW));
 				}
 			}
 		}
@@ -89,12 +98,10 @@ public class MyReporter implements IReporter {
                 if (fullClassName.contains(".")) {
                     packageName = fullClassName.substring(0, fullClassName.lastIndexOf('.'));
                 }
-                if(TYPETEST.equals(type)){
+                if(TYPE_TEST.equals(type)){
                 	jrrh.insertTestMethod(result.getTestContext().getSuite().getName(), result.getTestContext().getCurrentXmlTest().getName(), packageName, className, result);
-                	
-                }else if(TYPECONFIG.equals(type)){
+                }else if(TYPE_CONFIG.equals(type)){
                 	jrrh.insertConfigMethod(result.getTestContext().getSuite().getName(), result.getTestContext().getCurrentXmlTest().getName(), packageName, className, result);
-	                
                 }
             }
         }
@@ -110,48 +117,7 @@ public class MyReporter implements IReporter {
         return new ArrayList<ITestResult>(results);
     }
 	
-	/**
-	 * 删除文件
-	 * @param sPath
-	 * @return
-	 */
-	private boolean deleteFile(String sPath) {
-		File file = new File(sPath);
-	    if (file.isFile() && file.exists()) {
-	        file.delete();
-	        return true;
-	    }
-	    return false;
+	private String timeDir(){
+		return new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 	}
-	
-	/**
-	 * 判断文件夹是否存在
-	 * @param destDirName
-	 * @return
-	 */
-	private boolean existsDir(String destDirName) {
-        File dir = new File(destDirName);
-        if (dir.exists()) {
-            return true;
-        } else {
-        	return false;
-        }
-    }
-	
-	/**
-	 * 创建文件夹
-	 * @param destDirName
-	 * @return
-	 */
-	private boolean createDir(String destDirName) {
-        File dir = new File(destDirName);
-        if (!destDirName.endsWith(File.separator)) {
-            destDirName = destDirName + File.separator;
-        }
-        if (dir.mkdirs()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
