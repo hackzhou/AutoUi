@@ -17,8 +17,8 @@ public class MyTest extends AbsParentTest {
 		driverExe.tapElement(lp.getPhoneLoginUiObject(), "点击手机登录");
 		driverExe.appendTextField(lp.getPhoneNumberUiTextView(), "13151815253");
 		driverExe.appendTextField(lp.getPasswordUiTextView(), "zhouzhou");
-		driverExe.waitPageLoad(10);
 		driverExe.clear2SetTextField(lp.getPhoneNumberUiTextView(), "13151815253");
+		driverExe.log("截图", true);
 		driverExe.tapElement(lp.getLoginUiObject(), "登录确认");
 		driverExe.waitPageLoad(10);
 		endTest(NAME_TEST, caseName);

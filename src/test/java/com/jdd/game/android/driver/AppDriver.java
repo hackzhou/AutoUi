@@ -45,28 +45,34 @@ public class AppDriver {
 		String host = prop.getProperty("selenium.host");
 		String port = prop.getProperty("selenium.port");
 		String type = prop.getProperty("mobile.node.type");
-		String timeout = prop.getProperty("execution.timeout");
+		String timeout = prop.getProperty("timeout.execution");
 		String platform = prop.getProperty("platform.name");
+		String appPath = prop.getProperty("app.path");
+		String appName = prop.getProperty("app.name");
+		String appActivity = prop.getProperty("app.activity");
+		
 		if(StringUtils.isBlank(type)){
 			throw new AutoException("配置文件属性[mobile.node.type]不能为空！");
+		}else if(StringUtils.isBlank(platform)){
+			throw new AutoException("配置文件属性[platform.name]不能为空！");
 		}else if(StringUtils.isBlank(host)){
 			throw new AutoException("配置文件属性[selenium.host]不能为空！");
 		}else if(StringUtils.isBlank(port)){
 			throw new AutoException("配置文件属性[selenium.port]不能为空！");
-		}else if(StringUtils.isBlank(platform)){
-			throw new AutoException("配置文件属性[platform.name]不能为空！");
 		}else{
 			if(!this.isAvailablePort(host, Integer.parseInt(port))){
 				throw new AutoException("服务[http://" + host + ":" + port + "/wd/hub]未启动！");
 			}
 		}
-		if(this.isExistFile(prop.getProperty("app.path"))){
-			Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_PATH, new File(prop.getProperty("app.path")).getAbsolutePath());
+		if(StringUtils.isNotBlank(appPath) && this.isExistFile(appPath)){
+			Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_PATH, new File(appPath).getAbsolutePath());
 		}else{
-			if(StringUtils.isNotBlank(prop.getProperty("app.name"))){
-				Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_NAME, prop.getProperty("app.name"));
+			if(StringUtils.isNotBlank(appName) && StringUtils.isNotBlank(appActivity)){
+				Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_NAME, appName);
+				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_PACKAGE, appName);
+				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_MAIN_ACTIVITY, appActivity);
 			}else{
-				throw new AutoException("App Path or Name does not exist.");
+				throw new AutoException("配置文件属性[app.path]或[app.name和app.activity]不能同时为空！");
 			}
 		}
 		Config.setConfigProperty(Config.ConfigProperty.EXECUTION_TIMEOUT, timeout);
@@ -92,20 +98,18 @@ public class AppDriver {
 	    	capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, prop.getProperty("platform.name"));
 	    	capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, prop.getProperty("device.version"));
 	    	capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("device.name"));
-	    	capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, prop.getProperty("command.timeout"));
+	    	capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, prop.getProperty("timeout.command"));
 	        capabilities.setCapability(MobileCapabilityType.UDID, prop.getProperty("device.udid"));
 	        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
-	        capabilities.setCapability("autoWebviewTimeout", prop.getProperty("webview.timeout"));
+	        capabilities.setCapability("autoWebviewTimeout", prop.getProperty("timeout.webview"));
 	        capabilities.setCapability("unicodeKeyboard", true);
 	        return capabilities;
 	    }
 	}
 	
 	private boolean isExistFile(String path){
-		if(path == null || path.length() < 1){
-			return false;
-		}
-		if((new File(path)).exists()){
+		File file = new File(path);
+		if(file.exists() && file.isFile()){
 			return true;
 		}
 		return false;

@@ -2,3 +2,6 @@
 /.classpath
 /.gitignore
 /.project
+/selionFiles/
+/.settings/
+/test-output/

@@ -14,6 +14,7 @@ import org.testng.ISuiteResult;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
+import com.jdd.game.android.exception.AutoException;
 import com.jdd.game.android.utils.FileUtil;
 import com.paypal.selion.internal.reports.runtimereport.JsonRuntimeReporterHelper;
 
@@ -30,53 +31,44 @@ public class MyReporter implements IReporter {
 		/** 自定义文件输出路径 **/
 		String path = outputDirectory + String.format(PATH_OUT, timeDir());
 		
-		boolean bool = false;
 		FileUtil fu = new FileUtil();
 		if(!fu.existsDir(path)){
-			if(fu.createDir(path)){
-				bool = true;
-				System.out.println("文件夹已创建: " + path);
-			}else{
-				bool = false;
-				System.out.println("文件夹创建失败: " + path);
+			if(!fu.createDir(path)){
+				throw new AutoException("报告文件夹创建失败[" + path + "]");
 			}
-		}else{
-			bool = true;
-			System.out.println("文件夹已存在: " + path);
 		}
 		
-		if(bool){
-			JsonRuntimeReporterHelper jrrh = null;
-			List<ITestResult> list = null;
-			List<ITestResult> listConfig = null;
-			if(suites != null && !suites.isEmpty()){
-				for (ISuite suite : suites) {
-					jrrh = new JsonRuntimeReporterHelper();
-					list = new ArrayList<ITestResult>();
-					listConfig = new ArrayList<ITestResult>();
-		            Map<String, ISuiteResult> suiteResults = suite.getResults();
-		            if(suiteResults != null && !suiteResults.isEmpty()){
-		            	for (ISuiteResult suiteResult : suiteResults.values()) {
-			                ITestContext testContext = suiteResult.getTestContext();
-			                list.addAll(this.listTestResult(testContext.getPassedTests()));
-			                list.addAll(this.listTestResult(testContext.getFailedTests()));
-			                list.addAll(this.listTestResult(testContext.getSkippedTests()));
-			                listConfig.addAll(this.listTestResult(testContext.getPassedConfigurations()));
-			                listConfig.addAll(this.listTestResult(testContext.getFailedConfigurations()));
-			                listConfig.addAll(this.listTestResult(testContext.getSkippedConfigurations()));
-			            }
+		JsonRuntimeReporterHelper jrrh = null;
+		List<ITestResult> list = null;
+		List<ITestResult> listConfig = null;
+		if(suites != null && !suites.isEmpty()){
+			for (ISuite suite : suites) {
+				jrrh = new JsonRuntimeReporterHelper();
+				list = new ArrayList<ITestResult>();
+				listConfig = new ArrayList<ITestResult>();
+	            Map<String, ISuiteResult> suiteResults = suite.getResults();
+	            if(suiteResults != null && !suiteResults.isEmpty()){
+	            	for (ISuiteResult suiteResult : suiteResults.values()) {
+		                ITestContext testContext = suiteResult.getTestContext();
+		                list.addAll(this.listTestResult(testContext.getPassedTests()));
+		                list.addAll(this.listTestResult(testContext.getFailedTests()));
+		                list.addAll(this.listTestResult(testContext.getSkippedTests()));
+		                listConfig.addAll(this.listTestResult(testContext.getPassedConfigurations()));
+		                listConfig.addAll(this.listTestResult(testContext.getFailedConfigurations()));
+		                listConfig.addAll(this.listTestResult(testContext.getSkippedConfigurations()));
 		            }
-		            insertMethod(list, jrrh, TYPE_TEST);
-		            insertMethod(listConfig, jrrh, TYPE_CONFIG);
-		        }
-				jrrh.writeJSON(path, false);
-//				if(!deleteFile(path + "index.html")){
-//					System.out.println(path + "index.html - 删除失败!");
-//				}
-				String text = fu.readFile(path + "index.html");
-				if(text != null && !text.isEmpty()){
-					fu.writeFile(path + "index.html", text.replace(INDEX_BACK_OLD, INDEX_BACK_NEW));
-				}
+	            }
+	            insertMethod(list, jrrh, TYPE_TEST);
+	            insertMethod(listConfig, jrrh, TYPE_CONFIG);
+	        }
+			jrrh.writeJSON(path, false);
+//			if(!deleteFile(path + "index.html")){
+//				System.out.println(path + "index.html - 删除失败!");
+//			}
+			String text = fu.readFile(path + "index.html");
+			if(text != null && !text.isEmpty()){
+				fu.writeFile(path + "index.html", text.replace(INDEX_BACK_OLD, INDEX_BACK_NEW));
+				System.out.println("报告已创建: " + path + "index.html");
 			}
 		}
 	}
