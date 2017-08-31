@@ -72,7 +72,7 @@ public class AppDriver {
 				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_PACKAGE, appName);
 				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_MAIN_ACTIVITY, appActivity);
 			}else{
-				throw new AutoException("配置文件属性[app.path]或[app.name和app.activity]不能同时为空！");
+				throw new AutoException("配置文件属性[app.path]与[app.name和app.activity]不能同时为空！");
 			}
 		}
 		Config.setConfigProperty(Config.ConfigProperty.EXECUTION_TIMEOUT, timeout);

@@ -1,10 +1,13 @@
 package com.jdd.game.android.suites;
 
 import org.testng.annotations.Test;
-import com.jdd.game.android.driver.IDriverExe;
-import com.jdd.pages.LoginPage;
+import org.testng.annotations.Listeners;
 import com.paypal.selion.annotations.MobileTest;
+import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.report.MyReporter;
+import com.jdd.pages.LoginPage;
 
+@Listeners({MyReporter.class})
 public class MyTest extends AbsParentTest {
 	private static final String NAME_TEST	= "微竞猜";
 
