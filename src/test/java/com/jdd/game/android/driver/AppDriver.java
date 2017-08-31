@@ -79,7 +79,7 @@ public class AppDriver {
 		Config.setConfigProperty(Config.ConfigProperty.MOBILE_NODE_TYPE, type);
 		Config.setConfigProperty(Config.ConfigProperty.MOBILE_DEVICE, platform);
 		Config.setConfigProperty(Config.ConfigProperty.SELENIUM_HOST, host);
-		Config.setConfigProperty(Config.ConfigProperty.SELENIUM_PORT,port);
+		Config.setConfigProperty(Config.ConfigProperty.SELENIUM_PORT, port);
 		StringBuilder className = new StringBuilder(AppDriver.class.getCanonicalName());
         className.append("$").append(AndroidCapabilities.class.getSimpleName());
         Config.setConfigProperty(Config.ConfigProperty.SELENIUM_CUSTOM_CAPABILITIES_PROVIDER, className.toString());
