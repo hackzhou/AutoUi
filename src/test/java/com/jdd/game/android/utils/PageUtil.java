@@ -14,7 +14,7 @@ import com.paypal.selion.platform.mobile.android.UiObject;
 public class PageUtil {
 	
 	public static void waitTillActivity(RemoteWebDriver driver) {
-//		driver.manage().timeouts().pageLoadTimeout(timeoutInSeconds(), TimeUnit.SECONDS); /** 设置页面完全加载的超时时间 **/
+		//driver.manage().timeouts().pageLoadTimeout(timeoutInSeconds(), TimeUnit.SECONDS); /** 设置页面完全加载的超时时间 **/
 		driver.manage().timeouts().implicitlyWait(timeoutInSeconds(), TimeUnit.SECONDS); /** 设置识别对象的超时时间 **/
 	}
 
