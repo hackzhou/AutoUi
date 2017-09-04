@@ -1,0 +1,19 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  tongzhizhongxinUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/set_up_notice')]" #通知中心
+  qingchuhuancunUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/set_up_cache')]" #清除缓存
+  bangzhuzhongxinUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'帮助中心')]" #帮助中心
+  guanyuwomenUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'关于我们')]" #关于我们
+  tuichudengluUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/set_up_withdraw_from')]" #退出登录

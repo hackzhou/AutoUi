@@ -1,0 +1,10 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  tianxieyaoqingmaUiObject:
+    locators:
+      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_code')]" #请输入邀请码
+  querenUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/btn_bind')]" #确认

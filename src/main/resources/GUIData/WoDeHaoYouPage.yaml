@@ -1,0 +1,13 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  fanlishuomingUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_head_right')]" #返利说明
+  zhichijiluUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'支持记录')]" #支持记录
+  fanlijiluUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'返利记录')]" #返利记录

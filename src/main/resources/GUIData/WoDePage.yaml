@@ -1,0 +1,28 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  touxiangUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_personal_icon')]" #头像
+  nichengUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/info_name')]" #昵称
+  idUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/frag_id')]" #ID
+  zijinmingxiUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/info_money')]" #资金明细
+  shouhuoxinxiUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/info_account_number')]" #收货信息
+  yaoqinghaoyouUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/invite_friends')]" #邀请好友
+  kefuUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/info_custom_service')]" #客服
+  shezhiUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/info_set_up')]" #设置

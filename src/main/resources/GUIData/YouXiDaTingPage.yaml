@@ -1,0 +1,34 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  jinyezishuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/gold_num')]" #金叶子数
+  qiandaojiangliUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/task_and_sign')]" #签到奖励
+  xiaoxizhongxinUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/notify_msg')]" #消息中心
+  jinrupaihangbangUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/enter_rank')]" #进入排行榜
+  chakangengduoUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/see_share_more')]" #查看更多
+  xianshibianlanUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/show_operate_virturl')]" #显示边栏
+  yincangbianlanUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/hide_operate')]" #隐藏边栏
+  lijikaiqiUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'立即开启')]" #立即开启
+  xingyunzhuanpanUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'幸运转盘')]" #幸运转盘
+  taoquanUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'套圈')]" #套圈

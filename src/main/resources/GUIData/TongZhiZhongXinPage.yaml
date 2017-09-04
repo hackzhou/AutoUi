@@ -1,0 +1,13 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  zhongjiangUiObject:
+    locators:
+      US: "//android.view.View[contains(@resource-id,'com.jddfun.game:id/notification_centre_support')]" #中奖通知
+  miandaraoUiObject:
+    locators:
+      US: "//android.view.View[contains(@resource-id,'com.jddfun.game:id/notification_no_disturb_support')]" #免打扰时间
+  fashaomoshiUiObject:
+    locators:
+      US: "//android.view.View[contains(@resource-id,'com.jddfun.game:id/notification_disturb_support')]" #发烧模式

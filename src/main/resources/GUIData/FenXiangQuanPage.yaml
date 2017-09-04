@@ -1,0 +1,16 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  fenxiangquanUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_activity_title')]" #分享圈
+  bangzhuUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_head_right')]" #帮助
+  quanbuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'全部')]" #全部
+  woUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'我')]" #我

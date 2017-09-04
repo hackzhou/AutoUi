@@ -1,0 +1,13 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  chongzhijiluUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'充值记录')]" #充值记录
+  jinyezijiluUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'金叶子记录')]" #金叶子记录
+  riliObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/frag_record_calendar')]" #日历
