@@ -1,0 +1,25 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  paishezhaopianUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/takePhoto')]" #拍摄照片
+  bendixiangceUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/choosePhoto')]" #本地相册
+  quxiaoUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/btn_cancel')]" #取消
+  jinzhiUiButton:
+    locators:
+      US: "//android.widget.Button[contains(@resource-id,'com.huawei.systemmanager:id/btn_forbbid')]" #禁止调用摄像头
+  yunxuUiButton:
+    locators:
+      US: "//android.widget.Button[contains(@resource-id,'com.huawei.systemmanager:id/btn_allow')]" #允许调用摄像头
+  paizhaoUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.huawei.camera:id/shutter_button')]" #拍照
+  zhaopianUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.android.documentsui:id/icon_thumb')]" #照片1

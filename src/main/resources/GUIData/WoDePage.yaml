@@ -5,12 +5,24 @@ elements:
   touxiangUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_personal_icon')]" #头像
-  nichengUiObject:
-    locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/info_name')]" #昵称
   idUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/frag_id')]" #ID
+  nichengUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/info_name')]" #昵称
+  xiugainichengUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/info_imageView2')]" #修改昵称
+  xiugainichengUiTextView:
+    locators:
+      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/revise_setName')]" #修改昵称输入框
+  nichengquerenUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/revise_name_ok')]" #修改昵称确认
+  jinyezishuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/info_useAmount')]" #金叶子数
   zijinmingxiUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/info_money')]" #资金明细

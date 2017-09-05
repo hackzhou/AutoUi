@@ -14,3 +14,6 @@ elements:
   fanhuiUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_iv_back')]" #返回
+  huodongguanbiUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/tiger_dialog_close')]" #活动关闭

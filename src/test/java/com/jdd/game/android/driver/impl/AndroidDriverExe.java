@@ -284,7 +284,14 @@ public class AndroidDriverExe implements IDriverExe {
 
 	@Override
 	public void assertPage(String text, String message) {
+		log(message, false);
 		Assert.assertEquals(true, this.isTextInPage(text), message);
+	}
+	
+	@Override
+	public void assertElement(UiObject ub, String message) {
+		log(message, false);
+		Assert.assertEquals(true, this.getWebElements(Const.TYPE_XPATH, ub.getLocator()) != null, message);
 	}
 	
 	@Override

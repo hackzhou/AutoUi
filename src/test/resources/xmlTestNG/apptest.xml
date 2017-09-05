@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="1" name="AppTestSuite"
+	skipfailedinvocationcounts="false" junit="false" parallel="false"
+	data-provider-thread-count="50" annotations="JDK">
+
+	<!-- 测试 -->
+    <test name="app-test"> 
+        <classes>
+            <class name="com.jdd.game.android.suites.app.GeRenZhongXin">
+                <methods>
+                    <include name="yeMianXianShi" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

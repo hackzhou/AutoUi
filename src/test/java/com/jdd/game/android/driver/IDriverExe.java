@@ -56,7 +56,7 @@ public interface IDriverExe {
 	
 	/**
 	 * 取得元素点击
-	 * @param uel (UiObject控件)
+	 * @param ub (UiObject控件)
 	 * @param message (打印消息文本)
 	 */
 	public void tapElement(UiObject ub, String message);
@@ -177,6 +177,13 @@ public interface IDriverExe {
 	 * @param message (消息文本)
 	 */
 	public void assertPage(String text, String message);
+	
+	/**
+	 * 断言控件是否存在当前页面
+	 * @param ub (UiObject控件)
+	 * @param message (消息文本)
+	 */
+	public void assertElement(UiObject ub, String message);
 	
 	/**
 	 * 取得Xpath末尾"[n]"中n值

@@ -8,6 +8,9 @@ elements:
   weixindengluUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/btn_wx_login')]" #微信登录
+  youkeshiwanUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/btn_shiwan')]" #游客试玩
   shoujidengluUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_login')]" #手机登录
