@@ -164,8 +164,6 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.waitPageLoad(1);
 		driverExe.tapElement(tzzx.getZhongjiangUiObject(), "点击[中奖通知]");
 		driverExe.waitPageLoad(1);
-		driverExe.tapElement(tzzx.getMiandaraoUiObject(), "点击[免打扰时间]");
-		driverExe.waitPageLoad(1);
 		driverExe.tapElement(tzzx.getFashaomoshiUiObject(), "点击[发烧模式]");
 		driverExe.waitPageLoad(1);
 		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]");
@@ -178,8 +176,13 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]");
 		driverExe.assertPage("关于我们", "验证[关于我们]是否存在");
 		driverExe.tapElement(szp.getGuanyuwomenUiObject(), "点击[关于我们]");
+		driverExe.assertPage("微竞猜", "验证[关于我们页面]是否加载成功");
+		driverExe.assertPage("V", "验证[关于我们页面]是否加载成功");
 		driverExe.assertPage("苏州市联科创智信息技术有限公司", "验证[关于我们页面]是否加载成功");
 		driverExe.tapElement(cdp.getFanhuiUiObject(), "返回");
+		driverExe.waitPageLoad(1);
+		driverExe.tapElement(szp.getTuichudengluUiObject(), "点击[退出登录]按钮");
+		driverExe.tapElement(szp.getTuichuquerenUiObject(), "点击[退出确认]按钮");
 		driverExe.waitPageLoad(1);
 		endTest(NAME_TEST, caseName);
 	}

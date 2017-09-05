@@ -17,3 +17,6 @@ elements:
   tuichudengluUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/set_up_withdraw_from')]" #退出登录
+  tuichuquerenUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/confirm')]" #退出确认
