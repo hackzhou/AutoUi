@@ -2,13 +2,13 @@ baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 platform: "android"
 defaultLocale: "US"
 elements:
-  shouhuorenUiObject:
+  shouhuorenUiTextView:
     locators:
       US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/receiving_name')]" #收货人
-  lianxidianhuaUiObject:
+  lianxidianhuaUiTextView:
     locators:
       US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/receiving_phone')]" #联系电话
-  xiangxidizhiUiObject:
+  xiangxidizhiUiTextView:
     locators:
       US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/receiving_door_number')]" #详细地址
   querenUiObject:

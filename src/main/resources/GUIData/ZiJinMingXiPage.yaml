@@ -8,6 +8,6 @@ elements:
   jinyezijiluUiObject:
     locators:
       US: "//android.widget.TextView[contains(@text,'金叶子记录')]" #金叶子记录
-  riliObject:
+  riliUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/frag_record_calendar')]" #日历

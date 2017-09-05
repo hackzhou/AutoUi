@@ -124,6 +124,11 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 	
 	@Override
+	public void foundTapElement(UiObject ub, String message) {
+		this.tapElementByXpath(ub.getLocator(), message);
+	}
+	
+	@Override
 	public void tapElementByXpath(String xpath, String message) {
 		List<WebElement> list = this.getWebElements(Const.TYPE_XPATH, xpath);
 		if(list != null && !list.isEmpty()){
@@ -284,14 +289,16 @@ public class AndroidDriverExe implements IDriverExe {
 
 	@Override
 	public void assertPage(String text, String message) {
-		log(message, false);
-		Assert.assertEquals(true, this.isTextInPage(text), message);
+		boolean bool = this.isTextInPage(text);
+		log("测试输出:" + message + "[" + bool + "]", false);
+		Assert.assertEquals(true, bool, message);
 	}
 	
 	@Override
 	public void assertElement(UiObject ub, String message) {
-		log(message, false);
-		Assert.assertEquals(true, this.getWebElements(Const.TYPE_XPATH, ub.getLocator()) != null, message);
+		boolean bool = this.getWebElements(Const.TYPE_XPATH, ub.getLocator()) != null;
+		log("测试输出:" + message + "[" + bool + "]", false);
+		Assert.assertEquals(true, bool, message);
 	}
 	
 	@Override
@@ -357,6 +364,11 @@ public class AndroidDriverExe implements IDriverExe {
 	public Integer getWindowHeight() {
 		return this.getAndroidDriver().manage().window().getSize().height;
 	}
+	
+	@Override
+	public void context(String name) {
+		this.getAndroidDriver().context(name);
+	}
 
 	@Override
 	public void closeApp() {
@@ -377,4 +389,5 @@ public class AndroidDriverExe implements IDriverExe {
 	public void quitApp() {
 		this.getAndroidDriver().quit();
 	}
+
 }

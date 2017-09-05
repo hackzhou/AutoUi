@@ -20,6 +20,9 @@ elements:
   paizhaoUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.huawei.camera:id/shutter_button')]" #拍照
+  paizhaowanchengUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.huawei.camera:id/btn_done')]" #拍照完成
   zhaopianUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.android.documentsui:id/icon_thumb')]" #照片1

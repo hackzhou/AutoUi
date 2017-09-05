@@ -62,6 +62,13 @@ public interface IDriverExe {
 	public void tapElement(UiObject ub, String message);
 	
 	/**
+	 * 发现元素并点击
+	 * @param ub (UiObject控件)
+	 * @param message (打印消息文本)
+	 */
+	public void foundTapElement(UiObject ub, String message);
+	
+	/**
 	 * 通过xpath取得元素点击
 	 * @param xpath (xpath)
 	 * @param message (打印消息文本)
@@ -232,6 +239,12 @@ public interface IDriverExe {
 	 * 获取设备的高
 	 */
 	public Integer getWindowHeight();
+	
+	/**
+	 * 设置context
+	 * @param name (NATIVE_APP、WEBVIEW)
+	 */
+	public void context(String name);
 	
 	/**
 	 * 关闭APP
