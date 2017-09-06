@@ -69,6 +69,13 @@ public interface IDriverExe {
 	public void foundTapElement(UiObject ub, String message);
 	
 	/**
+	 * 取得元素点击(WebView)
+	 * @param xpath (xpath)
+	 * @param message (打印消息文本)
+	 */
+	public void tapElementWebView(String xpath, String message);
+	
+	/**
 	 * 通过xpath取得元素点击
 	 * @param xpath (xpath)
 	 * @param message (打印消息文本)

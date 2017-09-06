@@ -129,6 +129,16 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 	
 	@Override
+	public void tapElementWebView(String xpath, String message){
+		try {
+			this.context("WEBVIEW");
+			this.tapElementByXpath(xpath, message);
+		} finally {
+			this.context("NATIVE_APP");
+		}
+	}
+	
+	@Override
 	public void tapElementByXpath(String xpath, String message) {
 		List<WebElement> list = this.getWebElements(Const.TYPE_XPATH, xpath);
 		if(list != null && !list.isEmpty()){
@@ -283,6 +293,9 @@ public class AndroidDriverExe implements IDriverExe {
 
 	@Override
 	public void log(String message, boolean bool) {
+		if(bool){
+			System.out.println(this.getAndroidDriver().getPageSource());
+		}
 		System.out.println(message);
 		SeLionReporter.log(message, bool);
 	}

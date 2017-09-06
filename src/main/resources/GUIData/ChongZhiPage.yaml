@@ -2,6 +2,18 @@ baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 platform: "android"
 defaultLocale: "US"
 elements:
-  youxidatingUiObject:
+  chongzhioneUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_game')]" #游戏大厅
+      US: "//*[@id='app']/div/ul[1]/li[1]/span" #充值-特惠礼包-按钮1
+  chongzhitwoUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[2]/p[3]" #充值-特惠礼包-按钮2
+  zhifubaozhifuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/ali_pay')]" #支付宝支付
+  zhifubaozhifuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/ali_pay')]" #支付宝支付
+  tishishiUiObject:
+    locators:
+      US: "//android.widget.Button[contains(@resource-id,'com.alipay.mobile.base.commonbiz:id/btn_user_tip_ok')]" #提示-是

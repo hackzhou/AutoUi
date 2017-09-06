@@ -2,12 +2,15 @@ baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 platform: "android"
 defaultLocale: "US"
 elements:
+  yunxuUiButton:
+    locators:
+      US: "//android.widget.Button[contains(@resource-id,'com.huawei.systemmanager:id/btn_allow')]" #设备-允许
   youxidatingUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_game')]" #游戏大厅
-  fenxiangquanUiObject:
+  lingjiangtaiUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_prize')]" #分享圈
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_prize')]" #领奖台
   wodeUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_me')]" #我的

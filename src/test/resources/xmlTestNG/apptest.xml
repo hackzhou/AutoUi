@@ -14,7 +14,10 @@
                     <!-- <include name="ZiJinMingXi" /> -->
                     <!-- <include name="ShouHuoXinXi" /> -->
                     <!-- <include name="KeFu" /> -->
-                    <include name="SheZhi" />
+                    <!-- <include name="SheZhi" /> -->
+                    <!-- <include name="LiJiZhuCe" /> -->
+                    <!-- <include name="ChongZhi" /> -->
+                    <include name="WoDeFuLi" />
                 </methods>
             </class>
         </classes>

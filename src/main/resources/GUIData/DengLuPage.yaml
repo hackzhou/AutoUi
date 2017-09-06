@@ -14,9 +14,9 @@ elements:
   shoujidengluUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_login')]" #手机登录
-  shoujizhuceUiObject:
+  lijizhuceUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_register')]" #手机注册
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_register')]" #立即注册
   shoujihaomaUiTextView:
     locators:
       US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_phone_number')]" #手机号码输入框

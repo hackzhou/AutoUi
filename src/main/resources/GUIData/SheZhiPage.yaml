@@ -20,3 +20,24 @@ elements:
   tuichuquerenUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/confirm')]" #退出确认
+  guanyupaihangUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[1]/ul/li[1]" #帮助中心-关于排行
+  guanyulingjiangtaiUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[1]/ul/li[2]" #帮助中心-关于领奖台
+  guanyushangchengUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[1]/ul/li[3]" #帮助中心-关于商城
+  guanyujinyeziUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[1]/ul/li[4]" #帮助中心-关于金叶子
+  qiandaorenwuUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[1]/ul/li[5]" #帮助中心-签到&任务
+  guanyufenxiangUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[1]/ul/li[6]" #帮助中心-关于分享
+  kefuxiangguanUiObject:
+    locators:
+      US: "//*[@id='app']/div/div/div[1]/ul/li[7]" #帮助中心-客服相关
