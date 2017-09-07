@@ -293,9 +293,9 @@ public class AndroidDriverExe implements IDriverExe {
 
 	@Override
 	public void log(String message, boolean bool) {
-		if(bool){
-			System.out.println(this.getAndroidDriver().getPageSource());
-		}
+//		if(bool){
+//			System.out.println(this.getAndroidDriver().getPageSource());
+//		}
 		System.out.println(message);
 		SeLionReporter.log(message, bool);
 	}

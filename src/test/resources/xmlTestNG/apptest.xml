@@ -9,7 +9,7 @@
         <classes>
             <class name="com.jdd.game.android.suites.app.GeRenZhongXin">
                 <methods>
-                    <include name="YeMianXianShi" />
+                    <!-- <include name="YeMianXianShi" />
                     <include name="XiuGaiTouXiang" />
                     <include name="XiuGaiNiCheng" />
                     <include name="ChongZhi" />
@@ -19,7 +19,7 @@
                     <include name="KeFu" />
                     <include name="ShouHuoXinXi" />
                     <include name="SheZhi" />
-                    <include name="LiJiZhuCe" />
+                    <include name="LiJiZhuCe" /> -->
                     <include name="YouKeZhuCe" />
                 </methods>
             </class>

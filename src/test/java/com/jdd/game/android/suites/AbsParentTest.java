@@ -6,6 +6,7 @@ import com.jdd.pages.CaiDanPage;
 import com.jdd.pages.DengLuPage;
 
 public abstract class AbsParentTest extends AppDriver{
+	private static final Integer WAIT_HOME_PAGE_DIALOG	= 3;
 	
 	protected IDriverExe startTest(String testName, String caseName, boolean login) {
 		return startTest(testName, caseName, login, null, null);
@@ -21,6 +22,7 @@ public abstract class AbsParentTest extends AppDriver{
 			}else{
 				login(username, password);
 			}
+			driverExe.waitPageLoad(1);
 		}
 		return driverExe;
 	}
@@ -55,9 +57,8 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	private boolean waitCloseDialog() {
-		int count = 5;
 		IDriverExe driverExe = getAndroidDriverExe();
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i < WAIT_HOME_PAGE_DIALOG; i++) {
 			driverExe.waitPageLoad(1);
 			if(driverExe.isTextInPage("每日签到") && driverExe.isTextInPage("敬请期待")){
 				return true;

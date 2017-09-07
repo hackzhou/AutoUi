@@ -1,0 +1,10 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  gerenxiaoxiUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'个人消息')]" #个人消息
+  tongzhiUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'通知')]" #通知
