@@ -16,10 +16,13 @@ elements:
       US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/info_imageView2')]" #修改昵称
   xiugainichengUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/revise_setName')]" #修改昵称输入框
+      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/revise_setName')]" #修改昵称-输入框
   nichengquerenUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/revise_name_ok')]" #修改昵称确认
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/revise_name_ok')]" #修改昵称-确认
+  guanbiUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/ubber_dialog_close')]" #修改昵称-关闭
   jinyezishuUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/info_useAmount')]" #金叶子数

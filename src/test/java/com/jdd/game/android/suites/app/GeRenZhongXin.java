@@ -10,22 +10,31 @@ import com.jdd.pages.*;
 
 @Listeners({MyReporter.class})
 public class GeRenZhongXin extends AbsParentTest {
-	private static final String NAME_TEST	= "微竞猜";
+	private static final String JDDFUN_GAME			= "微竞猜";
+	private static final String YE_MIAN_XIAN_SHI	= "页面元素显示";	//1
+	private static final String XIU_GAI_TOU_XIANG	= "修改头像";		//2
+	private static final String XIU_GAI_NI_CHENG	= "修改昵称";		//3
+	private static final String CHONG_ZHI			= "充值";			//4
+	private static final String ZI_JIN_MING_XI		= "资金明细";		//5
+	private static final String XIAO_XI_ZHONG_XIN	= "消息中心";		//6
+	private static final String WO_DE_FU_LI			= "我的福利";		//7
+	private static final String KE_FU				= "客服";			//8
+	private static final String SHOU_HUO_XIN_XI		= "收货信息";		//9
+	private static final String SHE_ZHI				= "设置";			//10
+	private static final String LI_JI_ZHU_CE		= "立即注册";		//11
+	private static final String YOU_KE_ZHU_CE		= "游客注册";		//12
 	
 	@Test
 	@MobileTest
-	public void yeMianXianShi() {//页面元素显示
-		String caseName = "页面元素显示";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		shiWan();
+	public void YeMianXianShi() {//页面元素显示
+		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, true);
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		driverExe.tapElement(cdp.getWodeUiObject(), "点击[我的]标签页");
 		driverExe.assertElement(wdp.getTouxiangUiObject(), "验证[头像]是否存在");
 		driverExe.assertElement(wdp.getNichengUiObject(), "验证[昵称]是否存在");
 		driverExe.tapElement(wdp.getXiugainichengUiObject(), "点击[修改昵称]");
-		driverExe.appendTextField(wdp.getXiugainichengUiTextView(), "自动化测试");
-//		driverExe.tapElement(wdp.getNichengquerenUiObject(), "点击[修改昵称确认]");
+		driverExe.tapElement(wdp.getGuanbiUiObject(), "点击[修改昵称关闭]");
 		driverExe.assertElement(wdp.getJinyezishuUiObject(), "验证[金叶子数]是否存在");
 		driverExe.tapElement(wdp.getJinyezishuUiObject(), "点击[金叶子数]");
 		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]");
@@ -34,15 +43,13 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.assertElement(wdp.getYaoqinghaoyouUiObject(), "验证[邀请好友]是否存在");
 		driverExe.assertElement(wdp.getKefuUiObject(), "验证[客服]是否存在");
 		driverExe.assertElement(wdp.getShezhiUiObject(), "验证[设置]是否存在");
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI);
 	}
 	
 	@Test
 	@MobileTest
-	public void xiuGaiTouXiang() {//修改头像
-		String caseName = "修改 头像";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		shiWan();
+	public void XiuGaiTouXiang() {//修改头像
+		IDriverExe driverExe = startTest(JDDFUN_GAME, XIU_GAI_TOU_XIANG, true);
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		TouXiangPage txp = new TouXiangPage();
@@ -58,15 +65,13 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.tapElement(txp.getBendixiangceUiObject(), "点击[本地相册]");
 		driverExe.tapElement(txp.getZhaopianUiObject(), "点击[照片]");
 		driverExe.waitPageLoad(3);
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, XIU_GAI_TOU_XIANG);
 	}
 	
 	@Test
 	@MobileTest
-	public void xiuGaiNiCheng() {//修改昵称
-		String caseName = "修改昵称";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		shiWan();
+	public void XiuGaiNiCheng() {//修改昵称
+		IDriverExe driverExe = startTest(JDDFUN_GAME, XIU_GAI_NI_CHENG, true);
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		driverExe.tapElement(cdp.getWodeUiObject(), "点击[我的]标签页");
@@ -74,20 +79,18 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.assertPage("昵称仅可以修改一次", "验证[昵称仅可以修改一次]是否存在");
 		driverExe.appendTextField(wdp.getXiugainichengUiTextView(), "123");
 		driverExe.tapElement(wdp.getNichengquerenUiObject(), "点击[修改昵称确认]");
-		driverExe.appendTextField(wdp.getXiugainichengUiTextView(), "123456789123456789");
-//		driverExe.tapElement(wdp.getNichengquerenUiObject(), "点击[修改昵称确认]");
-//		driverExe.appendTextField(wdp.getXiugainichengUiTextView(), "autotest");
-//		driverExe.tapElement(wdp.getNichengquerenUiObject(), "点击[修改昵称确认]");
-		driverExe.waitPageLoad(1);
-		endTest(NAME_TEST, caseName);
+		driverExe.tapElement(wdp.getXiugainichengUiObject(), "点击[修改昵称]");
+		driverExe.clear2SetTextField(wdp.getXiugainichengUiTextView(), "autotest123456789");
+		driverExe.assertPage("autotest", "验证[12345678]是否存在");
+		driverExe.tapElement(wdp.getGuanbiUiObject(), "点击[修改昵称关闭]");
+		//driverExe.tapElement(wdp.getNichengquerenUiObject(), "点击[修改昵称确认]");
+		endTest(JDDFUN_GAME, XIU_GAI_NI_CHENG);
 	}
 	
 	@Test
 	@MobileTest
 	public void ChongZhi() {//充值
-		String caseName = "充值";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		login("13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, CHONG_ZHI, true, "13151815253", "zhouzhou");
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		ChongZhiPage czp = new ChongZhiPage();
@@ -98,15 +101,13 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.tapElementWebView(czp.getChongzhitwoUiObject().getLocator(), "点击[充值]按钮2");
 		driverExe.tapElement(czp.getZhifubaozhifuUiObject(), "点击[支付宝支付]按钮");
 		driverExe.waitPageLoad(3);
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, CHONG_ZHI);
 	}
 	
 	@Test
 	@MobileTest
 	public void ZiJinMingXi() {//资金明细
-		String caseName = "资金明细";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		login("13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, ZI_JIN_MING_XI, true, "13151815253", "zhouzhou");
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		ZiJinMingXiPage zjmx = new ZiJinMingXiPage();
@@ -116,31 +117,24 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.tapElement(zjmx.getJinyezijiluUiObject(), "点击[金叶子记录]");
 		driverExe.tapElement(zjmx.getRiliUiObject(), "点击[日历]");
 		driverExe.waitPageLoad(3);
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, ZI_JIN_MING_XI);
 	}
 	
 	@Test
 	@MobileTest
 	public void XiaoXiZhongXin() {//消息中心
-		String caseName = "消息中心";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		shiWan();
+		IDriverExe driverExe = startTest(JDDFUN_GAME, XIAO_XI_ZHONG_XIN, true, "13151815253", "zhouzhou");
 		CaiDanPage cdp = new CaiDanPage();
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.tapElement(cdp.getYouxidatingUiObject(), "点击[游戏大厅]标签页");
 		driverExe.tapElement(yxdtp.getXiaoxizhongxinUiObject(), "点击[消息中心]按钮");
-		
-		
-		
-		endTest(NAME_TEST, caseName);
+		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]");
+		endTest(JDDFUN_GAME, XIAO_XI_ZHONG_XIN);
 	}
 	
 	@Test
 	@MobileTest
 	public void WoDeFuLi() {//我的福利
-		String caseName = "我的福利";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		login("13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, WO_DE_FU_LI, true, "13151815253", "zhouzhou");
 		CaiDanPage cdp = new CaiDanPage();
 		WoDeFuLiPage wdp = new WoDeFuLiPage();
 		driverExe.tapElement(cdp.getLingjiangtaiUiObject(), "点击[领奖台]标签页");
@@ -155,15 +149,13 @@ public class GeRenZhongXin extends AbsParentTest {
 			driverExe.log("查看实物记录", true);
 		}
 		driverExe.waitPageLoad(1);
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, WO_DE_FU_LI);
 	}
 	
 	@Test
 	@MobileTest
 	public void KeFu() {//客服
-		String caseName = "客服";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		login("13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, KE_FU, true, "13151815253", "zhouzhou");
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		KeFuPage kf = new KeFuPage();
@@ -176,15 +168,13 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.waitPageLoad(2);
 		driverExe.tapElement(kf.getFanhuiUiObject(), "返回");
 		driverExe.waitPageLoad(1);
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, KE_FU);
 	}
 	
 	@Test
 	@MobileTest
 	public void ShouHuoXinXi() {//收货信息
-		String caseName = "收货信息";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		login("13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, SHOU_HUO_XIN_XI, true, "13151815253", "zhouzhou");
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		ShouHuoXinXiPage shxx = new ShouHuoXinXiPage();
@@ -198,15 +188,13 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.appendTextField(shxx.getXiangxidizhiUiTextView(), "苏州工业园区");
 		driverExe.tapElement(shxx.getQuerenUiObject(), "确认");
 		driverExe.waitPageLoad(1);
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, SHOU_HUO_XIN_XI);
 	}
 	
 	@Test
 	@MobileTest
 	public void SheZhi() {//设置
-		String caseName = "设置";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		login("13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, SHE_ZHI, true, "13151815253", "zhouzhou");
 		CaiDanPage cdp = new CaiDanPage();
 		WoDePage wdp = new WoDePage();
 		SheZhiPage szp = new SheZhiPage();
@@ -252,14 +240,28 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.tapElement(szp.getTuichudengluUiObject(), "点击[退出登录]按钮");
 		driverExe.tapElement(szp.getTuichuquerenUiObject(), "点击[退出确认]按钮");
 		driverExe.waitPageLoad(1);
-		endTest(NAME_TEST, caseName);
+		endTest(JDDFUN_GAME, SHE_ZHI);
 	}
 	
 	@Test
 	@MobileTest
 	public void LiJiZhuCe() {//立即注册
-		String caseName = "立即注册";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
+		IDriverExe driverExe = startTest(JDDFUN_GAME, LI_JI_ZHU_CE, false);
+		zhuCe(driverExe);
+		endTest(JDDFUN_GAME, LI_JI_ZHU_CE);
+	}
+	
+	@Test
+	@MobileTest
+	public void YouKeZhuCe() {//游客注册
+		IDriverExe driverExe = startTest(JDDFUN_GAME, YOU_KE_ZHU_CE, true);
+		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
+		driverExe.tapElement(yxdtp.getDianjidengluUiObject(), "点击[点击登录]");
+		zhuCe(driverExe);
+		endTest(JDDFUN_GAME, YOU_KE_ZHU_CE);
+	}
+	
+	private void zhuCe(IDriverExe driverExe) {
 		DengLuPage dlp = new DengLuPage();
 		ZhuCePage zcp = new ZhuCePage();
 		driverExe.tapElement(dlp.getLijizhuceUiObject(), "点击[立即注册]");
@@ -280,16 +282,6 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.tapElement(zcp.getQuerenUiObject(), "点击[确认]按钮");
 		driverExe.log("验证提示信息[该手机号已被注册]", true);
 		driverExe.waitPageLoad(1);
-		endTest(NAME_TEST, caseName);
-	}
-	
-	@Test
-	@MobileTest
-	public void YouKeZhuCe() {//游客注册
-		String caseName = "游客注册";
-		IDriverExe driverExe = startTest(NAME_TEST, caseName);
-		driverExe.waitPageLoad(1);
-		endTest(NAME_TEST, caseName);
 	}
 
 }

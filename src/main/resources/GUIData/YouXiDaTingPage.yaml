@@ -2,6 +2,9 @@ baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 platform: "android"
 defaultLocale: "US"
 elements:
+  dianjidengluUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/youke_avatar')]" #点击登录
   jinyezishuUiObject:
     locators:
       US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/gold_num')]" #金叶子数

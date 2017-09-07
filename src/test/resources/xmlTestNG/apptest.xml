@@ -9,15 +9,18 @@
         <classes>
             <class name="com.jdd.game.android.suites.app.GeRenZhongXin">
                 <methods>
-                    <!-- <include name="yeMianXianShi" /> -->
-                    <!-- <include name="xiuGaiTouXiang" /> -->
-                    <!-- <include name="ZiJinMingXi" /> -->
-                    <!-- <include name="ShouHuoXinXi" /> -->
-                    <!-- <include name="KeFu" /> -->
-                    <!-- <include name="SheZhi" /> -->
-                    <!-- <include name="LiJiZhuCe" /> -->
-                    <!-- <include name="ChongZhi" /> -->
+                    <include name="YeMianXianShi" />
+                    <include name="XiuGaiTouXiang" />
+                    <include name="XiuGaiNiCheng" />
+                    <include name="ChongZhi" />
+                    <include name="ZiJinMingXi" />
+                    <include name="XiaoXiZhongXin" />
                     <include name="WoDeFuLi" />
+                    <include name="KeFu" />
+                    <include name="ShouHuoXinXi" />
+                    <include name="SheZhi" />
+                    <include name="LiJiZhuCe" />
+                    <include name="YouKeZhuCe" />
                 </methods>
             </class>
         </classes>

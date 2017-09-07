@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" verbose="1" name="AppiumMobileSuite"
+<suite thread-count="1" verbose="1" name="LoginTestSuite"
 	skipfailedinvocationcounts="false" junit="false" parallel="false"
 	data-provider-thread-count="50" annotations="JDK">
 
 	<!-- 测试 -->
-    <test name="appium-mobile-test"> 
+    <test name="login-test"> 
         <classes>
-            <class name="com.jdd.game.android.suites.MyTest">
+            <class name="com.jdd.game.android.suites.LoginTest">
                 <methods>
-                    <include name="test1" />
+                    <include name="login" />
                 </methods>
             </class>
         </classes>
