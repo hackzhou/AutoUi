@@ -2,7 +2,6 @@ package com.jdd.game.android.suites.app;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.Listeners;
-
 import com.jdd.game.android.constants.Const;
 import com.jdd.game.android.driver.IDriverExe;
 import com.jdd.game.android.report.MyReporter;
