@@ -57,17 +57,11 @@
         </classes>
     </test> -->
     
-    <test name="app-test-shouye">
+    <test name="app-test-dailishang">
         <classes>
-            <class name="com.jdd.game.android.suites.app.ShouYe">
+            <class name="com.jdd.game.android.suites.app.DaiLiShang">
                 <methods>
                     <include name="YeMianXianShi" />
-                    <include name="ChongZhiTiaoZhuan" />
-                    <include name="MeiRiQianDao" />
-                    <include name="PaiHangBang" />
-                    <include name="LunBoTu" />
-                    <include name="GongLueFenXiang" />
-                    <include name="CeBianLan" />
                 </methods>
             </class>
         </classes>

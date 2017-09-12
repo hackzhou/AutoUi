@@ -11,7 +11,7 @@ import com.jdd.pages.*;
 
 @Listeners({MyReporter.class})
 public class ShouYe extends AbsParentTest {
-	private static final String JDDFUN_GAME				= "微竞猜-分享圈";
+	private static final String JDDFUN_GAME				= "微竞猜-首页";
 	private static final String YE_MIAN_XIAN_SHI		= "页面元素显示";	//1
 	private static final String CHONG_ZHI_TIAO_ZHUAN	= "充值跳转";		//2
 	private static final String MEI_RI_QIAN_DAO			= "每日签到";		//3
