@@ -5,7 +5,7 @@
 	data-provider-thread-count="50" annotations="JDK">
 
 	<!-- 测试 -->
-    <!-- <test name="app-test-gerenzhongxin"> 
+    <!-- <test name="app-test-gerenzhongxin">
         <classes>
             <class name="com.jdd.game.android.suites.app.GeRenZhongXin">
                 <methods>
@@ -26,16 +26,48 @@
         </classes>
     </test> -->
     
-    <test name="app-test-fenxiangquan"> 
+    <!-- <test name="app-test-fenxiangquan">
         <classes>
             <class name="com.jdd.game.android.suites.app.FenXiangQuan">
                 <methods>
-                    <!-- <include name="YeMianXianShi" /> -->
-                    <!-- <include name="ShuaXinChaKan" /> -->
-                    <!-- <include name="DianZan" /> -->
-                    <!-- <include name="FaBuFenXiang" /> -->
-                    <!-- <include name="FenXiangPingLun" /> -->
+                    <include name="YeMianXianShi" />
+                    <include name="ShuaXinChaKan" />
+                    <include name="DianZan" />
+                    <include name="FaBuFenXiang" />
+                    <include name="FenXiangPingLun" />
                     <include name="GongLueFenXiang" />
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    
+    <!-- <test name="app-test-shouye">
+        <classes>
+            <class name="com.jdd.game.android.suites.app.ShouYe">
+                <methods>
+                    <include name="YeMianXianShi" />
+                    <include name="ChongZhiTiaoZhuan" />
+                    <include name="MeiRiQianDao" />
+                    <include name="PaiHangBang" />
+                    <include name="LunBoTu" />
+                    <include name="GongLueFenXiang" />
+                    <include name="CeBianLan" />
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    
+    <test name="app-test-shouye">
+        <classes>
+            <class name="com.jdd.game.android.suites.app.ShouYe">
+                <methods>
+                    <include name="YeMianXianShi" />
+                    <include name="ChongZhiTiaoZhuan" />
+                    <include name="MeiRiQianDao" />
+                    <include name="PaiHangBang" />
+                    <include name="LunBoTu" />
+                    <include name="GongLueFenXiang" />
+                    <include name="CeBianLan" />
                 </methods>
             </class>
         </classes>

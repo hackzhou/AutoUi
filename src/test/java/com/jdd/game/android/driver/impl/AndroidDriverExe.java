@@ -206,6 +206,15 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 	
 	@Override
+	public void tapElementByXpath(String xpath, Integer index, String message) {
+		List<WebElement> list = this.getWebElements(Const.TYPE_XPATH, xpath);
+		if(list != null && !list.isEmpty()){
+			list.get(index).click();
+			this.log("测试输出:《" + message + "》已点击!");
+		}
+	}
+	
+	@Override
 	public void tapElementByID(String id, String message) {
 		List<WebElement> list = this.getWebElements(Const.TYPE_ID, id);
 		if(list != null && !list.isEmpty()){

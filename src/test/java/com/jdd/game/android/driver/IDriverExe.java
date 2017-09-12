@@ -91,6 +91,14 @@ public interface IDriverExe {
 	public void tapElementByXpath(String xpath, String message);
 	
 	/**
+	 * 通过xpath取得元素点击
+	 * @param xpath (xpath)
+	 * @param index (序号从0开始)
+	 * @param message (打印消息文本)
+	 */
+	public void tapElementByXpath(String xpath, Integer index, String message);
+	
+	/**
 	 * 通过name取得元素点击
 	 * @param name (name)
 	 * @param message (打印消息文本)

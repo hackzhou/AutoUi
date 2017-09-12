@@ -137,7 +137,7 @@ public class GeRenZhongXin extends AbsParentTest {
 		CaiDanPage cdp = new CaiDanPage();
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		XiaoXiZhongXinPage xxzxp = new XiaoXiZhongXinPage();
-		driverExe.tapElement(yxdtp.getXiaoxizhongxinUiObject(), "点击[消息中心]按钮");	//查看个人消息和通知
+		driverExe.tapElement(yxdtp.getTongzhiUiObject(), "点击[通知-消息中心]按钮");	//查看个人消息和通知
 		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 1);
 		driverExe.tapElement(xxzxp.getTongzhiUiObject(), "点击[通知]");
 		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 1);
