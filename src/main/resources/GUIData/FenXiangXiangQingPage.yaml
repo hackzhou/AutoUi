@@ -1,0 +1,10 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  pinglunUiTextView:
+    locators:
+      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/all_mes_help_details_chat_context')]" #评论框
+  fasongUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/all_mes_help_details_send')]" #发送

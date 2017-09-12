@@ -15,7 +15,7 @@ public abstract class AbsParentTest extends AppDriver{
 	protected IDriverExe startTest(String testName, String caseName, boolean login, String username, String password) {
 		IDriverExe driverExe = runAndroidDriverExe();
 		driverExe.waitPageLoad(1);
-		driverExe.log("测试输出:《" + testName + " -【" + caseName + "】》测试开始!");
+		driverExe.log("测试输出:《" + testName + "-【" + caseName + "】》测试开始!");
 		if(login){
 			if(isEmpty(username) || isEmpty(password)){
 				shiWan();
@@ -30,7 +30,7 @@ public abstract class AbsParentTest extends AppDriver{
 	protected void endTest(String testName, String caseName) {
 		IDriverExe driverExe = getAndroidDriverExe();
 		driverExe.waitPageLoad(1);
-		driverExe.log("测试输出:《" + testName + " -【" + caseName + "】》测试结束!");
+		driverExe.log("测试输出:《" + testName + "-【" + caseName + "】》测试结束!");
 		driverExe.closeApp();
 		driverExe.quitApp();
 	}

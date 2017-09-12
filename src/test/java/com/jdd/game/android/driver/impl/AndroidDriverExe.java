@@ -109,6 +109,64 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 	
 	@Override
+	public void swipeDirection(String direction, double per, int num) {
+		int screenX = this.getWindowWidth();
+		int screenY = this.getWindowHeight();
+		per = getPer(per);
+		double perStart = (1 - per) / 2;
+		double perEnd = per + perStart;
+		this.waitPageLoad(2);
+		for (int i = 0; i < (num < 1 ? 1 : num); i++) {
+			if (direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_UP)){
+				this.getAndroidDriver().swipe(screenX/2, (int) (screenY * perEnd), screenX/2, (int) (screenY * perStart), 500);
+				if(num == i - 1){
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向上已滑动 " + num + " 次!》");
+				}
+			} else if (direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_DOWN)){
+				this.getAndroidDriver().swipe(screenX/2, (int) (screenY * perStart), screenX/2, (int) (screenY * perEnd), 500);
+				if(num == i - 1){
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向下已滑动 " + num + " 次!》");
+				}
+			} else if(direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_LEFT)){
+				this.getAndroidDriver().swipe((int) (screenX * perEnd), screenY/2, (int) (screenX * perStart), screenY/2, 500);
+				if(num == i - 1){
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向左已滑动 " + num + " 次!》");
+				}
+			} else if(direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_RIGHT)){
+				this.getAndroidDriver().swipe((int) (screenX * perStart), screenY/2, (int) (screenX * perEnd), screenY/2, 500);
+				if(num == i - 1){
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向右已滑动 " + num + " 次!》");
+				}
+			} else {
+				this.log("测试输出:《请选择正确的滑动方向!》");
+			}
+			this.waitPageLoad(2);
+		}
+	}
+	
+	private double getPer(double per){
+		if(per <= 0.15){
+			return 0.1;
+		}else if(per <= 0.25){
+			return 0.2;
+		}else if(per <= 0.35){
+			return 0.3;
+		}else if(per <= 0.45){
+			return 0.4;
+		}else if(per <= 0.55){
+			return 0.5;
+		}else if(per <= 0.65){
+			return 0.6;
+		}else if(per <= 0.75){
+			return 0.7;
+		}else if(per <= 0.85){
+			return 0.8;
+		}else{
+			return 0.9;
+		}
+	}
+	
+	@Override
 	public void tapPoint(int x, int y) {
 		this.waitPageLoad(2);
 		this.getAndroidDriver().tap(1, x, y, 100);
@@ -293,9 +351,6 @@ public class AndroidDriverExe implements IDriverExe {
 
 	@Override
 	public void log(String message, boolean bool) {
-//		if(bool){
-//			System.out.println(this.getAndroidDriver().getPageSource());
-//		}
 		System.out.println(message);
 		SeLionReporter.log(message, bool);
 	}

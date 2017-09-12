@@ -1,0 +1,31 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  fabuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_head_right')]" #发布
+  fenxiangneirongUiTextView:
+    locators:
+      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/pulish_ed')]" #分享内容
+  tianjiatupianUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/image')]" #添加图片
+  tianjiatupianUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/image')]" #添加图片
+  paishezhaopianUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/takePhoto')]" #拍摄照片
+  bendixiangceUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/choosePhoto')]" #本地相册
+  quxiaoUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/btn_cancel')]" #取消
+  tupianOneUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/image')]" #相册图片1
+  wanchengUiObject:
+    locators:
+      US: "//android.widget.Button[contains(@resource-id,'com.jddfun.game:id/commit')]" #完成

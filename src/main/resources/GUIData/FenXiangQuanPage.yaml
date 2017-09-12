@@ -14,3 +14,33 @@ elements:
   woUiObject:
     locators:
       US: "//android.widget.TextView[contains(@text,'我')]" #我
+  tieshiUiObject:
+    locators:
+      US: "//android.widget.RelativeLayout[contains(@resource-id,'com.jddfun.game:id/centerf_rl')]" #贴士
+  tieshineirongUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/allmessage_context')]" #贴士内容
+  gonglueUiObject:
+    locators:
+      US: "//android.widget.RelativeLayout[contains(@resource-id,'com.jddfun.game:id/all_mes_rl')]" #攻略
+  neirongUiObject:
+    locators:
+      US: "//android.widget.LinearLayout[contains(@resource-id,'com.jddfun.game:id/amm_mes_frag_ll')]" #内容
+  gongluedianzanUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/all_mes_my_view_help_ok')]" #攻略点赞
+  gongluedianzanshuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/all_mes_help_data')]" #攻略点赞数
+  gongluefenxiangUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_head_right')]" #攻略分享
+  fenxiangdianzanUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_all_mes_two_help_img')]" #分享点赞
+  fenxiangdianzanshuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/iv_all_mes_two_help')]" #分享点赞数
+  fabufenxiangUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/publish_share')]" #发布分享

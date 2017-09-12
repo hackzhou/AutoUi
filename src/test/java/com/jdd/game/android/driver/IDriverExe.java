@@ -48,6 +48,14 @@ public interface IDriverExe {
 	public void swipeDirection(String direction, int num);
 	
 	/**
+	 * 屏幕上下左右滑动
+	 * @param direction (up (上), down (下), left (左), right (右))
+	 * @param per (滑动比例)
+	 * @param num (滑动次数)
+	 */
+	public void swipeDirection(String direction, double per, int num);
+	
+	/**
 	 * 取得坐标点击
 	 * @param x (点击坐标X轴)
 	 * @param y (点击坐标Y轴)

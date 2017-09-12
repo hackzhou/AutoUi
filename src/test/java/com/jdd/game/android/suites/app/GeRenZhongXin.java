@@ -11,7 +11,7 @@ import com.jdd.pages.*;
 
 @Listeners({MyReporter.class})
 public class GeRenZhongXin extends AbsParentTest {
-	private static final String JDDFUN_GAME			= "微竞猜";
+	private static final String JDDFUN_GAME			= "微竞猜-个人中心";
 	private static final String YE_MIAN_XIAN_SHI	= "页面元素显示";	//1
 	private static final String XIU_GAI_TOU_XIANG	= "修改头像";		//2
 	private static final String XIU_GAI_NI_CHENG	= "修改昵称";		//3
