@@ -1,0 +1,25 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  yinglibangUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[1]/p[2]/span[1]" #盈利榜
+  fuhaobangUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[1]/p[2]/span[2]" #富豪榜
+  bangzhuUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[1]/p[3]" #帮助
+  shangqibangdanUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[2]/div[2]" #查看上期榜单
+  guanbibangdanUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[3]/div[2]/div/p[2]" #上期榜单-关闭
+  dajiangmijiUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[2]/div[1]/p" #大奖获取秘籍
+  guanbimijiUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[3]/div/div[2]/p" #大奖获取秘籍-关闭

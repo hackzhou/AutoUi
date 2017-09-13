@@ -1,0 +1,31 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  xingyundachoujiangUiObject:
+    locators:
+      US: "//android.widget.RelativeLayout[contains(@resource-id,'com.jddfun.game:id/weal_lottery_draw')]" #幸运大抽奖
+  mianfeicishuUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/lottery_draw_bg_content')]" #幸运大抽奖-免费次数
+  chaojipaihangbangUiObject:
+    locators:
+      US: "//android.widget.RelativeLayout[contains(@resource-id,'com.jddfun.game:id/weal_lottery_rank')]" #超级排行榜
+  daojishiUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/weal_page_time')]" #倒计时
+  bangzhuUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_head_right')]" #帮助
+  shuomingUiObject:
+    locators:
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_info')]" #说明
+  suipianjiluUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'碎片记录')]" #碎片记录
+  shiwujiluUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@text,'实物记录')]" #实物记录
+  zhuangtaiUiObject:
+    locators:
+      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/status')]" #状态

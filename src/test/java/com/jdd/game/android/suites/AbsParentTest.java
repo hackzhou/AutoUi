@@ -79,4 +79,10 @@ public abstract class AbsParentTest extends AppDriver{
 		return false;
 	}
 	
+	protected void back() {
+		IDriverExe driverExe = getAndroidDriverExe();
+		driverExe.tapElement(new CaiDanPage().getFanhuiUiObject(), "点击[返回]");
+		driverExe.waitPageLoad(1);
+	}
+	
 }

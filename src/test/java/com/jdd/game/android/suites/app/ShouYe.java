@@ -91,9 +91,24 @@ public class ShouYe extends AbsParentTest {
 	public void PaiHangBang() {//排行榜
 		IDriverExe driverExe = startTest(JDDFUN_GAME, PAI_HANG_BANG, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
+		PaiHangBangPage phbp = new PaiHangBangPage();
 		driverExe.tapElement(yxdtp.getJinrupaihangbangUiObject(), "点击[进入排行榜]控件");
 		driverExe.waitPageLoad(5);
 		driverExe.log("测试输出:验证查看排行榜", true);
+		driverExe.tapElementWebView(phbp.getShangqibangdanUiObject().getLocator(), "点击[上期榜单]");
+		driverExe.waitPageLoad(1);
+		driverExe.log("测试输出:验证查看上期榜单", true);
+		driverExe.tapElementWebView(phbp.getGuanbibangdanUiObject().getLocator(), "点击[上期榜单-关闭]");
+		driverExe.tapElementWebView(phbp.getDajiangmijiUiObject().getLocator(), "点击[大奖获取秘籍]");
+		driverExe.waitPageLoad(1);
+		driverExe.log("测试输出:验证查看规则详情", true);
+		driverExe.tapElementWebView(phbp.getGuanbimijiUiObject().getLocator(), "点击[大奖获取秘籍-关闭]");
+		driverExe.tapElementWebView(phbp.getFuhaobangUiObject().getLocator(), "点击[富豪榜]");
+		driverExe.waitPageLoad(1);
+		driverExe.log("测试输出:验证查看富豪榜", true);
+		driverExe.tapElementWebView(phbp.getBangzhuUiObject().getLocator(), "点击[帮助]");
+		driverExe.waitPageLoad(3);
+		driverExe.assertPage("帮助中心", "验证[帮助中心]是否存在");
 		endTest(JDDFUN_GAME, PAI_HANG_BANG);
 	}
 	
