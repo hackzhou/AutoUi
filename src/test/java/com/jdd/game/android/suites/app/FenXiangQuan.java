@@ -71,7 +71,7 @@ public class FenXiangQuan extends AbsParentTest {
 		FenXiangQuanPage fxqp = new FenXiangQuanPage();
 		FenXiangFaBuPage fxfbp = new FenXiangFaBuPage();
 		driverExe.tapElement(fxqp.getFabufenxiangUiObject(), "发布分享");
-		driverExe.waitPageLoad(1);
+		driverExe.waitPageLoad(2);
 		driverExe.assertPage("分享中奖信息或游戏心得");
 		driverExe.appendTextField(fxfbp.getFenxiangneirongUiTextView(), "自动化测试，请忽略！自动化测试，请忽略！");
 		driverExe.tapElement(fxfbp.getTianjiatupianUiObject(), "添加图片");

@@ -131,13 +131,13 @@ public class ShouYe extends AbsParentTest {
 	public void GongLueFenXiang() {//攻略分享
 		IDriverExe driverExe = startTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.4, 1);
+		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.3, 1);
 		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 0, "攻略");
-		driverExe.waitPageLoad(3);
+		driverExe.waitPageLoad(5);
 		driverExe.assertPage("攻略详情");
 		back();
 		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 1, "分享");
-		driverExe.waitPageLoad(3);
+		driverExe.waitPageLoad(5);
 		driverExe.assertPage("详情");
 		back();
 		endTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG);
@@ -155,13 +155,13 @@ public class ShouYe extends AbsParentTest {
 		}
 		if(driverExe.isTextInPage("幸运转盘")){
 			driverExe.tapElement(yxdtp.getXingyunzhuanpanUiObject(), "幸运转盘");
-			driverExe.waitPageLoad(3);
+			driverExe.waitPageLoad(5);
 			driverExe.assertPage("幸运转盘");
 			back();
 		}
 		if(driverExe.isTextInPage("首充送话费")){
 			driverExe.tapElement(yxdtp.getShouchongsonghuafeiUiObject(), "首充送话费");
-			driverExe.waitPageLoad(3);
+			driverExe.waitPageLoad(5);
 			driverExe.assertPage("充值回馈");
 			back();
 		}

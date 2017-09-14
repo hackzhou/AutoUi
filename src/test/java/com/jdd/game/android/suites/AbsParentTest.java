@@ -146,7 +146,7 @@ public abstract class AbsParentTest extends AppDriver{
 		IDriverExe driverExe = getAndroidDriverExe();
 		driverExe.assertPage("大神分享", "验证[大神分享]是否存在");
 		driverExe.assertPage("查看更多", "验证[查看更多]是否存在");
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
+		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.2, 1);
 		driverExe.tapElement(new YouXiDaTingPage().getChakangengduoUiObject(), "查看更多");
 		driverExe.waitPageLoad(1);
 	}

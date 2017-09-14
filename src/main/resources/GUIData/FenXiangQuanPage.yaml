@@ -43,4 +43,4 @@ elements:
       US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/iv_all_mes_two_help']" #分享点赞数
   fabufenxiangUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/publish_share']" #发布分享
+      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/publish_share')]" #发布分享
