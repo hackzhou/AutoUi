@@ -4,55 +4,55 @@ defaultLocale: "US"
 elements:
   dianjidengluUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/youke_avatar')]" #点击登录
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/youke_avatar']" #点击登录
   yonghutouxiangUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/user_avatar')]" #用户头像
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/user_avatar']" #用户头像
   yonghuidUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/user_id')]" #用户ID
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/user_id']" #用户ID
   yonghunichengUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/user_name')]" #用户昵称
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/user_name']" #用户昵称
   jinyezishuUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/gold_num')]" #金叶子数
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/gold_num']" #金叶子数
   renwuUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/task_and_sign')]" #任务-签到奖励
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/task_and_sign']" #任务-签到奖励
   tongzhiUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/notify_msg')]" #通知-消息中心
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/notify_msg']" #通知-消息中心
   xiajijiangliUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/rank_no')]" #下级奖励
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/rank_no']" #下级奖励
   daojishiUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/rank_end_time')]" #倒计时
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/rank_end_time']" #倒计时
   guanjunUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/rank_no1_username')]" #排行榜-冠军
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/rank_no1_username']" #排行榜-冠军
   yajunUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/rank_no2_username')]" #排行榜-亚军
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/rank_no2_username']" #排行榜-亚军
   jijunUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/rank_no3_username')]" #排行榜-季军
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/rank_no3_username']" #排行榜-季军
   lunbotuUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/banner_image')]" #轮播图
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/banner_image']" #轮播图
   jinrupaihangbangUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/enter_rank')]" #进入排行榜
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/enter_rank']" #进入排行榜
   chakangengduoUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/see_share_more')]" #查看更多
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/see_share_more']" #查看更多
   xianshibianlanUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/show_operate_virturl')]" #显示边栏
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/show_operate_virturl']" #显示边栏
   yincangbianlanUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/hide_operate')]" #隐藏边栏
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/hide_operate']" #隐藏边栏
   lijikaiqiUiObject:
     locators:
       US: "//android.widget.TextView[contains(@text,'立即开启')]" #立即开启
@@ -67,10 +67,10 @@ elements:
       US: "//android.widget.TextView[contains(@text,'首充送话费')]" #首充送话费
   lijichoujiangUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/btn_play')]" #立即抽奖
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/btn_play']" #立即抽奖
   qiandaojitianUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tiger_resolvedsign_in')]" #签到几天
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/tiger_resolvedsign_in']" #签到几天
   gongluefenxiangUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/share_image')]" #攻略分享
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/share_image']" #攻略分享

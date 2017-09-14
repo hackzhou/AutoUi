@@ -4,13 +4,13 @@ defaultLocale: "US"
 elements:
   shouhuorenUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/receiving_name')]" #收货人
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/receiving_name']" #收货人
   lianxidianhuaUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/receiving_phone')]" #联系电话
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/receiving_phone']" #联系电话
   xiangxidizhiUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/receiving_door_number')]" #详细地址
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/receiving_door_number']" #详细地址
   querenUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/receiving_ok')]" #确认
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/receiving_ok']" #确认

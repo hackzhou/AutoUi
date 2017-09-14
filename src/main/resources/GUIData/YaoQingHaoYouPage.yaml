@@ -4,10 +4,10 @@ defaultLocale: "US"
 elements:
   tianxieyaoqingmaUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/iv_head_right')]" #填写邀请码
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/iv_head_right']" #填写邀请码
   wodeyaoqingmaUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_invite_code')]" #我的邀请码
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/tv_invite_code']" #我的邀请码
   wodehaoyouUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_friend')]" #我的好友
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/tv_friend']" #我的好友

@@ -4,13 +4,13 @@ defaultLocale: "US"
 elements:
   fanhuiUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/ysf_title_bar_back_view')]" #返回
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/ysf_title_bar_back_view']" #返回
   tongzhiUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/message_item_notification_label')]" #通知
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/message_item_notification_label']" #通知
   xiaoxikuangUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/editTextMessage')]" #消息框
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/editTextMessage']" #消息框
   fasongxiaoxiUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/send_message_button')]" #发送消息
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/send_message_button']" #发送消息

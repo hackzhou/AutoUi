@@ -4,22 +4,22 @@ defaultLocale: "US"
 elements:
   shoujihaomaUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_phone_number')]" #手机号码
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/et_phone_number']" #手机号码
   yanzhengmaUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_code')]" #验证码
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/et_code']" #验证码
   fasongyanzhengmaUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tv_send_code')]" #发送验证码
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/tv_send_code']" #发送验证码
   shezhimimaUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_pwd')]" #设置密码
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/et_pwd']" #设置密码
   querenmimaUiTextView:
     locators:
-      US: "//android.widget.EditText[contains(@resource-id,'com.jddfun.game:id/et_confirm_pwd')]" #重新确认密码
+      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/et_confirm_pwd']" #重新确认密码
   guanbiUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/close')]" #关闭
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/close']" #关闭
   querenUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/btn_register_or_forget')]" #确认
+      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/btn_register_or_forget']" #确认

@@ -10,4 +10,4 @@ elements:
       US: "//android.widget.TextView[contains(@text,'金叶子记录')]" #金叶子记录
   riliUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/frag_record_calendar')]" #日历
+      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/frag_record_calendar']" #日历
