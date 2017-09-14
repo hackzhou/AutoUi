@@ -15,7 +15,7 @@ public class LoginTest extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void login() {
-		IDriverExe driverExe = startTest(NAME_TEST, LOGIN_TEST, false);
+		IDriverExe driverExe = startTest(NAME_TEST, LOGIN_TEST, 0, false);
 		DengLuPage dl = new DengLuPage();
 		driverExe.tapElement(dl.getShoujidengluUiObject(), "点击手机登录");
 		driverExe.appendTextField(dl.getShoujihaomaUiTextView(), "13151815253");

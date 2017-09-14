@@ -23,150 +23,147 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void YeMianXianShi() {//页面元素显示
-		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, true);
+		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 0, true);
 		CaiDanPage cdp = new CaiDanPage();
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.assertElement(yxdtp.getYonghutouxiangUiObject(), "验证[用户头像]是否存在");
-		driverExe.assertElement(yxdtp.getYonghuidUiObject(), "验证[用户ID]是否存在");
-		driverExe.log("测试输出:用户ID[" + driverExe.getNameByXpath(yxdtp.getYonghuidUiObject().getLocator()) + "]");
-		driverExe.assertElement(yxdtp.getYonghunichengUiObject(), "验证[用户昵称]是否存在");
-		driverExe.log("测试输出:用户昵称[" + driverExe.getNameByXpath(yxdtp.getYonghunichengUiObject().getLocator()) + "]");
-		driverExe.assertElement(yxdtp.getJinyezishuUiObject(), "验证[金叶子数]是否存在");
-		driverExe.log("测试输出:金叶子数[" + driverExe.getNameByXpath(yxdtp.getJinyezishuUiObject().getLocator()) + "]");
-		driverExe.assertElement(yxdtp.getRenwuUiObject(), "验证[任务]是否存在");
-		driverExe.tapElement(yxdtp.getRenwuUiObject(), "点击[任务]控件");
-		driverExe.tapElement(cdp.getHuodongguanbiUiObject(), "点击[任务关闭]按钮");
-		driverExe.assertElement(yxdtp.getTongzhiUiObject(), "验证[通知]是否存在");
-		driverExe.tapElement(yxdtp.getTongzhiUiObject(), "点击[通知]控件");
-		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
-		driverExe.assertPage("下级奖励", "验证[下级奖励]标签是否存在");
-		driverExe.assertElement(yxdtp.getXiajijiangliUiObject(), "验证[下级奖励]是否存在");
-		driverExe.log("测试输出:下级奖励[" + driverExe.getNameByXpath(yxdtp.getXiajijiangliUiObject().getLocator()) + "]");
-		driverExe.assertElement(yxdtp.getDaojishiUiObject(), "验证[倒计时]是否存在");
-		driverExe.log("测试输出:倒计时[" + driverExe.getNameByXpath(yxdtp.getDaojishiUiObject().getLocator()) + "]");
+		driverExe.assertElement(yxdtp.getYonghutouxiangUiObject(), "用户头像");
+		driverExe.assertElement(yxdtp.getYonghuidUiObject(), "用户ID");
+		driverExe.logOut("用户ID[" + driverExe.getNameByXpath(yxdtp.getYonghuidUiObject().getLocator()) + "]", false);
+		driverExe.assertElement(yxdtp.getYonghunichengUiObject(), "用户昵称");
+		driverExe.logOut("用户昵称[" + driverExe.getNameByXpath(yxdtp.getYonghunichengUiObject().getLocator()) + "]", false);
+		driverExe.assertElement(yxdtp.getJinyezishuUiObject(), "金叶子数");
+		driverExe.logOut("金叶子数[" + driverExe.getNameByXpath(yxdtp.getJinyezishuUiObject().getLocator()) + "]", false);
+		driverExe.assertElement(yxdtp.getRenwuUiObject(), "任务");
+		driverExe.tapElement(yxdtp.getRenwuUiObject(), "任务");
+		driverExe.tapElement(cdp.getHuodongguanbiUiObject(), "任务关闭");
+		driverExe.assertElement(yxdtp.getTongzhiUiObject(), "通知");
+		driverExe.tapElement(yxdtp.getTongzhiUiObject(), "通知");
+		back();
+		driverExe.assertPage("下级奖励");
+		driverExe.assertElement(yxdtp.getXiajijiangliUiObject(), "下级奖励");
+		driverExe.logOut("下级奖励[" + driverExe.getNameByXpath(yxdtp.getXiajijiangliUiObject().getLocator()) + "]", false);
+		driverExe.assertElement(yxdtp.getDaojishiUiObject(), "倒计时");
+		driverExe.logOut("倒计时[" + driverExe.getNameByXpath(yxdtp.getDaojishiUiObject().getLocator()) + "]", false);
 		if(!driverExe.isTextInPage("暂无榜单")){
-			driverExe.assertElement(yxdtp.getGuanjunUiObject(), "验证[排行榜-冠军]是否存在");
-			driverExe.log("测试输出:排行榜-冠军[" + driverExe.getNameByXpath(yxdtp.getGuanjunUiObject().getLocator()) + "]");
+			driverExe.assertElement(yxdtp.getGuanjunUiObject(), "排行榜-冠军");
+			driverExe.logOut("排行榜-冠军[" + driverExe.getNameByXpath(yxdtp.getGuanjunUiObject().getLocator()) + "]", false);
 		}
 		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
-		driverExe.assertPage("大神分享", "验证[大神分享]是否存在");
-		driverExe.assertPage("查看更多", "验证[查看更多]是否存在");
-		driverExe.tapElement(yxdtp.getChakangengduoUiObject(), "点击[查看更多]标签页");
-		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
+		driverExe.assertPage("大神分享");
+		driverExe.assertPage("查看更多");
+		driverExe.tapElement(yxdtp.getChakangengduoUiObject(), "查看更多");
+		back();
 		endTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI);
 	}
 	
 	@Test
 	@MobileTest
 	public void ChongZhiTiaoZhuan() {//充值跳转
-		IDriverExe driverExe = startTest(JDDFUN_GAME, CHONG_ZHI_TIAO_ZHUAN, true);
+		IDriverExe driverExe = startTest(JDDFUN_GAME, CHONG_ZHI_TIAO_ZHUAN, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		ChongZhiPage czp = new ChongZhiPage();
-		driverExe.tapElement(yxdtp.getJinyezishuUiObject(), "点击[金叶子数]控件");
+		driverExe.tapElement(yxdtp.getJinyezishuUiObject(), "金叶子数");
 		driverExe.waitPageLoad(10);
-		driverExe.tapElementWebView(czp.getChongzhioneUiObject().getLocator(), "点击[充值]按钮1");
-		driverExe.tapElementWebView(czp.getChongzhitwoUiObject().getLocator(), "点击[充值]按钮2");
-		driverExe.tapElement(czp.getZhifubaozhifuUiObject(), "点击[支付宝支付]按钮");
+		driverExe.tapElementWebView(czp.getChongzhioneUiObject().getLocator(), "充值-1");
+		driverExe.tapElementWebView(czp.getChongzhitwoUiObject().getLocator(), "充值-2");
+		driverExe.tapElement(czp.getZhifubaozhifuUiObject(), "支付宝-支付");
 		endTest(JDDFUN_GAME, CHONG_ZHI_TIAO_ZHUAN);
 	}
 	
 	@Test
 	@MobileTest
 	public void MeiRiQianDao() {//每日签到
-		IDriverExe driverExe = startTest(JDDFUN_GAME, MEI_RI_QIAN_DAO, true);
+		IDriverExe driverExe = startTest(JDDFUN_GAME, MEI_RI_QIAN_DAO, 0, true);
 		CaiDanPage cdp = new CaiDanPage();
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.assertElement(yxdtp.getRenwuUiObject(), "验证[任务]是否存在");
-		driverExe.tapElement(yxdtp.getRenwuUiObject(), "点击[任务]控件");
-		driverExe.assertPage("每日签到", "验证[每日签到]是否存在");
-		driverExe.tapElement(yxdtp.getLijichoujiangUiObject(), "点击[立即抽奖]按钮");
+		driverExe.assertElement(yxdtp.getRenwuUiObject(), "任务");
+		driverExe.tapElement(yxdtp.getRenwuUiObject(), "任务");
+		driverExe.assertPage("每日签到");
+		driverExe.tapElement(yxdtp.getLijichoujiangUiObject(), "立即抽奖");
 		driverExe.waitPageLoad(3);
-		driverExe.log("测试输出:签到几天[" + driverExe.getNameByXpath(yxdtp.getQiandaojitianUiObject().getLocator()) + "]");
-		driverExe.tapElement(cdp.getHuodongguanbiUiObject(), "点击[任务关闭]按钮");
+		driverExe.logOut("签到几天[" + driverExe.getNameByXpath(yxdtp.getQiandaojitianUiObject().getLocator()) + "]", false);
+		driverExe.tapElement(cdp.getHuodongguanbiUiObject(), "任务关闭");
 		endTest(JDDFUN_GAME, MEI_RI_QIAN_DAO);
 	}
 	
 	@Test
 	@MobileTest
 	public void PaiHangBang() {//排行榜
-		IDriverExe driverExe = startTest(JDDFUN_GAME, PAI_HANG_BANG, true);
+		IDriverExe driverExe = startTest(JDDFUN_GAME, PAI_HANG_BANG, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		PaiHangBangPage phbp = new PaiHangBangPage();
-		driverExe.tapElement(yxdtp.getJinrupaihangbangUiObject(), "点击[进入排行榜]控件");
+		driverExe.tapElement(yxdtp.getJinrupaihangbangUiObject(), "进入排行榜");
 		driverExe.waitPageLoad(5);
-		driverExe.log("测试输出:验证查看排行榜", true);
-		driverExe.tapElementWebView(phbp.getShangqibangdanUiObject().getLocator(), "点击[上期榜单]");
+		driverExe.logOut("验证查看排行榜", true);
+		driverExe.tapElementWebView(phbp.getShangqibangdanUiObject().getLocator(), "上期榜单");
 		driverExe.waitPageLoad(1);
-		driverExe.log("测试输出:验证查看上期榜单", true);
-		driverExe.tapElementWebView(phbp.getGuanbibangdanUiObject().getLocator(), "点击[上期榜单-关闭]");
-		driverExe.tapElementWebView(phbp.getDajiangmijiUiObject().getLocator(), "点击[大奖获取秘籍]");
+		driverExe.logOut("验证查看上期榜单", true);
+		driverExe.tapElementWebView(phbp.getGuanbibangdanUiObject().getLocator(), "上期榜单-关闭");
+		driverExe.tapElementWebView(phbp.getDajiangmijiUiObject().getLocator(), "大奖获取秘籍");
 		driverExe.waitPageLoad(1);
-		driverExe.log("测试输出:验证查看规则详情", true);
-		driverExe.tapElementWebView(phbp.getGuanbimijiUiObject().getLocator(), "点击[大奖获取秘籍-关闭]");
-		driverExe.tapElementWebView(phbp.getFuhaobangUiObject().getLocator(), "点击[富豪榜]");
+		driverExe.logOut("验证查看规则详情", true);
+		driverExe.tapElementWebView(phbp.getGuanbimijiUiObject().getLocator(), "大奖获取秘籍-关闭");
+		driverExe.tapElementWebView(phbp.getFuhaobangUiObject().getLocator(), "富豪榜");
 		driverExe.waitPageLoad(1);
-		driverExe.log("测试输出:验证查看富豪榜", true);
-		driverExe.tapElementWebView(phbp.getBangzhuUiObject().getLocator(), "点击[帮助]");
+		driverExe.logOut("验证查看富豪榜", true);
+		driverExe.tapElementWebView(phbp.getBangzhuUiObject().getLocator(), "帮助");
 		driverExe.waitPageLoad(3);
-		driverExe.assertPage("帮助中心", "验证[帮助中心]是否存在");
+		driverExe.assertPage("帮助中心");
 		endTest(JDDFUN_GAME, PAI_HANG_BANG);
 	}
 	
 	@Test
 	@MobileTest
 	public void LunBoTu() {//轮播图
-		IDriverExe driverExe = startTest(JDDFUN_GAME, LUN_BO_TU, true);
-		CaiDanPage cdp = new CaiDanPage();
+		IDriverExe driverExe = startTest(JDDFUN_GAME, LUN_BO_TU, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "点击[轮播图]控件");
+		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
 		driverExe.waitPageLoad(3);
-		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
-		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "点击[轮播图]控件");
+		back();
+		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
 		driverExe.waitPageLoad(3);
-		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
+		back();
 		endTest(JDDFUN_GAME, LUN_BO_TU);
 	}
 	
 	@Test
 	@MobileTest
 	public void GongLueFenXiang() {//攻略分享
-		IDriverExe driverExe = startTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG, true);
-		CaiDanPage cdp = new CaiDanPage();
+		IDriverExe driverExe = startTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.4, 1);
-		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 0, "点击[攻略]控件");
+		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 0, "攻略");
 		driverExe.waitPageLoad(3);
-		driverExe.assertPage("攻略详情", "验证[攻略详情]是否存在");
-		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
-		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 1, "点击[分享]控件");
+		driverExe.assertPage("攻略详情");
+		back();
+		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 1, "分享");
 		driverExe.waitPageLoad(3);
-		driverExe.assertPage("详情", "验证[详情]是否存在");
-		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
+		driverExe.assertPage("详情");
+		back();
 		endTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG);
 	}
 	
 	@Test
 	@MobileTest
 	public void CeBianLan() {//侧边栏
-		IDriverExe driverExe = startTest(JDDFUN_GAME, CE_BIAN_LAN, true);
-		CaiDanPage cdp = new CaiDanPage();
+		IDriverExe driverExe = startTest(JDDFUN_GAME, CE_BIAN_LAN, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
-		driverExe.tapElement(yxdtp.getXianshibianlanUiObject(), "点击[显示边栏]按钮");
+		driverExe.tapElement(yxdtp.getXianshibianlanUiObject(), "显示边栏");
 		if(driverExe.isTextInPage("立即开启")){
-			driverExe.tapElement(yxdtp.getLijikaiqiUiObject(), "点击[立即开启]按钮");
+			driverExe.tapElement(yxdtp.getLijikaiqiUiObject(), "立即开启");
 		}
 		if(driverExe.isTextInPage("幸运转盘")){
-			driverExe.tapElement(yxdtp.getXingyunzhuanpanUiObject(), "点击[幸运转盘]按钮");
+			driverExe.tapElement(yxdtp.getXingyunzhuanpanUiObject(), "幸运转盘");
 			driverExe.waitPageLoad(3);
-			driverExe.assertPage("幸运转盘", "验证[幸运转盘]是否存在");
-			driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
+			driverExe.assertPage("幸运转盘");
+			back();
 		}
 		if(driverExe.isTextInPage("首充送话费")){
-			driverExe.tapElement(yxdtp.getShouchongsonghuafeiUiObject(), "点击[首充送话费]按钮");
+			driverExe.tapElement(yxdtp.getShouchongsonghuafeiUiObject(), "首充送话费");
 			driverExe.waitPageLoad(3);
-			driverExe.assertPage("充值回馈", "验证[充值回馈]是否存在");
-			driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]按钮");
+			driverExe.assertPage("充值回馈");
+			back();
 		}
 		endTest(JDDFUN_GAME, CE_BIAN_LAN);
 	}

@@ -16,29 +16,28 @@ public class DaiLiShang extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void YeMianXianShi() {//页面元素显示
-		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, true);
-		CaiDanPage cdp = new CaiDanPage();
+		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 3, true);
 		WoDePage wdp = new WoDePage();
 		YaoQingHaoYouPage yqhyp = new YaoQingHaoYouPage();
 		WoDeHaoYouPage wdhyp = new WoDeHaoYouPage();
 		TianXieYaoQingMaPage txyqmp = new TianXieYaoQingMaPage();
-		driverExe.tapElement(cdp.getWodeUiObject(), "点击[我的]标签页");
-		driverExe.tapElement(wdp.getYaoqinghaoyouUiObject(), "点击[邀请好友]");
-		driverExe.assertElement(yqhyp.getWodeyaoqingmaUiObject(), "验证[邀请好友]是否存在");
+		driverExe.tapElement(wdp.getYaoqinghaoyouUiObject(), "邀请好友");
+		driverExe.assertPage("邀请好友");
+		driverExe.assertElement(yqhyp.getWodeyaoqingmaUiObject(), "我的邀请码");
 		String code = driverExe.getNameByXpath(yqhyp.getWodeyaoqingmaUiObject().getLocator());
-		driverExe.log("测试输出:我的邀请码[" + code + "]");
-		driverExe.tapElement(yqhyp.getWodehaoyouUiObject(), "点击[我的好友]");
-		driverExe.assertPage("支持记录", "验证[支持记录]是否存在");
-		driverExe.assertPage("返利记录", "验证[返利记录]是否存在");
-		driverExe.tapElement(wdhyp.getFanlijiluUiObject(), "点击[返利记录]");
-		driverExe.tapElement(cdp.getFanhuiUiObject(), "点击[返回]");
-		driverExe.tapElement(yqhyp.getTianxieyaoqingmaUiObject(), "点击[填写邀请码]");
-		driverExe.assertPage("填写邀请码", "验证[填写邀请码]是否存在");
+		driverExe.logOut("我的邀请码[" + code + "]", false);
+		driverExe.tapElement(yqhyp.getWodehaoyouUiObject(), "我的好友");
+		driverExe.assertPage("支持记录");
+		driverExe.assertPage("返利记录");
+		driverExe.tapElement(wdhyp.getFanlijiluUiObject(), "返利记录");
+		driverExe.back();
+		driverExe.tapElement(yqhyp.getTianxieyaoqingmaUiObject(), "填写邀请码");
+		driverExe.assertPage("填写邀请码");
 		driverExe.appendTextField(txyqmp.getYaoqingmaUiTextView(), code);
-		driverExe.tapElement(txyqmp.getQuerenUiObject(), "点击[确认]");
+		driverExe.tapElement(txyqmp.getQuerenUiObject(), "确认");
 		driverExe.waitPageLoad(3);
 		driverExe.appendTextField(txyqmp.getYaoqingmaUiTextView(), "0000000");
-		driverExe.tapElement(txyqmp.getQuerenUiObject(), "点击[确认]");
+		driverExe.tapElement(txyqmp.getQuerenUiObject(), "确认");
 		driverExe.waitPageLoad(3);
 		endTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI);
 	}

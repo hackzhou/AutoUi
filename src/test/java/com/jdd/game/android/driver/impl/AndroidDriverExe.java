@@ -363,17 +363,29 @@ public class AndroidDriverExe implements IDriverExe {
 		System.out.println(message);
 		SeLionReporter.log(message, bool);
 	}
-
+	
 	@Override
-	public void assertPage(String text, String message) {
-		boolean bool = this.isTextInPage(text);
-		log("测试输出:" + message + "[" + bool + "]", false);
-		Assert.assertEquals(true, bool, message);
+	public void logOut(String message, boolean bool) {
+		log("测试输出:《" + message + "》", bool);
 	}
 	
 	@Override
 	public void assertElement(UiObject ub, String message) {
 		boolean bool = this.getWebElements(Const.TYPE_XPATH, ub.getLocator()) != null;
+		log("测试输出:《" + message + "》验证控件是否存在" + "[" + bool + "]", false);
+		Assert.assertEquals(true, bool, message);
+	}
+
+	@Override
+	public void assertPage(String text) {
+		boolean bool = this.isTextInPage(text);
+		log("测试输出:《" + text + "》验证文本/页面是否存在" + "[" + bool + "]", false);
+		Assert.assertEquals(true, bool, text);
+	}
+	
+	@Override
+	public void assertPage(String text, String message) {
+		boolean bool = this.isTextInPage(text);
 		log("测试输出:" + message + "[" + bool + "]", false);
 		Assert.assertEquals(true, bool, message);
 	}
@@ -445,6 +457,11 @@ public class AndroidDriverExe implements IDriverExe {
 	@Override
 	public void context(String name) {
 		this.getAndroidDriver().context(name);
+	}
+	
+	@Override
+	public void keyboardClick(int key) {
+		this.getAndroidDriver().pressKeyCode(key);
 	}
 
 	@Override

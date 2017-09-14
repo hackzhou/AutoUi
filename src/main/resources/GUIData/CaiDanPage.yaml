@@ -4,19 +4,25 @@ defaultLocale: "US"
 elements:
   yunxuUiButton:
     locators:
-      US: "//android.widget.Button[contains(@resource-id,'com.huawei.systemmanager:id/btn_allow')]" #设备-允许
+      US: "//android.widget.Button[@resource-id,'com.huawei.systemmanager:id/btn_allow']" #设备-允许
   youxidatingUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_game')]" #游戏大厅
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/tab_game']" #游戏大厅
   lingjiangtaiUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_prize')]" #领奖台
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/tab_prize']" #领奖台
   wodeUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@resource-id,'com.jddfun.game:id/tab_me')]" #我的
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/tab_me']" #我的
   fanhuiUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/iv_iv_back')]" #返回
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/iv_iv_back']" #返回
   huodongguanbiUiObject:
     locators:
-      US: "//android.widget.ImageView[contains(@resource-id,'com.jddfun.game:id/tiger_dialog_close')]" #活动关闭
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/tiger_dialog_close']" #活动关闭
+  lijichoujiangUiObject:
+    locators:
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/btn_play']" #立即抽奖
+  qiyingqianUiObject:
+    locators:
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/signed_dialog_popup']" #去赢钱

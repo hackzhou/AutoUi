@@ -195,18 +195,18 @@ public interface IDriverExe {
 	public void log(String message);
 	
 	/**
-	 * 日志输出
+	 * 日志输出(内部使用)
 	 * @param message (消息文本)
 	 * @param bool (是否截图)
 	 */
 	public void log(String message, boolean bool);
 	
 	/**
-	 * 断言验证文本是否在当前页面
-	 * @param text (验证文本)
+	 * 日志输出(外部使用)
 	 * @param message (消息文本)
+	 * @param bool (是否截图)
 	 */
-	public void assertPage(String text, String message);
+	public void logOut(String message, boolean bool);
 	
 	/**
 	 * 断言控件是否存在当前页面
@@ -214,6 +214,19 @@ public interface IDriverExe {
 	 * @param message (消息文本)
 	 */
 	public void assertElement(UiObject ub, String message);
+	
+	/**
+	 * 断言验证文本是否在当前页面
+	 * @param text (验证文本)
+	 */
+	public void assertPage(String text);
+	
+	/**
+	 * 断言验证文本是否在当前页面
+	 * @param text (验证文本)
+	 * @param message (消息文本)
+	 */
+	public void assertPage(String text, String message);
 	
 	/**
 	 * 取得Xpath末尾"[n]"中n值
@@ -268,6 +281,12 @@ public interface IDriverExe {
 	 * @param name (NATIVE_APP、WEBVIEW)
 	 */
 	public void context(String name);
+	
+	/**
+	 * 键盘点击操作
+	 * @param key 值
+	 */
+	public void keyboardClick(int key);
 	
 	/**
 	 * 关闭APP
