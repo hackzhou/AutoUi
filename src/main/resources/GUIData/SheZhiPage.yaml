@@ -4,10 +4,10 @@ defaultLocale: "US"
 elements:
   tongzhizhongxinUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/set_up_notice']" #通知中心
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/set_up_notice']" #通知中心
   qingchuhuancunUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/set_up_cache']" #清除缓存
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/set_up_cache']" #清除缓存
   bangzhuzhongxinUiObject:
     locators:
       US: "//android.widget.TextView[contains(@text,'帮助中心')]" #帮助中心
@@ -16,10 +16,10 @@ elements:
       US: "//android.widget.TextView[contains(@text,'关于我们')]" #关于我们
   tuichudengluUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/set_up_withdraw_from']" #退出登录
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/set_up_withdraw_from']" #退出登录
   tuichuquerenUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/confirm']" #退出确认
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/confirm']" #退出确认
   guanyupaihangUiObject:
     locators:
       US: "//*[@id='app']/div/div/div[1]/ul/li[1]" #帮助中心-关于排行

@@ -4,19 +4,19 @@ defaultLocale: "US"
 elements:
   paishezhaopianUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/takePhoto']" #拍摄照片
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/takePhoto']" #拍摄照片
   bendixiangceUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/choosePhoto']" #本地相册
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/choosePhoto']" #本地相册
   quxiaoUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/btn_cancel']" #取消
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/btn_cancel']" #取消
   paizhaoUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.huawei.camera:id/shutter_button']" #拍照
+      US: "//android.widget.ImageView[@resource-id='com.huawei.camera:id/shutter_button']" #拍照
   paizhaowanchengUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.huawei.camera:id/btn_done']" #拍照完成
+      US: "//android.widget.ImageView[@resource-id='com.huawei.camera:id/btn_done']" #拍照完成
   zhaopianUiObject:
     locators:
       US: "//android.widget.ImageView[contains(@resource-id,'com.android.documentsui:id/icon_thumb')]" #照片1

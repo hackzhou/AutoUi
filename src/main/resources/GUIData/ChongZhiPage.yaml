@@ -10,10 +10,10 @@ elements:
       US: "//*[@id='app']/div/div/div[2]/p[3]" #充值-特惠礼包-按钮2
   zhifubaozhifuUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/ali_pay']" #支付宝支付
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/ali_pay']" #支付宝支付
   zhifubaozhifuUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/ali_pay']" #支付宝支付
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/ali_pay']" #支付宝支付
   tishishiUiObject:
     locators:
       US: "//android.widget.Button[contains(@resource-id,'com.alipay.mobile.base.commonbiz:id/btn_user_tip_ok')]" #提示-是

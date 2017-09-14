@@ -4,40 +4,40 @@ defaultLocale: "US"
 elements:
   touxiangUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/iv_personal_icon']" #头像
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/iv_personal_icon']" #头像
   idUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/frag_id']" #ID
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/frag_id']" #ID
   nichengUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/info_name']" #昵称
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/info_name']" #昵称
   xiugainichengUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/info_imageView2']" #修改昵称
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/info_imageView2']" #修改昵称
   xiugainichengUiTextView:
     locators:
-      US: "//android.widget.EditText[@resource-id,'com.jddfun.game:id/revise_setName']" #修改昵称-输入框
+      US: "//android.widget.EditText[@resource-id='com.jddfun.game:id/revise_setName']" #修改昵称-输入框
   nichengquerenUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/revise_name_ok']" #修改昵称-确认
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/revise_name_ok']" #修改昵称-确认
   guanbiUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/ubber_dialog_close']" #修改昵称-关闭
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/ubber_dialog_close']" #修改昵称-关闭
   jinyezishuUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id,'com.jddfun.game:id/info_useAmount']" #金叶子数
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/info_useAmount']" #金叶子数
   zijinmingxiUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/info_money']" #资金明细
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/info_money']" #资金明细
   shouhuoxinxiUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/info_account_number']" #收货信息
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/info_account_number']" #收货信息
   yaoqinghaoyouUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/invite_friends']" #邀请好友
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/invite_friends']" #邀请好友
   kefuUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/info_custom_service']" #客服
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/info_custom_service']" #客服
   shezhiUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/info_set_up']" #设置
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/info_set_up']" #设置

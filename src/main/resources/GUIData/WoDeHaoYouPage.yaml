@@ -4,7 +4,7 @@ defaultLocale: "US"
 elements:
   fanlishuomingUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id,'com.jddfun.game:id/iv_head_right']" #返利说明
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/iv_head_right']" #返利说明
   zhichijiluUiObject:
     locators:
       US: "//android.widget.TextView[contains(@text,'支持记录')]" #支持记录

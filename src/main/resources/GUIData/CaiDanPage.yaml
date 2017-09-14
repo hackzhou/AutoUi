@@ -4,7 +4,7 @@ defaultLocale: "US"
 elements:
   yunxuUiButton:
     locators:
-      US: "//android.widget.Button[@resource-id,'com.huawei.systemmanager:id/btn_allow']" #设备-允许
+      US: "//android.widget.Button[@resource-id='com.huawei.systemmanager:id/btn_allow']" #设备-允许
   youxidatingUiObject:
     locators:
       US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/tab_game']" #游戏大厅
