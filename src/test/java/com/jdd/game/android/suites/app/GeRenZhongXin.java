@@ -95,7 +95,7 @@ public class GeRenZhongXin extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void ChongZhi() {//充值
-		IDriverExe driverExe = startTest(JDDFUN_GAME, CHONG_ZHI, 3, true, "13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, CHONG_ZHI, 3, true);
 		WoDePage wdp = new WoDePage();
 		ChongZhiPage czp = new ChongZhiPage();
 		driverExe.tapElement(wdp.getJinyezishuUiObject(), "金叶子数");						//查看充值页面
@@ -109,7 +109,7 @@ public class GeRenZhongXin extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void ZiJinMingXi() {//资金明细
-		IDriverExe driverExe = startTest(JDDFUN_GAME, ZI_JIN_MING_XI, 3, true, "13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, ZI_JIN_MING_XI, 3, true);
 		WoDePage wdp = new WoDePage();
 		ZiJinMingXiPage zjmx = new ZiJinMingXiPage();
 		driverExe.tapElement(wdp.getZijinmingxiUiObject(), "资金明细");
@@ -124,7 +124,7 @@ public class GeRenZhongXin extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void XiaoXiZhongXin() {//消息中心
-		IDriverExe driverExe = startTest(JDDFUN_GAME, XIAO_XI_ZHONG_XIN, 0, true, "13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, XIAO_XI_ZHONG_XIN, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		XiaoXiZhongXinPage xxzxp = new XiaoXiZhongXinPage();
 		driverExe.tapElement(yxdtp.getTongzhiUiObject(), "通知-消息中心");			//查看个人消息和通知
@@ -158,7 +158,7 @@ public class GeRenZhongXin extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void KeFu() {//客服
-		IDriverExe driverExe = startTest(JDDFUN_GAME, KE_FU, 3, true, "13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, KE_FU, 3, true);
 		WoDePage wdp = new WoDePage();
 		KeFuPage kf = new KeFuPage();
 		driverExe.tapElement(wdp.getKefuUiObject(), "客服");							//查看客服页面
@@ -174,7 +174,7 @@ public class GeRenZhongXin extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void ShouHuoXinXi() {//收货信息
-		IDriverExe driverExe = startTest(JDDFUN_GAME, SHOU_HUO_XIN_XI, 3, true, "13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, SHOU_HUO_XIN_XI, 3, true);
 		WoDePage wdp = new WoDePage();
 		ShouHuoXinXiPage shxx = new ShouHuoXinXiPage();
 		driverExe.tapElement(wdp.getShouhuoxinxiUiObject(), "收货信息");			//查看收货信息页面
@@ -192,7 +192,7 @@ public class GeRenZhongXin extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void SheZhi() {//设置
-		IDriverExe driverExe = startTest(JDDFUN_GAME, SHE_ZHI, 3, true, "13151815253", "zhouzhou");
+		IDriverExe driverExe = startTest(JDDFUN_GAME, SHE_ZHI, 3, true);
 		WoDePage wdp = new WoDePage();
 		SheZhiPage szp = new SheZhiPage();
 		TongZhiZhongXinPage tzzx = new TongZhiZhongXinPage();

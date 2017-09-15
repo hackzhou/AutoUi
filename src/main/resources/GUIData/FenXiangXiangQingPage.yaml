@@ -8,3 +8,9 @@ elements:
   fasongUiObject:
     locators:
       US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/all_mes_help_details_send']" #发送
+  pinglunshuUiObject:
+    locators:
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/iv_all_mes_two_message']" #评论数
+  dianzanshuUiObject:
+    locators:
+      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/all_mes_help_help']" #点赞数

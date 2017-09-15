@@ -99,10 +99,13 @@ public abstract class AbsParentTest extends AppDriver{
 	private void closeDialog() {
 		IDriverExe driverExe = getAndroidDriverExe();
 		CaiDanPage cdp = new CaiDanPage();
+		driverExe.tapElement(cdp.getLijichoujiangUiObject(), "立即抽奖");
 		driverExe.foundTapElement(cdp.getHuodongguanbiUiObject(), "活动关闭");
 		if(driverExe.isTextInPage("去赢钱")) {
-			driverExe.keyboardClick(4);
+			driverExe.foundTapElement(cdp.getQiyingqianUiObject(), "去赢钱");
+			//driverExe.keyboardClick(4);
 		}
+		driverExe.waitPageLoad(3);
 	}
 	
 	private boolean isEmpty(String text){

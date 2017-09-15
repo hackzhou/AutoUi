@@ -1,5 +1,8 @@
 package com.jdd.game.android.suites.app;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.jdd.game.android.constants.Const;
@@ -67,19 +70,23 @@ public class FenXiangQuan extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void FaBuFenXiang() {//发布分享
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
+		String text = "自动化测试，请忽略！-" + sdf.format(new Date());
 		IDriverExe driverExe = startTest(JDDFUN_GAME, FA_BU_FEN_XIANG, 4, true);
 		FenXiangQuanPage fxqp = new FenXiangQuanPage();
 		FenXiangFaBuPage fxfbp = new FenXiangFaBuPage();
 		driverExe.tapElement(fxqp.getFabufenxiangUiObject(), "发布分享");
 		driverExe.waitPageLoad(2);
 		driverExe.assertPage("分享中奖信息或游戏心得");
-		driverExe.appendTextField(fxfbp.getFenxiangneirongUiTextView(), "自动化测试，请忽略！自动化测试，请忽略！");
+		driverExe.appendTextField(fxfbp.getFenxiangneirongUiTextView(), text);
 		driverExe.tapElement(fxfbp.getTianjiatupianUiObject(), "添加图片");
 		driverExe.tapElement(fxfbp.getBendixiangceUiObject(), "本地相册");
 		driverExe.tapElement(fxfbp.getTupianOneUiObject(), "照片1");
 		driverExe.tapElement(fxfbp.getWanchengUiObject(), "完成");
 		driverExe.tapElement(fxfbp.getFabuUiObject(), "发布");
-		driverExe.waitPageLoad(3);
+		driverExe.waitPageLoad(5);
+		driverExe.assertPage("待审核");
+		driverExe.assertPage(text);
 		endTest(JDDFUN_GAME, FA_BU_FEN_XIANG);
 	}
 	
@@ -91,12 +98,15 @@ public class FenXiangQuan extends AbsParentTest {
 		FenXiangQuanPage fxqp = new FenXiangQuanPage();
 		FenXiangXiangQingPage fxxqp = new FenXiangXiangQingPage();
 		driverExe.tapElement(fxqp.getNeirongUiObject(), "评论内容");
+		driverExe.assertPage("详情");
+		driverExe.logOut("当前评论数[" + driverExe.getNameByXpath(fxxqp.getPinglunshuUiObject().getLocator()) + "]", false);
 		driverExe.appendTextField(fxxqp.getPinglunUiTextView(), "自动化测试，请忽略！");
 		adb.exeKeyboard1();
 		driverExe.waitPageLoad(2);
 		driverExe.tapElement(fxxqp.getFasongUiObject(), "发送");
 		adb.exeKeyboard0();
 		driverExe.waitPageLoad(2);
+		driverExe.logOut("当前评论数[" + driverExe.getNameByXpath(fxxqp.getPinglunshuUiObject().getLocator()) + "]", false);
 		endTest(JDDFUN_GAME, FEN_XIANG_PING_LUN);
 	}
 	
