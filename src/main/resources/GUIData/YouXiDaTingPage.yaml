@@ -20,9 +20,9 @@ elements:
   renwuUiObject:
     locators:
       US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/task_and_sign']" #任务-签到奖励
-  tongzhiUiObject:
+  xiaoxiUiObject:
     locators:
-      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/notify_msg']" #通知-消息中心
+      US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/notify_msg']" #消息中心
   xiajijiangliUiObject:
     locators:
       US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/rank_no']" #下级奖励

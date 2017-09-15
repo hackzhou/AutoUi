@@ -36,8 +36,8 @@ public class ShouYe extends AbsParentTest {
 		driverExe.assertElement(yxdtp.getRenwuUiObject(), "任务");
 		driverExe.tapElement(yxdtp.getRenwuUiObject(), "任务");
 		driverExe.tapElement(cdp.getHuodongguanbiUiObject(), "任务关闭");
-		driverExe.assertElement(yxdtp.getTongzhiUiObject(), "通知");
-		driverExe.tapElement(yxdtp.getTongzhiUiObject(), "通知");
+		driverExe.assertElement(yxdtp.getXiaoxiUiObject(), "消息中心");
+		driverExe.tapElement(yxdtp.getXiaoxiUiObject(), "消息中心");
 		back();
 		driverExe.assertPage("下级奖励");
 		driverExe.assertElement(yxdtp.getXiajijiangliUiObject(), "下级奖励");

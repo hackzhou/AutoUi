@@ -93,17 +93,16 @@ public class FenXiangQuan extends AbsParentTest {
 	@MobileTest
 	public void FenXiangPingLun() {//分享评论
 		IDriverExe driverExe = startTest(JDDFUN_GAME, FEN_XIANG_PING_LUN, 4, true);
-		AdbUtil adb = new AdbUtil();
 		FenXiangQuanPage fxqp = new FenXiangQuanPage();
 		FenXiangXiangQingPage fxxqp = new FenXiangXiangQingPage();
 		driverExe.tapElement(fxqp.getNeirongUiObject(), "评论内容");
 		driverExe.assertPage("详情");
 		driverExe.logOut("当前评论数[" + driverExe.getNameByXpath(fxxqp.getPinglunshuUiObject().getLocator()) + "]", false);
 		driverExe.appendTextField(fxxqp.getPinglunUiTextView(), "自动化测试，请忽略！");
-		adb.exeKeyboard1();
+		AdbUtil.exeKeyboard1();
 		driverExe.waitPageLoad(2);
 		driverExe.tapElement(fxxqp.getFasongUiObject(), "发送");
-		adb.exeKeyboard0();
+		AdbUtil.exeKeyboard0();
 		driverExe.waitPageLoad(2);
 		driverExe.logOut("当前评论数[" + driverExe.getNameByXpath(fxxqp.getPinglunshuUiObject().getLocator()) + "]", false);
 		endTest(JDDFUN_GAME, FEN_XIANG_PING_LUN);

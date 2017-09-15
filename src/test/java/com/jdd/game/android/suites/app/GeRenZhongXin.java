@@ -127,11 +127,11 @@ public class GeRenZhongXin extends AbsParentTest {
 		IDriverExe driverExe = startTest(JDDFUN_GAME, XIAO_XI_ZHONG_XIN, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		XiaoXiZhongXinPage xxzxp = new XiaoXiZhongXinPage();
-		driverExe.tapElement(yxdtp.getTongzhiUiObject(), "通知-消息中心");			//查看个人消息和通知
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 1);
-		driverExe.tapElement(xxzxp.getTongzhiUiObject(), "通知");
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 1);
-		back();
+		driverExe.tapElement(yxdtp.getXiaoxiUiObject(), "消息中心");			//查看个人消息和通知
+		driverExe.waitPageLoad(2);
+		driverExe.tapElement(xxzxp.getGerenxiaoxiUiObject(), "个人消息");
+		driverExe.waitPageLoad(2);
+		driverExe.tapElement(xxzxp.getGuanbiUiObject(), "关闭");
 		endTest(JDDFUN_GAME, XIAO_XI_ZHONG_XIN);
 	}
 	

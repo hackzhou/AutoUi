@@ -1,11 +1,10 @@
 package com.jdd.game.android.suites;
 
-import com.jdd.game.android.constants.Const;
 import com.jdd.game.android.driver.AppDriver;
 import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.utils.AdbUtil;
 import com.jdd.pages.CaiDanPage;
 import com.jdd.pages.DengLuPage;
-import com.jdd.pages.YouXiDaTingPage;
 
 public abstract class AbsParentTest extends AppDriver{
 	private static final Integer WAIT_HOME_PAGE_DIALOG		= 3;
@@ -149,8 +148,7 @@ public abstract class AbsParentTest extends AppDriver{
 		IDriverExe driverExe = getAndroidDriverExe();
 		driverExe.assertPage("大神分享", "验证[大神分享]是否存在");
 		driverExe.assertPage("查看更多", "验证[查看更多]是否存在");
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
-		driverExe.tapElement(new YouXiDaTingPage().getChakangengduoUiObject(), "查看更多");
+		AdbUtil.openPage(AdbUtil.ACTIVITY_FENXIANGQUAN);
 		driverExe.waitPageLoad(1);
 	}
 	
