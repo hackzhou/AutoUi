@@ -4,8 +4,7 @@
 	skipfailedinvocationcounts="false" junit="false" parallel="false"
 	data-provider-thread-count="50" annotations="JDK">
 
-	<!-- 测试 -->
-    <!-- <test name="app-test-gerenzhongxin">
+    <test name="app-test-gerenzhongxin">
         <classes>
             <class name="com.jdd.game.android.suites.app.GeRenZhongXin">
                 <methods>
@@ -24,9 +23,20 @@
                 </methods>
             </class>
         </classes>
-    </test> -->
+    </test>
     
-    <!-- <test name="app-test-fenxiangquan">
+    <test name="app-test-lingjiangtai">
+        <classes>
+            <class name="com.jdd.game.android.suites.app.LingJiangTai">
+                <methods>
+                    <include name="YeMianXianShi" />
+                    <include name="SuiPianShiWu" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="app-test-fenxiangquan">
         <classes>
             <class name="com.jdd.game.android.suites.app.FenXiangQuan">
                 <methods>
@@ -39,9 +49,9 @@
                 </methods>
             </class>
         </classes>
-    </test> -->
+    </test>
     
-    <!-- <test name="app-test-shouye">
+    <test name="app-test-shouye">
         <classes>
             <class name="com.jdd.game.android.suites.app.ShouYe">
                 <methods>
@@ -55,7 +65,7 @@
                 </methods>
             </class>
         </classes>
-    </test> -->
+    </test>
     
     <test name="app-test-dailishang">
         <classes>
