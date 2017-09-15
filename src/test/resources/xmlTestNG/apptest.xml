@@ -3,6 +3,10 @@
 <suite thread-count="1" verbose="1" name="AppTestSuite"
 	skipfailedinvocationcounts="false" junit="false" parallel="false"
 	data-provider-thread-count="50" annotations="JDK">
+	
+	<listeners>
+        <listener class-name="com.jdd.game.android.report.MyReporter"></listener>
+    </listeners>
 
     <test name="app-test-gerenzhongxin">
         <classes>

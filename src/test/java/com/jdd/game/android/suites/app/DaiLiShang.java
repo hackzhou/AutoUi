@@ -1,14 +1,14 @@
 package com.jdd.game.android.suites.app;
 
-import org.testng.annotations.Listeners;
+//import org.testng.annotations.Listeners;
+//import com.jdd.game.android.report.MyReporter;
 import org.testng.annotations.Test;
 import com.jdd.game.android.driver.IDriverExe;
-import com.jdd.game.android.report.MyReporter;
 import com.jdd.game.android.suites.AbsParentTest;
 import com.paypal.selion.annotations.MobileTest;
 import com.jdd.pages.*;
 
-@Listeners({MyReporter.class})
+//@Listeners({MyReporter.class})
 public class DaiLiShang extends AbsParentTest {
 	private static final String JDDFUN_GAME			= "微竞猜-代理商";
 	private static final String YE_MIAN_XIAN_SHI	= "页面元素显示";	//1
