@@ -4,6 +4,7 @@ package com.jdd.game.android.suites.app;
 //import com.jdd.game.android.report.MyReporter;
 import org.testng.annotations.Test;
 import com.paypal.selion.annotations.MobileTest;
+import com.jdd.game.android.constants.Const;
 import com.jdd.game.android.driver.IDriverExe;
 import com.jdd.game.android.suites.AbsParentTest;
 import com.jdd.pages.*;
@@ -65,7 +66,7 @@ public class ShouYe extends AbsParentTest {
 		driverExe.waitPageLoad(10);
 		driverExe.tapElementWebView(czp.getChongzhioneUiObject().getLocator(), "充值-1");
 		driverExe.tapElementWebView(czp.getChongzhitwoUiObject().getLocator(), "充值-2");
-		driverExe.tapElement(czp.getZhifubaozhifuUiObject(), "支付宝-支付");
+		//driverExe.tapElement(czp.getZhifubaozhifuUiObject(), "支付宝-支付");
 		endTest(JDDFUN_GAME, CHONG_ZHI_TIAO_ZHUAN);
 	}
 	
@@ -113,29 +114,24 @@ public class ShouYe extends AbsParentTest {
 	
 	@Test
 	@MobileTest
-	@SuppressWarnings("unused")
 	public void LunBoTu() {//轮播图
 		IDriverExe driverExe = startTest(JDDFUN_GAME, LUN_BO_TU, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-//		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
-//		driverExe.waitPageLoad(3);
-//		back();
-//		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
-//		driverExe.waitPageLoad(3);
-//		back();
+		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
+		driverExe.waitPageLoad(3);
+		back();
 		endTest(JDDFUN_GAME, LUN_BO_TU);
 	}
 	
 	@Test
 	@MobileTest
-	@SuppressWarnings("unused")
 	public void GongLueFenXiang() {//攻略分享
 		IDriverExe driverExe = startTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-//		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.3, 1);
-//		driverExe.tapElement(yxdtp.getGonglueUiObject(), "攻略");
-//		driverExe.waitPageLoad(5);
-//		driverExe.assertPage("攻略详情");
+		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.3, 1);
+		driverExe.tapElement(yxdtp.getGonglueUiObject(), "攻略");
+		driverExe.waitPageLoad(5);
+		driverExe.assertPage("攻略详情");
 		endTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG);
 	}
 	

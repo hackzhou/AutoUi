@@ -102,7 +102,7 @@ public class GeRenZhongXin extends AbsParentTest {
 		driverExe.waitPageLoad(10);
 		driverExe.tapElementWebView(czp.getChongzhioneUiObject().getLocator(), "充值-1");	//点击充值金额
 		driverExe.tapElementWebView(czp.getChongzhitwoUiObject().getLocator(), "充值-2");
-		driverExe.tapElement(czp.getZhifubaozhifuUiObject(), "支付宝-支付");				//打开支付页面
+		//driverExe.tapElement(czp.getZhifubaozhifuUiObject(), "支付宝-支付");				//打开支付页面
 		endTest(JDDFUN_GAME, CHONG_ZHI);
 	}
 	
