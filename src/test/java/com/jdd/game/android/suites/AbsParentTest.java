@@ -144,7 +144,7 @@ public abstract class AbsParentTest extends AppDriver{
 		}
 	}
 	
-	private void openFenXiangQuan(){
+	protected void openFenXiangQuan(){
 		IDriverExe driverExe = getAndroidDriverExe();
 		driverExe.assertPage("大神分享", "验证[大神分享]是否存在");
 		driverExe.assertPage("查看更多", "验证[查看更多]是否存在");

@@ -7,7 +7,9 @@ import com.paypal.selion.platform.mobile.android.UiTextView;
 
 public interface IDriverExe {
 
-	
+	/**
+	 * Mobile
+	 */
 	public void driverApp();
 	
 	/**
@@ -308,4 +310,42 @@ public interface IDriverExe {
 	 */
 	public void quitApp();
 	
+	/**
+	 * PC
+	 */
+	public void driverBrowser();
+	
+	public void open(String url);
+	
+	public void click(String type, String locator);
+	
+	public void foundClick(String type, String locator);
+	
+	public void browserClick(String keyName);
+	
+	public void clearText(String type, String locator);
+	
+	public boolean result(String text);
+	
+	public boolean value(String type, String locator, String text);
+	
+	public void sendKey(String type, String locator, String text);
+	
+	public String getElementValue(String type, String locator);
+	
+	public void scroll(String type, String locator);
+	
+	public void scrollTop(String direction);
+	
+	public void switchToWindow(String windowTitle);
+	
+	public void switchToFrame(String id);
+	
+	public void clickAlertSure();
+	
+	public void clickAlertDismiss();
+	
+	public void clickAndHold(String type, String locator);
+	
+	public void selectByValue(String type, String locator, String text);
 }

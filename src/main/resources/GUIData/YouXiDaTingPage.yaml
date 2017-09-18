@@ -43,7 +43,7 @@ elements:
       US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/banner_image']" #轮播图
   jinrupaihangbangUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/enter_rank']" #进入排行榜
+      US: "//android.widget.LinearLayout[@resource-id='com.jddfun.game:id/rank_rich_left']" #进入排行榜
   chakangengduoUiObject:
     locators:
       US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/see_share_more']" #查看更多
@@ -74,3 +74,6 @@ elements:
   gongluefenxiangUiObject:
     locators:
       US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/share_image']" #攻略分享
+  gonglueUiObject:
+    locators:
+      US: "//android.widget.LinearLayout[@resource-id='com.jddfun.game:id/ll_share_content']" #攻略

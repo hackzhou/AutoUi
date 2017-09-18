@@ -4,7 +4,6 @@ package com.jdd.game.android.suites.app;
 //import com.jdd.game.android.report.MyReporter;
 import org.testng.annotations.Test;
 import com.paypal.selion.annotations.MobileTest;
-import com.jdd.game.android.constants.Const;
 import com.jdd.game.android.driver.IDriverExe;
 import com.jdd.game.android.suites.AbsParentTest;
 import com.jdd.pages.*;
@@ -26,6 +25,7 @@ public class ShouYe extends AbsParentTest {
 		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 0, true);
 		CaiDanPage cdp = new CaiDanPage();
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
+		XiaoXiZhongXinPage xxzxp = new XiaoXiZhongXinPage();
 		driverExe.assertElement(yxdtp.getYonghutouxiangUiObject(), "用户头像");
 		driverExe.assertElement(yxdtp.getYonghuidUiObject(), "用户ID");
 		driverExe.logOut("用户ID[" + driverExe.getNameByXpath(yxdtp.getYonghuidUiObject().getLocator()) + "]", false);
@@ -38,21 +38,20 @@ public class ShouYe extends AbsParentTest {
 		driverExe.tapElement(cdp.getHuodongguanbiUiObject(), "任务关闭");
 		driverExe.assertElement(yxdtp.getXiaoxiUiObject(), "消息中心");
 		driverExe.tapElement(yxdtp.getXiaoxiUiObject(), "消息中心");
-		back();
-		driverExe.assertPage("下级奖励");
-		driverExe.assertElement(yxdtp.getXiajijiangliUiObject(), "下级奖励");
-		driverExe.logOut("下级奖励[" + driverExe.getNameByXpath(yxdtp.getXiajijiangliUiObject().getLocator()) + "]", false);
-		driverExe.assertElement(yxdtp.getDaojishiUiObject(), "倒计时");
-		driverExe.logOut("倒计时[" + driverExe.getNameByXpath(yxdtp.getDaojishiUiObject().getLocator()) + "]", false);
-		if(!driverExe.isTextInPage("暂无榜单")){
-			driverExe.assertElement(yxdtp.getGuanjunUiObject(), "排行榜-冠军");
-			driverExe.logOut("排行榜-冠军[" + driverExe.getNameByXpath(yxdtp.getGuanjunUiObject().getLocator()) + "]", false);
-		}
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
-		driverExe.assertPage("大神分享");
-		driverExe.assertPage("查看更多");
-		driverExe.tapElement(yxdtp.getChakangengduoUiObject(), "查看更多");
-		back();
+		driverExe.tapElement(xxzxp.getGuanbiUiObject(), "关闭");
+//		if(driverExe.isTextInPage("下级奖励")){
+//			driverExe.assertElement(yxdtp.getXiajijiangliUiObject(), "下级奖励");
+//			driverExe.logOut("下级奖励[" + driverExe.getNameByXpath(yxdtp.getXiajijiangliUiObject().getLocator()) + "]", false);
+//			driverExe.assertElement(yxdtp.getDaojishiUiObject(), "倒计时");
+//			driverExe.logOut("倒计时[" + driverExe.getNameByXpath(yxdtp.getDaojishiUiObject().getLocator()) + "]", false);
+//			if(!driverExe.isTextInPage("暂无榜单")){
+//				driverExe.assertElement(yxdtp.getGuanjunUiObject(), "排行榜-冠军");
+//				driverExe.logOut("排行榜-冠军[" + driverExe.getNameByXpath(yxdtp.getGuanjunUiObject().getLocator()) + "]", false);
+//			}
+//		}else if(driverExe.isTextInPage("富豪榜")){
+//		}
+		openFenXiangQuan();
+		driverExe.back();
 		endTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI);
 	}
 	
@@ -114,32 +113,29 @@ public class ShouYe extends AbsParentTest {
 	
 	@Test
 	@MobileTest
+	@SuppressWarnings("unused")
 	public void LunBoTu() {//轮播图
 		IDriverExe driverExe = startTest(JDDFUN_GAME, LUN_BO_TU, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
-		driverExe.waitPageLoad(3);
-		back();
-		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
-		driverExe.waitPageLoad(3);
-		back();
+//		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
+//		driverExe.waitPageLoad(3);
+//		back();
+//		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
+//		driverExe.waitPageLoad(3);
+//		back();
 		endTest(JDDFUN_GAME, LUN_BO_TU);
 	}
 	
 	@Test
 	@MobileTest
+	@SuppressWarnings("unused")
 	public void GongLueFenXiang() {//攻略分享
 		IDriverExe driverExe = startTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.3, 1);
-		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 0, "攻略");
-		driverExe.waitPageLoad(5);
-		driverExe.assertPage("攻略详情");
-		back();
-		driverExe.tapElementByXpath(yxdtp.getGongluefenxiangUiObject().getLocator(), 1, "分享");
-		driverExe.waitPageLoad(5);
-		driverExe.assertPage("详情");
-		back();
+//		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.3, 1);
+//		driverExe.tapElement(yxdtp.getGonglueUiObject(), "攻略");
+//		driverExe.waitPageLoad(5);
+//		driverExe.assertPage("攻略详情");
 		endTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG);
 	}
 	
@@ -148,8 +144,6 @@ public class ShouYe extends AbsParentTest {
 	public void CeBianLan() {//侧边栏
 		IDriverExe driverExe = startTest(JDDFUN_GAME, CE_BIAN_LAN, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
-		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
-		driverExe.tapElement(yxdtp.getXianshibianlanUiObject(), "显示边栏");
 		if(driverExe.isTextInPage("立即开启")){
 			driverExe.tapElement(yxdtp.getLijikaiqiUiObject(), "立即开启");
 		}
