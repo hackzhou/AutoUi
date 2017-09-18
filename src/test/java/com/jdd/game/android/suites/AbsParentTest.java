@@ -1,5 +1,6 @@
 package com.jdd.game.android.suites;
 
+import com.jdd.game.android.constants.Const;
 import com.jdd.game.android.driver.AppDriver;
 import com.jdd.game.android.driver.IDriverExe;
 import com.jdd.game.android.utils.AdbUtil;
@@ -137,6 +138,7 @@ public abstract class AbsParentTest extends AppDriver{
 	protected void openWoDe() {
 		IDriverExe driverExe = getAndroidDriverExe();
 		CaiDanPage cdp = new CaiDanPage();
+		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
 		driverExe.tapElement(cdp.getWodeUiObject(), "我的");
 		if(!driverExe.isTextInPage("ID | ")){
 			driverExe.waitPageLoad(1);

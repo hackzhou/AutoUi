@@ -29,7 +29,7 @@
         </classes>
     </test>
     
-    <!-- <test name="app-test-lingjiangtai">
+    <test name="app-test-lingjiangtai">
         <classes>
             <class name="com.jdd.game.android.suites.app.LingJiangTai">
                 <methods>
@@ -38,9 +38,9 @@
                 </methods>
             </class>
         </classes>
-    </test> -->
+    </test>
     
-    <!-- <test name="app-test-fenxiangquan">
+    <test name="app-test-fenxiangquan">
         <classes>
             <class name="com.jdd.game.android.suites.app.FenXiangQuan">
                 <methods>
@@ -53,9 +53,9 @@
                 </methods>
             </class>
         </classes>
-    </test> -->
+    </test>
     
-    <!-- <test name="app-test-shouye">
+    <test name="app-test-shouye">
         <classes>
             <class name="com.jdd.game.android.suites.app.ShouYe">
                 <methods>
@@ -69,9 +69,9 @@
                 </methods>
             </class>
         </classes>
-    </test> -->
+    </test>
     
-    <!-- <test name="app-test-dailishang">
+    <test name="app-test-dailishang">
         <classes>
             <class name="com.jdd.game.android.suites.app.DaiLiShang">
                 <methods>
@@ -79,6 +79,6 @@
                 </methods>
             </class>
         </classes>
-    </test> -->
+    </test>
 
 </suite>
