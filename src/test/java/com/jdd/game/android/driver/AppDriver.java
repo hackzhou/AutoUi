@@ -23,6 +23,7 @@ public class AppDriver {
 	private static ClassLoader loader = Thread.currentThread().getContextClassLoader();
 	private static Properties prop = new Properties();
 	private static IDriverExe androidDriverExe = null;
+	private static boolean clearBool = false;
 
 	static {
 		InputStream input = loader.getResourceAsStream("appium.properties");
@@ -69,7 +70,7 @@ public class AppDriver {
 			Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_PATH, new File(appPath).getAbsolutePath());
 		}else{
 			if(StringUtils.isNotBlank(appName) && StringUtils.isNotBlank(appActivity)){
-				AdbUtil.clearApp();
+				clearBool = true;
 				Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_NAME, appName);
 				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_PACKAGE, appName);
 				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_MAIN_ACTIVITY, appActivity);
@@ -91,7 +92,7 @@ public class AppDriver {
 	@AfterClass
 	public void stop(){
 		if(androidDriverExe != null){
-			androidDriverExe.quitApp();
+			androidDriverExe = null;
 		}
 	}
 
@@ -144,6 +145,9 @@ public class AppDriver {
 		return androidDriverExe;
 	}
 	protected static IDriverExe runAndroidDriverExe() {
+		if(clearBool){
+			AdbUtil.clearApp();
+		}
 		if(androidDriverExe != null){
 			androidDriverExe.driverApp();
 		}
