@@ -15,6 +15,10 @@ public class AdbUtil {
 		exeAdb("adb shell ime set com.nuance.swype.emui/com.nuance.swype.input.HuaweiIME");
 	}
 	
+	public static void clearApp(){
+		exeAdb("adb shell pm clear com.jddfun.game");
+	}
+	
 	/**
 	 * linux: adb shell dumpsys activity | grep "mFocusedActivity"
 	 * windows: adb shell dumpsys activity | findstr "mFocusedActivity"
