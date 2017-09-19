@@ -55,16 +55,13 @@ elements:
       US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/hide_operate']" #隐藏边栏
   lijikaiqiUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@text,'立即开启')]" #立即开启
+      US: "//android.widget.LinearLayout[@resource-id='com.jddfun.game:id/ll_operate_container']/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]" #立即开启
   xingyunzhuanpanUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@text,'幸运转盘')]" #幸运转盘
-  taoquanUiObject:
-    locators:
-      US: "//android.widget.TextView[contains(@text,'套圈')]" #套圈
+      US: "//android.widget.LinearLayout[@resource-id='com.jddfun.game:id/ll_operate_container']/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]" #幸运转盘
   shouchongsonghuafeiUiObject:
     locators:
-      US: "//android.widget.TextView[contains(@text,'首充送话费')]" #首充送话费
+      US: "//android.widget.LinearLayout[@resource-id='com.jddfun.game:id/ll_operate_container']/android.widget.RelativeLayout[3]/android.widget.FrameLayout[1]" #首充送话费
   lijichoujiangUiObject:
     locators:
       US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/btn_play']" #立即抽奖
