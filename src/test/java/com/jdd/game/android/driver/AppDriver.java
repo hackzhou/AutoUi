@@ -67,6 +67,7 @@ public class AppDriver {
 			}
 		}
 		if(StringUtils.isNotBlank(appPath) && this.isExistFile(appPath)){
+			AdbUtil.clearApp();
 			Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_PATH, new File(appPath).getAbsolutePath());
 		}else{
 			if(StringUtils.isNotBlank(appName) && StringUtils.isNotBlank(appActivity)){
