@@ -1,6 +1,7 @@
 package com.jdd.game.android.driver.impl;
 
 import java.util.List;
+import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -505,6 +506,13 @@ public class AndroidDriverExe implements IDriverExe {
 
 	@Override
 	public void switchToWindow(String windowTitle) {
+		Set<String> contextNames = getAndroidDriver().getContextHandles();
+	    for (String contextName : contextNames) {
+	    	if (contextName.contains(windowTitle)) {
+	        	getAndroidDriver().context(contextName);
+	            break;
+	        }
+		}
 	}
 
 	@Override
