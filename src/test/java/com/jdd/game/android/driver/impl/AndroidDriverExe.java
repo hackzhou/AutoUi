@@ -32,7 +32,7 @@ public class AndroidDriverExe implements IDriverExe {
 	
 	public SeLionAppiumAndroidDriver getAndroidDriver() {
 		if(this.rwd == null){
-			throw new AutoException("驱动异常:《请检查!》");
+			throw new AutoException("驱动异常:《请检查！》");
 		}
 		return (SeLionAppiumAndroidDriver) this.rwd;
 	}
@@ -45,21 +45,21 @@ public class AndroidDriverExe implements IDriverExe {
 	@Override
 	public void back() {
 		this.getAndroidDriver().navigate().back();
-		this.log("测试输出:《已返回!》");
+		this.log("测试输出:《已返回！》");
 		this.waitPageLoad(1);
 	}
 
 	@Override
 	public void forward() {
 		this.getAndroidDriver().navigate().forward();
-		this.log("测试输出:《已前进!》");
+		this.log("测试输出:《已前进！》");
 		this.waitPageLoad(1);
 	}
 
 	@Override
 	public void refresh() {
 		this.getAndroidDriver().navigate().refresh();
-		this.log("测试输出:《已刷新!》");
+		this.log("测试输出:《已刷新！》");
 		this.waitPageLoad(1);
 	}
 	
@@ -72,7 +72,7 @@ public class AndroidDriverExe implements IDriverExe {
 	public void swipePoint(int startx, int starty, int endx, int endy) {
 		this.waitPageLoad(2);
 		this.getAndroidDriver().swipe(startx, starty, endx, endy, 500);
-		this.log("测试输出:《坐标(" + startx + "," + starty + ")-(" + endx + "," + endy + ")》已滑动!");
+		this.log("测试输出:《坐标(" + startx + "," + starty + ")-(" + endx + "," + endy + ")》已滑动！");
 	}
 
 	@Override
@@ -84,25 +84,25 @@ public class AndroidDriverExe implements IDriverExe {
 			if (direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_UP)){
 				this.getAndroidDriver().swipe(screenX/2, screenY*3/4, screenX/2, screenY/4, 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向上已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向上已滑动 " + num + " 次！》");
 				}
 			} else if (direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_DOWN)){
 				this.getAndroidDriver().swipe(screenX/2, screenY/4, screenX/2, screenY*3/4, 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向下已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向下已滑动 " + num + " 次！》");
 				}
 			} else if(direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_LEFT)){
 				this.getAndroidDriver().swipe(screenX*4/5, screenY/2, screenX/5, screenY/2, 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向左已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向左已滑动 " + num + " 次！》");
 				}
 			} else if(direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_RIGHT)){
 				this.getAndroidDriver().swipe(screenX/5, screenY/2, screenX*4/5, screenY/2, 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向右已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向右已滑动 " + num + " 次！》");
 				}
 			} else {
-				this.log("测试输出:《请选择正确的滑动方向!》");
+				this.log("测试输出:《请选择正确的滑动方向！》");
 			}
 			this.waitPageLoad(2);
 		}
@@ -120,25 +120,25 @@ public class AndroidDriverExe implements IDriverExe {
 			if (direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_UP)){
 				this.getAndroidDriver().swipe(screenX/2, (int) (screenY * perEnd), screenX/2, (int) (screenY * perStart), 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向上已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向上已滑动 " + num + " 次！》");
 				}
 			} else if (direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_DOWN)){
 				this.getAndroidDriver().swipe(screenX/2, (int) (screenY * perStart), screenX/2, (int) (screenY * perEnd), 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向下已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向下已滑动 " + num + " 次！》");
 				}
 			} else if(direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_LEFT)){
 				this.getAndroidDriver().swipe((int) (screenX * perEnd), screenY/2, (int) (screenX * perStart), screenY/2, 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向左已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向左已滑动 " + num + " 次！》");
 				}
 			} else if(direction.equalsIgnoreCase(Const.SWIPE_DIRECTION_RIGHT)){
 				this.getAndroidDriver().swipe((int) (screenX * perStart), screenY/2, (int) (screenX * perEnd), screenY/2, 500);
 				if(num == i - 1){
-					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向右已滑动 " + num + " 次!》");
+					this.log("测试输出:《屏幕(" + screenX + "," + screenY + ")向右已滑动 " + num + " 次！》");
 				}
 			} else {
-				this.log("测试输出:《请选择正确的滑动方向!》");
+				this.log("测试输出:《请选择正确的滑动方向！》");
 			}
 			this.waitPageLoad(2);
 		}
@@ -170,14 +170,14 @@ public class AndroidDriverExe implements IDriverExe {
 	public void tapPoint(int x, int y) {
 		this.waitPageLoad(2);
 		this.getAndroidDriver().tap(1, x, y, 100);
-		this.log("测试输出:《坐标(" + x + "," + y + ")》已点击!");
+		this.log("测试输出:《坐标(" + x + "," + y + ")》已点击！");
 	}
 
 	@Override
 	public void tapElement(UiObject ub, String message) {
 		if(PageUtil.isElementPresent(getAndroidDriver(), ub, message)){
 			ub.tap();
-			this.log("测试输出:《" + message + "》已点击!");
+			this.log("测试输出:《" + message + "》已点击！");
 		}
 	}
 	
@@ -201,7 +201,7 @@ public class AndroidDriverExe implements IDriverExe {
 		List<WebElement> list = this.getWebElements(Const.TYPE_XPATH, xpath);
 		if(list != null && !list.isEmpty()){
 			list.get(0).click();
-			this.log("测试输出:《" + message + "》已点击!");
+			this.log("测试输出:《" + message + "》已点击！");
 		}
 	}
 	
@@ -210,7 +210,7 @@ public class AndroidDriverExe implements IDriverExe {
 		List<WebElement> list = this.getWebElements(Const.TYPE_XPATH, xpath);
 		if(list != null && !list.isEmpty()){
 			list.get(index).click();
-			this.log("测试输出:《" + message + "》已点击!");
+			this.log("测试输出:《" + message + "》已点击！");
 		}
 	}
 	
@@ -219,7 +219,7 @@ public class AndroidDriverExe implements IDriverExe {
 		List<WebElement> list = this.getWebElements(Const.TYPE_ID, id);
 		if(list != null && !list.isEmpty()){
 			list.get(0).click();
-			this.log("测试输出:《" + message + "》已点击!");
+			this.log("测试输出:《" + message + "》已点击！");
 		}
 	}
 	
@@ -227,7 +227,7 @@ public class AndroidDriverExe implements IDriverExe {
 	public void tapElementByName(String name, String message) {
 		if(PageUtil.isElementPresent(getAndroidDriver(), name, message)){
 			this.getWebElements(Const.TYPE_NAME, name).get(0).click();
-			this.log("测试输出:《" + message + "》已点击!");
+			this.log("测试输出:《" + message + "》已点击！");
 		}
 	}
 	
@@ -239,7 +239,7 @@ public class AndroidDriverExe implements IDriverExe {
 				for (int i = 0; i < list.size(); i++) {
 					list.get(i).click();
 				}
-				this.log("测试输出:《" + message + "》已点击!");
+				this.log("测试输出:《" + message + "》已点击！");
 			}
 		}
 	}
@@ -247,14 +247,14 @@ public class AndroidDriverExe implements IDriverExe {
 	@Override
 	public void appendTextField(UiTextView utv, String text) {
 		utv.sendKeys(text);
-		this.log("测试输出:《文本(" + text + ")》已追加!");
+		this.log("测试输出:《文本(" + text + ")》已追加！");
 	}
 
 	@Override
 	public void clear2SetTextField(UiTextView utv, String text) {
 		this.clearTextField(utv);
 		utv.sendKeys(text);
-		this.log("测试输出:《文本(" + text + ")》已替换!");
+		this.log("测试输出:《文本(" + text + ")》已替换！");
 	}
 	
 	@Override
@@ -262,7 +262,7 @@ public class AndroidDriverExe implements IDriverExe {
 		String val = utv.getValue();
 		if(val != null && val.length() > 0){
 			this.getWebElement(Const.TYPE_XPATH, utv.getLocator()).clear();
-			this.log("测试输出:《文本(" + val + ")》已清除!");
+			this.log("测试输出:《文本(" + val + ")》已清除！");
 		}
 	}
 
@@ -286,7 +286,7 @@ public class AndroidDriverExe implements IDriverExe {
 	public void tapSpecifyDateElement(String dateStr, String message) {
 		if(PageUtil.isElementPresent(getAndroidDriver(), dateStr, message)){
 			this.getWebElement(Const.TYPE_NAME, dateStr).click();
-			this.log("测试输出:《" + message + "》已点击!");
+			this.log("测试输出:《" + message + "》已点击！");
 		}
 	}
 	
@@ -295,7 +295,7 @@ public class AndroidDriverExe implements IDriverExe {
 		String date = DateUtil.getSpecifyDate((num < 1)?1:num);
 		if(PageUtil.isElementPresent(getAndroidDriver(), date, message)){
 			this.getWebElement(Const.TYPE_NAME, date).click();
-			this.log("测试输出:《" + message + "-" + date + "》已点击!");
+			this.log("测试输出:《" + message + "-" + date + "》已点击！");
 		}
 	}
 	
@@ -304,7 +304,7 @@ public class AndroidDriverExe implements IDriverExe {
 		String date = DateUtil.getCurrentDate();
 		if(PageUtil.isElementPresent(getAndroidDriver(), date, message)){
 			this.getWebElement(Const.TYPE_NAME, date).click();
-			this.log("测试输出:《" + message + "-" + date + "》已点击!");
+			this.log("测试输出:《" + message + "-" + date + "》已点击！");
 		}
 	}
 	
@@ -313,7 +313,7 @@ public class AndroidDriverExe implements IDriverExe {
 		String date = DateUtil.getRandomDate((num < 1)?1:num);
 		if(PageUtil.isElementPresent(getAndroidDriver(), date, message)){
 			this.getWebElement(Const.TYPE_NAME, date).click();
-			this.log("测试输出:《" + message + "-" + date + "》已点击!");
+			this.log("测试输出:《" + message + "-" + date + "》已点击！");
 		}
 	}
 	
@@ -328,10 +328,10 @@ public class AndroidDriverExe implements IDriverExe {
 						list.get(list.size() - 1).click();
 						this.waitPageLoad(1);
 						if(this.isTextInPage("订单填写")){
-							this.log("测试输出:《" + message + "-" + date + "》已点击并且生效!");
+							this.log("测试输出:《" + message + "-" + date + "》已点击并且生效！");
 							return DateUtil.getSpecifyDate(i, "MM-dd");
 						}else{
-							this.log("测试输出:《" + message + "-" + date + "》已点击但未生效!");
+							this.log("测试输出:《" + message + "-" + date + "》已点击但未生效！");
 						}
 					}
 				}
@@ -496,11 +496,7 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 
 	@Override
-	public void browserClick(String keyName) {
-	}
-
-	@Override
-	public void scroll(String type, String locator) {
+	public void scroll(String type, String locator, String log) {
 	}
 
 	@Override
@@ -524,7 +520,7 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 
 	@Override
-	public void clickAndHold(String type, String locator) {
+	public void clickAndHold(String type, String locator, String log) {
 	}
 
 	@Override
@@ -532,15 +528,15 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 
 	@Override
-	public void click(String type, String locator) {
+	public void click(String type, String locator, String log) {
 	}
 
 	@Override
-	public void foundClick(String type, String locator) {
+	public void foundClick(String type, String locator, String log) {
 	}
 
 	@Override
-	public void clearText(String type, String locator) {
+	public void clearText(String type, String locator, String log) {
 	}
 
 	@Override
@@ -558,8 +554,16 @@ public class AndroidDriverExe implements IDriverExe {
 	}
 
 	@Override
-	public String getElementValue(String type, String locator) {
+	public String getElementValue(String type, String locator, String log) {
 		return null;
+	}
+
+	@Override
+	public void close() {
+	}
+
+	@Override
+	public void quit() {
 	}
 
 }

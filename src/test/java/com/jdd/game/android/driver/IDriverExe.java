@@ -6,11 +6,6 @@ import com.paypal.selion.platform.mobile.android.UiObject;
 import com.paypal.selion.platform.mobile.android.UiTextView;
 
 public interface IDriverExe {
-
-	/**
-	 * Mobile
-	 */
-	public void driverApp();
 	
 	/**
 	 * 页面后退
@@ -32,6 +27,45 @@ public interface IDriverExe {
 	 * @param s (等待时间:秒)
 	 */
 	public void waitPageLoad(long s);
+	
+	/**
+	 * 日志输出 (不截图)
+	 * @param message (消息文本)
+	 */
+	public void log(String message);
+	
+	/**
+	 * 日志输出(内部使用)
+	 * @param message (消息文本)
+	 * @param bool (是否截图)
+	 */
+	public void log(String message, boolean bool);
+	
+	/**
+	 * 日志输出(外部使用)
+	 * @param message (消息文本)
+	 * @param bool (是否截图)
+	 */
+	public void logOut(String message, boolean bool);
+	
+	/**
+	 * 取得元素
+	 * @param type (xpath or name)
+	 * @param text (验证文本)
+	 * @return
+	 */
+	public WebElement getWebElement(String type, String text);
+	
+	/**
+	 * 取得元素集
+	 * @param type (xpath or name)
+	 * @param text (验证文本)
+	 * @return
+	 */
+	public List<WebElement> getWebElements(String type, String text);
+
+	/* Mobile */
+	public void driverApp();
 	
 	/**
 	 * 取得坐标滑动
@@ -191,26 +225,6 @@ public interface IDriverExe {
 	public String tapAutoDateElement(String message);
 	
 	/**
-	 * 日志输出 (不截图)
-	 * @param message (消息文本)
-	 */
-	public void log(String message);
-	
-	/**
-	 * 日志输出(内部使用)
-	 * @param message (消息文本)
-	 * @param bool (是否截图)
-	 */
-	public void log(String message, boolean bool);
-	
-	/**
-	 * 日志输出(外部使用)
-	 * @param message (消息文本)
-	 * @param bool (是否截图)
-	 */
-	public void logOut(String message, boolean bool);
-	
-	/**
 	 * 断言控件是否存在当前页面
 	 * @param ub (UiObject控件)
 	 * @param message (消息文本)
@@ -244,22 +258,6 @@ public interface IDriverExe {
 	 * @return
 	 */
 	public String setIndexXpath(String xpath, int i);
-	
-	/**
-	 * 取得元素
-	 * @param type (xpath or name)
-	 * @param text (验证文本)
-	 * @return
-	 */
-	public WebElement getWebElement(String type, String text);
-	
-	/**
-	 * 取得元素集
-	 * @param type (xpath or name)
-	 * @param text (验证文本)
-	 * @return
-	 */
-	public List<WebElement> getWebElements(String type, String text);
 	
 	/**
 	 * 通过xpath取得WebElement的name
@@ -310,20 +308,16 @@ public interface IDriverExe {
 	 */
 	public void quitApp();
 	
-	/**
-	 * PC
-	 */
+	/* PC */
 	public void driverBrowser();
 	
 	public void open(String url);
 	
-	public void click(String type, String locator);
+	public void click(String type, String locator, String log);
 	
-	public void foundClick(String type, String locator);
+	public void foundClick(String type, String locator, String log);
 	
-	public void browserClick(String keyName);
-	
-	public void clearText(String type, String locator);
+	public void clearText(String type, String locator, String log);
 	
 	public boolean result(String text);
 	
@@ -331,9 +325,9 @@ public interface IDriverExe {
 	
 	public void sendKey(String type, String locator, String text);
 	
-	public String getElementValue(String type, String locator);
+	public String getElementValue(String type, String locator, String log);
 	
-	public void scroll(String type, String locator);
+	public void scroll(String type, String locator, String log);
 	
 	public void scrollTop(String direction);
 	
@@ -345,7 +339,12 @@ public interface IDriverExe {
 	
 	public void clickAlertDismiss();
 	
-	public void clickAndHold(String type, String locator);
+	public void clickAndHold(String type, String locator, String log);
 	
 	public void selectByValue(String type, String locator, String text);
+	
+	public void close();
+	
+	public void quit();
+	
 }

@@ -38,7 +38,7 @@ public class BrowserDriverExe implements IDriverExe {
 	
 	public RemoteWebDriver getBrowserDriver() {
 		if(this.rwd == null){
-			throw new AutoException("驱动异常:《请检查!》");
+			throw new AutoException("驱动异常:《请检查！》");
 		}
 		return (RemoteWebDriver) this.rwd;
 	}
@@ -49,24 +49,100 @@ public class BrowserDriverExe implements IDriverExe {
 	}
 	
 	@Override
-	public void driverApp(){
-	}
-
-	@Override
 	public void back() {
+		this.getBrowserDriver().navigate().back();
 	}
 
 	@Override
 	public void forward() {
+		this.getBrowserDriver().navigate().forward();
 	}
 
 	@Override
 	public void refresh() {
+		this.getBrowserDriver().navigate().refresh();
 	}
 
 	@Override
 	public void waitPageLoad(long s) {
-		SleepUtil.sleep(s);
+		SleepUtil.sleep(s * 1000);
+	}
+	
+	@Override
+	public void log(String message) {
+		if(StringUtils.isNotBlank(message) && message.contains("测试开始")){
+			startTime = System.currentTimeMillis();
+			System.out.println(message);
+			SeLionReporter.log(message, false);
+		}else if(StringUtils.isNotBlank(message) && message.contains("测试结束")){
+			startTime = 0;
+			System.out.println(message);
+			SeLionReporter.log(message, false);
+		}else{
+			String timeStr = DateUtil.subTime(System.currentTimeMillis() - startTime);
+			System.out.println(message + "--[耗时:" + timeStr +"]");
+			SeLionReporter.log(message + "--[耗时:" + timeStr +"]", false);
+			startTime = System.currentTimeMillis();
+		}
+	}
+
+	@Override
+	public void log(String message, boolean bool) {
+		System.out.println(message);
+		SeLionReporter.log(message, bool);
+	}
+
+	@Override
+	public void logOut(String message, boolean bool) {
+		log("测试输出:《" + message + "》", bool);
+	}
+	
+	@Override
+	public WebElement getWebElement(String type, String locator) {
+		RemoteWebDriver driver = this.getBrowserDriver();
+		WebElement e = null;
+		if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
+			e = driver.findElement(By.id(locator));
+		}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
+			e = driver.findElement(By.name(locator));
+		}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
+			e = driver.findElement(By.className(locator));
+		}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
+			e = driver.findElement(By.xpath(locator));
+		}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
+			e = driver.findElement(By.cssSelector(locator));
+		}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
+			e = driver.findElement(By.linkText(locator));
+		}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
+			e = driver.findElement(By.tagName(locator));
+		}
+		return e;
+	}
+
+	@Override
+	public List<WebElement> getWebElements(String type, String locator) {
+		RemoteWebDriver driver = this.getBrowserDriver();
+		List<WebElement> list = null;
+		if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
+    		list = driver.findElements(By.id(locator));
+		}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
+			list = driver.findElements(By.name(locator));
+		}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
+			list = driver.findElements(By.className(locator));
+		}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
+			list = driver.findElements(By.xpath(locator));
+		}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
+			list = driver.findElements(By.cssSelector(locator));
+		}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
+			list = driver.findElements(By.linkText(locator));
+		}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
+			list = driver.findElements(By.tagName(locator));
+		}
+		return list;
+	}
+	
+	@Override
+	public void driverApp(){
 	}
 
 	@Override
@@ -161,35 +237,6 @@ public class BrowserDriverExe implements IDriverExe {
 	}
 
 	@Override
-	public void log(String message) {
-		if(StringUtils.isNotBlank(message) && message.contains("测试开始")){
-			startTime = System.currentTimeMillis();
-			System.out.println(message);
-			SeLionReporter.log(message, false);
-		}else if(StringUtils.isNotBlank(message) && message.contains("测试结束")){
-			startTime = 0;
-			System.out.println(message);
-			SeLionReporter.log(message, false);
-		}else{
-			String timeStr = DateUtil.subTime(System.currentTimeMillis() - startTime);
-			System.out.println(message + "--[耗时:" + timeStr +"]");
-			SeLionReporter.log(message + "--[耗时:" + timeStr +"]", false);
-			startTime = System.currentTimeMillis();
-		}
-	}
-
-	@Override
-	public void log(String message, boolean bool) {
-		System.out.println(message);
-		SeLionReporter.log(message, bool);
-	}
-
-	@Override
-	public void logOut(String message, boolean bool) {
-		log("测试输出:《" + message + "》", bool);
-	}
-
-	@Override
 	public void assertElement(UiObject ub, String message) {
 	}
 
@@ -208,16 +255,6 @@ public class BrowserDriverExe implements IDriverExe {
 
 	@Override
 	public String setIndexXpath(String xpath, int i) {
-		return null;
-	}
-
-	@Override
-	public WebElement getWebElement(String type, String text) {
-		return null;
-	}
-
-	@Override
-	public List<WebElement> getWebElements(String type, String text) {
 		return null;
 	}
 
@@ -266,79 +303,36 @@ public class BrowserDriverExe implements IDriverExe {
 	@Override
 	public void open(String url) {
 		this.getBrowserDriver().get(url);
-		this.log("测试输出:《" + url + "》已打开!");
+		this.log("测试输出:《" + url + "》已打开！");
 	}
 	
 	@Override
-	public void click(String type, String locator) {
+	public void click(String type, String locator, String log) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				driver.findElement(By.id(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				driver.findElement(By.name(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				driver.findElement(By.className(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				driver.findElement(By.xpath(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				driver.findElement(By.cssSelector(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				driver.findElement(By.linkText(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				driver.findElement(By.tagName(locator)).click();
-			}
-			this.log("已点击[" + locator + "]");
+			getWebElement(type, locator).click();
+			this.log("测试输出:《" + log + "》已点击！");
 		}else{
-			this.log("未找到[" + locator + "]");
+			this.log("测试输出:《" + log + "》未找到！");
 		}
 	}
 
 	@Override
-	public void foundClick(String type, String locator) {
-		RemoteWebDriver driver = this.getBrowserDriver();
+	public void foundClick(String type, String locator, String log) {
 		if(isElementExist(type, locator)){
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				driver.findElement(By.id(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				driver.findElement(By.name(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				driver.findElement(By.className(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				driver.findElement(By.xpath(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				driver.findElement(By.cssSelector(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				driver.findElement(By.linkText(locator)).click();
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				driver.findElement(By.tagName(locator)).click();
-			}
-			this.log("已点击[" + locator + "]");
+			getWebElement(type, locator).click();
+			this.log("测试输出:《" + log + "》已点击！");
 		}else{
-			this.log("未找到[" + locator + "]");
+			this.log("测试输出:《" + log + "》未找到！");
 		}
 	}
 
 	@Override
-	public void clearText(String type, String locator) {
+	public void clearText(String type, String locator, String log) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				driver.findElement(By.id(locator)).clear();
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				driver.findElement(By.name(locator)).clear();
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				driver.findElement(By.className(locator)).clear();
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				driver.findElement(By.xpath(locator)).clear();
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				driver.findElement(By.cssSelector(locator)).clear();
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				driver.findElement(By.linkText(locator)).clear();
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				driver.findElement(By.tagName(locator)).clear();
-			}
-			this.log("清除值[" + locator + "]");
+			getWebElement(type, locator).clear();
+			this.log("测试输出:《" + log + "》清除值！");
 		}
 	}
 
@@ -347,7 +341,7 @@ public class BrowserDriverExe implements IDriverExe {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		driver.navigate().refresh();
 		boolean bool = (driver.getPageSource().indexOf(text) != -1);
-		this.log("结果验证[" + text + ":" + bool + "],Title[" + driver.getTitle() + "]");
+		this.log("测试输出:《" + text + "[" + bool + "][" + driver.getTitle() + "]》结果验证");
 		return bool;
 	}
 
@@ -355,27 +349,12 @@ public class BrowserDriverExe implements IDriverExe {
 	public boolean value(String type, String locator, String text) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
-			WebElement e = null;
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				e = driver.findElement(By.id(locator));
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				e = driver.findElement(By.name(locator));
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				e = driver.findElement(By.className(locator));
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				e = driver.findElement(By.xpath(locator));
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				e = driver.findElement(By.cssSelector(locator));
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				e = driver.findElement(By.linkText(locator));
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				e = driver.findElement(By.tagName(locator));
-			}
+			WebElement e = getWebElement(type, locator);
 			if (e != null && (text.equals(e.getText()) || text.equals(e.getAttribute("value")))) {
-				this.log("值验证[" + text + ":true]");
+				this.log("测试输出:《" + text + "[true]》值验证");
 				return true;
 			}
-			this.log("值验证[" + text + ":false]");
+			this.log("测试输出:《" + text + "[false]》值验证");
 		}
 		return false;
 	}
@@ -416,76 +395,36 @@ public class BrowserDriverExe implements IDriverExe {
 					e.clear();
 				}
 				e.sendKeys(text);
-				this.log("设置值[" + text + "]");
+				this.log("测试输出:《" + text + "》设置值");
 			}
 		}
 	}
 
 	@Override
-	public String getElementValue(String type, String locator) {
+	public String getElementValue(String type, String locator, String log) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		String result = null;
 		if(PageUtil.isElementPresent(driver, type, locator)){
-			WebElement e = null;
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				e = driver.findElement(By.id(locator));
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				e = driver.findElement(By.name(locator));
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				e = driver.findElement(By.className(locator));
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				e = driver.findElement(By.xpath(locator));
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				e = driver.findElement(By.cssSelector(locator));
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				e = driver.findElement(By.linkText(locator));
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				e = driver.findElement(By.tagName(locator));
-			}
+			WebElement e = getWebElement(type, locator);
 			if(e != null){
 				result = e.getText();
 				if(result == null){
 					result = e.getAttribute("value");
 				}
+				this.log("测试输出:《" + log + "》获取值");
 			}
 		}
 		return result;
 	}
 
 	@Override
-	public void browserClick(String keyName) {
-		RemoteWebDriver driver = this.getBrowserDriver();
-		if(Const.BROWSER_FORWARD.equals(keyName)){
-			driver.navigate().forward();
-		}else if(Const.BROWSER_BACK.equals(keyName)){
-			driver.navigate().back();
-		}else if(Const.BROWSER_REFRESH.equals(keyName)){
-			driver.navigate().refresh();
-		}
-	}
-
-	@Override
-	public void scroll(String type, String locator) {
+	public void scroll(String type, String locator, String log) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
-			WebElement e = null;
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				e = driver.findElement(By.id(locator));
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				e = driver.findElement(By.name(locator));
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				e = driver.findElement(By.className(locator));
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				e = driver.findElement(By.xpath(locator));
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				e = driver.findElement(By.cssSelector(locator));
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				e = driver.findElement(By.linkText(locator));
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				e = driver.findElement(By.tagName(locator));
-			}
+			WebElement e = getWebElement(type, locator);
 			if(e != null){
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", e);
+				this.log("测试输出:《" + log + "》滑动");
 			}
 		}
 	}
@@ -495,8 +434,10 @@ public class BrowserDriverExe implements IDriverExe {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(Const.PC_SCROLLTOP_TOP.equals(direction)){
 			((JavascriptExecutor) driver).executeScript("document.documentElement.scrollTop=0");
+			this.log("测试输出:《顶端》滑动");
 		}else if(Const.PC_SCROLLTOP_BOTTOM.equals(direction)){
 			((JavascriptExecutor) driver).executeScript("document.documentElement.scrollTop=10000");
+			this.log("测试输出:《底端》滑动");
 		}
 	}
 
@@ -536,6 +477,7 @@ public class BrowserDriverExe implements IDriverExe {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
+		this.log("测试输出:《弹框-允许》已点击");
 	}
 
 	@Override
@@ -543,31 +485,18 @@ public class BrowserDriverExe implements IDriverExe {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		Alert alert = driver.switchTo().alert();
         alert.dismiss();
+        this.log("测试输出:《弹框-取消》已点击");
 	}
 
 	@Override
-	public void clickAndHold(String type, String locator) {
+	public void clickAndHold(String type, String locator, String log) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
-			WebElement e = null;
+			WebElement e = getWebElement(type, locator);
 			Actions action = new Actions(driver);
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				e = driver.findElement(By.id(locator));
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				e = driver.findElement(By.name(locator));
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				e = driver.findElement(By.className(locator));
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				e = driver.findElement(By.xpath(locator));
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				e = driver.findElement(By.cssSelector(locator));
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				e = driver.findElement(By.linkText(locator));
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				e = driver.findElement(By.tagName(locator));
-			}
 			if(e != null){
 				action.moveToElement(e).perform();
+				this.log("测试输出:《" + log + "》光标移动");
 			}
 		}
 	}
@@ -576,22 +505,7 @@ public class BrowserDriverExe implements IDriverExe {
 	public void selectByValue(String type, String locator, String text) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
-			WebElement e = null;
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-				e = driver.findElement(By.id(locator));
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				e = driver.findElement(By.name(locator));
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				e = driver.findElement(By.className(locator));
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				e = driver.findElement(By.xpath(locator));
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				e = driver.findElement(By.cssSelector(locator));
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				e = driver.findElement(By.linkText(locator));
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				e = driver.findElement(By.tagName(locator));
-			}
+			WebElement e = getWebElement(type, locator);
 			if(e != null){
 				if("select".equalsIgnoreCase(e.getTagName().trim())){
 					Select select = new Select(e);
@@ -599,30 +513,25 @@ public class BrowserDriverExe implements IDriverExe {
 				}else{
 					e.sendKeys(text);
 				}
+				this.log("测试输出:《" + text + "》选择值");
 			}
 		}
 	}
 	
+	@Override
+	public void close() {
+		this.getBrowserDriver().close();
+	}
+
+	@Override
+	public void quit() {
+		this.getBrowserDriver().quit();
+	}
+	
 	private boolean isElementExist(String type, String locator){
-		RemoteWebDriver driver = this.getBrowserDriver();
 		int index = 0;
 		while (index < 1) {
-			List<?> list = null;
-			if (Const.LOCATIONTYPE_PC_ID.equals(type)) {
-        		list = driver.findElements(By.id(locator));
-			}else if (Const.LOCATIONTYPE_PC_NAME.equals(type)) {
-				list = driver.findElements(By.name(locator));
-			}else if (Const.LOCATIONTYPE_PC_CLASS.equals(type)) {
-				list = driver.findElements(By.className(locator));
-			}else if (Const.LOCATIONTYPE_PC_XPATH.equals(type)) {
-				list = driver.findElements(By.xpath(locator));
-			}else if (Const.LOCATIONTYPE_PC_CSS.equals(type)) {
-				list = driver.findElements(By.cssSelector(locator));
-			}else if (Const.LOCATIONTYPE_PC_LINK.equals(type)) {
-				list = driver.findElements(By.linkText(locator));
-			}else if (Const.LOCATIONTYPE_PC_TAG.equals(type)) {
-				list = driver.findElements(By.tagName(locator));
-			}
+			List<?> list = getWebElements(type, locator);
         	if(list != null && !list.isEmpty()){
         		return true;
         	}
