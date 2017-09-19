@@ -62,7 +62,6 @@ public abstract class AbsParentTest extends AppDriver{
 		driverExe.log("测试输出:《" + testName + "-【" + caseName + "】》测试结束！");
 		driverExe.closeApp();
 		driverExe.quitApp();
-		AdbUtil.clearApp();
 	}
 	
 	private void login(String username, String password) {

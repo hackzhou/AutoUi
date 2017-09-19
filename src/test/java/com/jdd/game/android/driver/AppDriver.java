@@ -13,6 +13,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import com.jdd.game.android.driver.impl.AndroidDriverExe;
 import com.jdd.game.android.exception.AutoException;
+import com.jdd.game.android.utils.AdbUtil;
 import com.paypal.selion.configuration.Config;
 import com.paypal.selion.platform.grid.browsercapabilities.DefaultCapabilitiesBuilder;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -68,6 +69,7 @@ public class AppDriver {
 			Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_PATH, new File(appPath).getAbsolutePath());
 		}else{
 			if(StringUtils.isNotBlank(appName) && StringUtils.isNotBlank(appActivity)){
+				AdbUtil.clearApp();
 				Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_NAME, appName);
 				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_PACKAGE, appName);
 				Config.setConfigProperty(Config.ConfigProperty.ANDROID_APP_MAIN_ACTIVITY, appActivity);
