@@ -7,13 +7,13 @@ elements:
       US: "//android.widget.Button[@resource-id='com.huawei.systemmanager:id/btn_allow']" #设备-允许
   youxidatingUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/tab_game']" #游戏大厅
+      US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.TextView[1]" #游戏大厅
   lingjiangtaiUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/tab_prize']" #领奖台
+      US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.TextView[2]" #领奖台
   wodeUiObject:
     locators:
-      US: "//android.widget.TextView[@resource-id='com.jddfun.game:id/tab_me']" #我的
+      US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.TextView[3]" #我的
   fanhuiUiObject:
     locators:
       US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/iv_iv_back']" #返回
