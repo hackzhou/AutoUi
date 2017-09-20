@@ -108,7 +108,7 @@ public class AppDriver {
 	    	capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, prop.getProperty("timeout.command"));
 	        capabilities.setCapability(MobileCapabilityType.UDID, prop.getProperty("device.udid"));
 	        //capabilities.setCapability(MobileCapabilityType.AUTO_WEBVIEW, true);
-	        capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
+	        //capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
 	        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 	        capabilities.setCapability("autoWebviewTimeout", prop.getProperty("timeout.webview"));
 	        capabilities.setCapability("unicodeKeyboard", true);

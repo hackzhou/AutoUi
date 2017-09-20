@@ -64,6 +64,7 @@ public class BrowserDriver {
 			Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_NAME, "browser");
 		}else{
 			Config.setConfigProperty(Config.ConfigProperty.MOBILE_APP_NAME, browser);
+			Config.setConfigProperty(Config.ConfigProperty.BROWSER, browser);
 		}
 		Config.setConfigProperty(Config.ConfigProperty.EXECUTION_TIMEOUT, timeout);
 		Config.setConfigProperty(Config.ConfigProperty.MOBILE_NODE_TYPE, type);
@@ -94,7 +95,7 @@ public class BrowserDriver {
 	    	capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, prop.getProperty("timeout.command"));
 	        capabilities.setCapability(MobileCapabilityType.UDID, prop.getProperty("device.udid"));
 	        //capabilities.setCapability(MobileCapabilityType.AUTO_WEBVIEW, true);
-	        capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
+	        //capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
 	        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 	        capabilities.setCapability("autoWebviewTimeout", prop.getProperty("timeout.webview"));
 	        capabilities.setCapability("unicodeKeyboard", true);
