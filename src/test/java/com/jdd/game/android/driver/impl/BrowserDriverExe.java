@@ -303,6 +303,7 @@ public class BrowserDriverExe implements IDriverExe {
 	@Override
 	public void open(String url) {
 		this.getBrowserDriver().get(url);
+		this.waitPageLoad(2);
 		this.log("测试输出:《" + url + "》已打开！");
 	}
 	
@@ -310,6 +311,7 @@ public class BrowserDriverExe implements IDriverExe {
 	public void click(String type, String locator, String log) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
+			this.waitPageLoad(1);
 			getWebElement(type, locator).click();
 			this.log("测试输出:《" + log + "》已点击！");
 		}else{
@@ -320,6 +322,7 @@ public class BrowserDriverExe implements IDriverExe {
 	@Override
 	public void foundClick(String type, String locator, String log) {
 		if(isElementExist(type, locator)){
+			this.waitPageLoad(1);
 			getWebElement(type, locator).click();
 			this.log("测试输出:《" + log + "》已点击！");
 		}else{
@@ -331,6 +334,7 @@ public class BrowserDriverExe implements IDriverExe {
 	public void clearText(String type, String locator, String log) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
+			this.waitPageLoad(1);
 			getWebElement(type, locator).clear();
 			this.log("测试输出:《" + log + "》清除值！");
 		}
@@ -339,9 +343,9 @@ public class BrowserDriverExe implements IDriverExe {
 	@Override
 	public boolean result(String text) {
 		RemoteWebDriver driver = this.getBrowserDriver();
-		driver.navigate().refresh();
+		this.waitPageLoad(1);
 		boolean bool = (driver.getPageSource().indexOf(text) != -1);
-		this.log("测试输出:《" + text + "[" + bool + "][" + driver.getTitle() + "]》结果验证");
+		this.log("测试输出:《" + text + "[" + bool + "]》结果验证");
 		return bool;
 	}
 
@@ -349,6 +353,7 @@ public class BrowserDriverExe implements IDriverExe {
 	public boolean value(String type, String locator, String text) {
 		RemoteWebDriver driver = this.getBrowserDriver();
 		if(PageUtil.isElementPresent(driver, type, locator)){
+			this.waitPageLoad(1);
 			WebElement e = getWebElement(type, locator);
 			if (e != null && (text.equals(e.getText()) || text.equals(e.getAttribute("value")))) {
 				this.log("测试输出:《" + text + "[true]》值验证");
@@ -411,7 +416,7 @@ public class BrowserDriverExe implements IDriverExe {
 				if(result == null){
 					result = e.getAttribute("value");
 				}
-				this.log("测试输出:《" + log + "》获取值");
+				this.log("测试输出:《" + log + "[" + result + "]》获取值");
 			}
 		}
 		return result;
