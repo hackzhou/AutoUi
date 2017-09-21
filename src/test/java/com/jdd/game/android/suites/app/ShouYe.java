@@ -106,9 +106,9 @@ public class ShouYe extends AbsParentTest {
 		driverExe.tapElementWebView(phbp.getFuhaobangUiObject().getLocator(), "富豪榜");
 		driverExe.waitPageLoad(1);
 		driverExe.logOut("验证查看富豪榜", true);
-		driverExe.tapElementWebView(phbp.getBangzhuUiObject().getLocator(), "帮助");
-		driverExe.waitPageLoad(3);
-		driverExe.assertPage("帮助中心");
+//		driverExe.tapElementWebView(phbp.getBangzhuUiObject().getLocator(), "帮助");
+//		driverExe.waitPageLoad(3);
+//		driverExe.assertPage("帮助中心");
 		endTest(JDDFUN_GAME, PAI_HANG_BANG);
 	}
 	
