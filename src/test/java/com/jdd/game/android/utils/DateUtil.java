@@ -74,8 +74,9 @@ public class DateUtil {
 		long min = ((l / (60 * 1000)) - day * 24 * 60 - hour * 60);
 		String minStr = (min == 0) ? "" : min + "分";
 		long s = (l / 1000 - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60);
-		String sStr = (s == 0) ? "<1秒" : s + "秒";
-		return dayStr + hourStr + minStr + sStr;
+		String sStr = (s == 0) ? "" : s + "秒";
+		String result = dayStr + hourStr + minStr + sStr;
+		return result == "" ? "<1秒" : result;
 	}
 	
 }

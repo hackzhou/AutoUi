@@ -10,10 +10,10 @@ elements:
       US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.TextView[1]" #游戏大厅
   lingjiangtaiUiObject:
     locators:
-      US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.TextView[2]" #领奖台
+      US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.TextView" #领奖台
   wodeUiObject:
     locators:
-      US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.TextView[3]" #我的
+      US: "//android.widget.FrameLayout[@resource-id='com.jddfun.game:id/bottom']/android.widget.LinearLayout[2]/android.widget.TextView[2]" #我的
   fanhuiUiObject:
     locators:
       US: "//android.widget.ImageView[@resource-id='com.jddfun.game:id/iv_iv_back']" #返回
