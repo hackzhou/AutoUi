@@ -1,7 +1,7 @@
 package com.jdd.game.android.suites;
 
 import com.jdd.game.android.driver.AppDriver;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IAppDriverExe;
 import com.jdd.game.android.utils.AdbUtil;
 import com.jdd.pages.CaiDanPage;
 import com.jdd.pages.DengLuPage;
@@ -17,7 +17,7 @@ public abstract class AbsParentTest extends AppDriver{
 	 * @param login (是否登录)
 	 * @return
 	 */
-	protected IDriverExe startTest(String testName, String caseName, Integer page, boolean login) {
+	protected IAppDriverExe startTest(String testName, String caseName, Integer page, boolean login) {
 		return startTest(testName, caseName, page, login, null, null);
 	}
 	
@@ -31,8 +31,8 @@ public abstract class AbsParentTest extends AppDriver{
 	 * @param password (密码)
 	 * @return
 	 */
-	protected IDriverExe startTest(String testName, String caseName, Integer page, boolean login, String username, String password) {
-		IDriverExe driverExe = runAndroidDriverExe();
+	protected IAppDriverExe startTest(String testName, String caseName, Integer page, boolean login, String username, String password) {
+		IAppDriverExe driverExe = runAndroidDriverExe();
 		driverExe.waitPageLoad(1);
 		driverExe.log("测试输出:《" + testName + "-【" + caseName + "】》测试开始！");
 		if(login){
@@ -56,7 +56,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	protected void endTest(String testName, String caseName) {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		driverExe.waitPageLoad(1);
 		driverExe.log("测试输出:《" + testName + "-【" + caseName + "】》测试结束！");
 		driverExe.closeApp();
@@ -64,7 +64,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	private void login(String username, String password) {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		DengLuPage dlp = new DengLuPage();
 		driverExe.tapElement(dlp.getShoujidengluUiObject(), "手机登录");
 		driverExe.appendTextField(dlp.getShoujihaomaUiTextView(), username);
@@ -76,7 +76,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	private void shiWan() {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		DengLuPage dlp = new DengLuPage();
 		driverExe.tapElement(dlp.getYoukeshiwanUiObject(), "游客试玩");
 		if(waitCloseDialog()){
@@ -85,7 +85,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	private boolean waitCloseDialog() {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		for (int i = 0; i < WAIT_HOME_PAGE_DIALOG; i++) {
 			driverExe.waitPageLoad(1);
 			if(driverExe.isTextInPage("每日签到") && driverExe.isTextInPage("敬请期待")){
@@ -96,7 +96,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	private void closeDialog() {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		CaiDanPage cdp = new CaiDanPage();
 		driverExe.tapElement(cdp.getLijichoujiangUiObject(), "立即抽奖");
 		driverExe.foundTapElement(cdp.getHuodongguanbiUiObject(), "活动关闭");
@@ -115,7 +115,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	protected void openYouXiDaTing() {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		CaiDanPage cdp = new CaiDanPage();
 		driverExe.tapElement(cdp.getYouxidatingUiObject(), "游戏大厅");
 		if(!driverExe.isTextInPage("下级奖励")){
@@ -125,7 +125,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	protected void openLingJiangTai() {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		CaiDanPage cdp = new CaiDanPage();
 		driverExe.tapElement(cdp.getLingjiangtaiUiObject(), "领奖台");
 		if(!driverExe.isTextInPage("我的碎片合集")){
@@ -135,7 +135,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	protected void openWoDe() {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		CaiDanPage cdp = new CaiDanPage();
 		//driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.1, 1);
 		driverExe.tapElement(cdp.getWodeUiObject(), "我的");
@@ -146,7 +146,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	protected void openFenXiangQuan(){
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		driverExe.assertPage("大神分享", "验证[大神分享]是否存在");
 		driverExe.assertPage("查看更多", "验证[查看更多]是否存在");
 		AdbUtil.openPage(AdbUtil.ACTIVITY_FENXIANGQUAN);
@@ -154,7 +154,7 @@ public abstract class AbsParentTest extends AppDriver{
 	}
 	
 	protected void back() {
-		IDriverExe driverExe = getAndroidDriverExe();
+		IAppDriverExe driverExe = getAndroidDriverExe();
 		driverExe.tapElement(new CaiDanPage().getFanhuiUiObject(), "返回");
 		driverExe.waitPageLoad(1);
 	}

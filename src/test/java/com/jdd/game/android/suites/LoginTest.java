@@ -3,7 +3,7 @@ package com.jdd.game.android.suites;
 import org.testng.annotations.Test;
 import org.testng.annotations.Listeners;
 import com.paypal.selion.annotations.MobileTest;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IAppDriverExe;
 import com.jdd.game.android.report.MyReporter;
 import com.jdd.pages.DengLuPage;
 
@@ -15,7 +15,7 @@ public class LoginTest extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void login() {
-		IDriverExe driverExe = startTest(NAME_TEST, LOGIN_TEST, 0, false);
+		IAppDriverExe driverExe = startTest(NAME_TEST, LOGIN_TEST, 0, false);
 		DengLuPage dl = new DengLuPage();
 		driverExe.tapElement(dl.getShoujidengluUiObject(), "点击手机登录");
 		driverExe.appendTextField(dl.getShoujihaomaUiTextView(), "13151815253");

@@ -5,7 +5,12 @@ import org.openqa.selenium.WebElement;
 import com.paypal.selion.platform.mobile.android.UiObject;
 import com.paypal.selion.platform.mobile.android.UiTextView;
 
-public interface IDriverExe {
+public interface IAppDriverExe {
+	
+	/**
+	 * 驱动打开运行App
+	 */
+	public void driverApp();
 	
 	/**
 	 * 页面后退
@@ -64,9 +69,6 @@ public interface IDriverExe {
 	 */
 	public List<WebElement> getWebElements(String type, String text);
 
-	/* Mobile */
-	public void driverApp();
-	
 	/**
 	 * 取得坐标滑动
 	 * @param startx (开始坐标X轴)
@@ -307,44 +309,5 @@ public interface IDriverExe {
 	 * 退出APP
 	 */
 	public void quitApp();
-	
-	/* PC */
-	public void driverBrowser();
-	
-	public void open(String url);
-	
-	public void click(String type, String locator, String log);
-	
-	public void foundClick(String type, String locator, String log);
-	
-	public void clearText(String type, String locator, String log);
-	
-	public boolean result(String text);
-	
-	public boolean value(String type, String locator, String text);
-	
-	public void sendKey(String type, String locator, String text);
-	
-	public String getElementValue(String type, String locator, String log);
-	
-	public void scroll(String type, String locator, String log);
-	
-	public void scrollTop(String direction);
-	
-	public void switchToWindow(String windowTitle);
-	
-	public void switchToFrame(String id);
-	
-	public void clickAlertSure();
-	
-	public void clickAlertDismiss();
-	
-	public void clickAndHold(String type, String locator, String log);
-	
-	public void selectByValue(String type, String locator, String text);
-	
-	public void close();
-	
-	public void quit();
-	
+
 }

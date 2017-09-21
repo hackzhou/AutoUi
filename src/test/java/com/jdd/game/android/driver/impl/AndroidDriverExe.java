@@ -1,13 +1,12 @@
 package com.jdd.game.android.driver.impl;
 
 import java.util.List;
-import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import com.jdd.game.android.constants.Const;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IAppDriverExe;
 import com.jdd.game.android.exception.AutoException;
 import com.jdd.game.android.utils.DateUtil;
 import com.jdd.game.android.utils.PageUtil;
@@ -18,7 +17,7 @@ import com.paypal.selion.platform.mobile.android.UiObject;
 import com.paypal.selion.platform.mobile.android.UiTextView;
 import com.paypal.selion.reports.runtime.SeLionReporter;
 
-public class AndroidDriverExe implements IDriverExe {
+public class AndroidDriverExe implements IAppDriverExe {
 
 	private RemoteWebDriver rwd = null;
 	private long startTime = 0;
@@ -483,95 +482,6 @@ public class AndroidDriverExe implements IDriverExe {
 	@Override
 	public void quitApp() {
 		this.getAndroidDriver().quit();
-	}
-
-	/**
-	 * PC
-	 */
-	@Override
-	public void driverBrowser(){
-	}
-	
-	@Override
-	public void open(String url) {
-	}
-
-	@Override
-	public void scroll(String type, String locator, String log) {
-	}
-
-	@Override
-	public void scrollTop(String direction) {
-	}
-
-	@Override
-	public void switchToWindow(String windowTitle) {
-		Set<String> contextNames = getAndroidDriver().getContextHandles();
-	    for (String contextName : contextNames) {
-	    	if (contextName.contains(windowTitle)) {
-	        	getAndroidDriver().context(contextName);
-	            break;
-	        }
-		}
-	}
-
-	@Override
-	public void switchToFrame(String id) {
-	}
-
-	@Override
-	public void clickAlertSure() {
-	}
-
-	@Override
-	public void clickAlertDismiss() {
-	}
-
-	@Override
-	public void clickAndHold(String type, String locator, String log) {
-	}
-
-	@Override
-	public void selectByValue(String type, String locator, String text) {
-	}
-
-	@Override
-	public void click(String type, String locator, String log) {
-	}
-
-	@Override
-	public void foundClick(String type, String locator, String log) {
-	}
-
-	@Override
-	public void clearText(String type, String locator, String log) {
-	}
-
-	@Override
-	public boolean result(String text) {
-		return false;
-	}
-
-	@Override
-	public boolean value(String type, String locator, String text) {
-		return false;
-	}
-
-	@Override
-	public void sendKey(String type, String locator, String text) {
-	}
-
-	@Override
-	public String getElementValue(String type, String locator, String log) {
-		return null;
-	}
-
-	@Override
-	public void close() {
-	}
-
-	@Override
-	public void quit() {
 	}
 
 }

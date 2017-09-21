@@ -5,7 +5,7 @@ package com.jdd.game.android.suites.app;
 import org.testng.annotations.Test;
 import com.paypal.selion.annotations.MobileTest;
 import com.jdd.game.android.constants.Const;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IAppDriverExe;
 import com.jdd.game.android.suites.AbsParentTest;
 import com.jdd.pages.*;
 
@@ -23,7 +23,7 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void YeMianXianShi() {//页面元素显示
-		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 0, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 0, true);
 		CaiDanPage cdp = new CaiDanPage();
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		XiaoXiZhongXinPage xxzxp = new XiaoXiZhongXinPage();
@@ -59,7 +59,7 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void ChongZhiTiaoZhuan() {//充值跳转
-		IDriverExe driverExe = startTest(JDDFUN_GAME, CHONG_ZHI_TIAO_ZHUAN, 0, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, CHONG_ZHI_TIAO_ZHUAN, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		ChongZhiPage czp = new ChongZhiPage();
 		driverExe.tapElement(yxdtp.getJinyezishuUiObject(), "金叶子数");
@@ -73,7 +73,7 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void MeiRiQianDao() {//每日签到
-		IDriverExe driverExe = startTest(JDDFUN_GAME, MEI_RI_QIAN_DAO, 0, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, MEI_RI_QIAN_DAO, 0, true);
 		CaiDanPage cdp = new CaiDanPage();
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		driverExe.assertElement(yxdtp.getRenwuUiObject(), "任务");
@@ -89,7 +89,7 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void PaiHangBang() {//排行榜
-		IDriverExe driverExe = startTest(JDDFUN_GAME, PAI_HANG_BANG, 0, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, PAI_HANG_BANG, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		PaiHangBangPage phbp = new PaiHangBangPage();
 		driverExe.tapElement(yxdtp.getJinrupaihangbangUiObject(), "进入排行榜");
@@ -115,7 +115,7 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void LunBoTu() {//轮播图
-		IDriverExe driverExe = startTest(JDDFUN_GAME, LUN_BO_TU, 0, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, LUN_BO_TU, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		driverExe.tapElement(yxdtp.getLunbotuUiObject(), "轮播图");
 		driverExe.waitPageLoad(3);
@@ -126,7 +126,7 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void GongLueFenXiang() {//攻略分享
-		IDriverExe driverExe = startTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG, 0, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, GONG_LUE_FEN_XIANG, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		driverExe.swipeDirection(Const.SWIPE_DIRECTION_UP, 0.3, 1);
 		driverExe.tapElement(yxdtp.getGonglueUiObject(), "攻略");
@@ -138,7 +138,7 @@ public class ShouYe extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void CeBianLan() {//侧边栏
-		IDriverExe driverExe = startTest(JDDFUN_GAME, CE_BIAN_LAN, 0, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, CE_BIAN_LAN, 0, true);
 		YouXiDaTingPage yxdtp = new YouXiDaTingPage();
 		if(driverExe.isTextInPage("立即开启")){
 			driverExe.tapElement(yxdtp.getLijikaiqiUiObject(), "立即开启");

@@ -2,7 +2,7 @@ package com.jdd.game.android.browser;
 
 import org.testng.annotations.Test;
 import com.jdd.game.android.constants.Const;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IWapDriverExe;
 import com.paypal.selion.annotations.MobileTest;
 
 public class BrowserTest2 extends AbsParentTest{
@@ -12,7 +12,7 @@ public class BrowserTest2 extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void testWithBrowser() {
-		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI);
 		driverExe.open("https://m.baidu.com/");
 		driverExe.sendKey(Const.LOCATIONTYPE_PC_XPATH, "//*[@id='index-kw']", "苏州");
 		driverExe.click(Const.LOCATIONTYPE_PC_XPATH, "//*[@id='index-bn']", "百度一下");

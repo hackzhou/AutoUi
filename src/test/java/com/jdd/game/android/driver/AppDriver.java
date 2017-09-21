@@ -22,7 +22,7 @@ public class AppDriver {
 	
 	private static ClassLoader loader = Thread.currentThread().getContextClassLoader();
 	private static Properties prop = new Properties();
-	private static IDriverExe androidDriverExe = null;
+	private static IAppDriverExe androidDriverExe = null;
 	private static boolean clearBool = false;
 
 	static {
@@ -142,10 +142,10 @@ public class AppDriver {
 		}
     }
 	
-	protected static IDriverExe getAndroidDriverExe() {
+	protected static IAppDriverExe getAndroidDriverExe() {
 		return androidDriverExe;
 	}
-	protected static IDriverExe runAndroidDriverExe() {
+	protected static IAppDriverExe runAndroidDriverExe() {
 		if(clearBool){
 			AdbUtil.clearApp();
 		}

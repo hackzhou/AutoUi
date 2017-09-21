@@ -4,7 +4,7 @@ package com.jdd.game.android.suites.app;
 //import com.jdd.game.android.report.MyReporter;
 import org.testng.annotations.Test;
 import com.jdd.game.android.constants.Const;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IAppDriverExe;
 import com.jdd.game.android.suites.AbsParentTest;
 import com.paypal.selion.annotations.MobileTest;
 import com.jdd.pages.*;
@@ -18,7 +18,7 @@ public class LingJiangTai extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void YeMianXianShi() {//页面元素显示
-		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 2, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 2, true);
 		LingJiangTaiPage ljtp = new LingJiangTaiPage();
 		driverExe.assertElement(ljtp.getXingyundachoujiangUiObject(), "幸运大抽奖");
 		driverExe.logOut("免费抽奖次数[" + driverExe.getNameByXpath(ljtp.getMianfeicishuUiObject().getLocator()) + "]", false);
@@ -38,7 +38,7 @@ public class LingJiangTai extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void SuiPianShiWu() {//碎片实物
-		IDriverExe driverExe = startTest(JDDFUN_GAME, SUI_PIAN_SHI_WU, 2, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, SUI_PIAN_SHI_WU, 2, true);
 		LingJiangTaiPage ljtp = new LingJiangTaiPage();
 		driverExe.assertPage("碎片记录");
 		driverExe.assertPage("实物记录");

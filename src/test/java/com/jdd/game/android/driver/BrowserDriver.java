@@ -20,7 +20,7 @@ public class BrowserDriver {
 	
 	private static ClassLoader loader = Thread.currentThread().getContextClassLoader();
 	private static Properties prop = new Properties();
-	private static IDriverExe browserDriverExe = null;
+	private static IWapDriverExe browserDriverExe = null;
 
 	static {
 		InputStream input = loader.getResourceAsStream("appium.properties");
@@ -121,10 +121,10 @@ public class BrowserDriver {
 		}
     }
 	
-	protected static IDriverExe getBrowserDriverExe() {
+	protected static IWapDriverExe getBrowserDriverExe() {
 		return browserDriverExe;
 	}
-	protected static IDriverExe runBrowserDriverExe() {
+	protected static IWapDriverExe runBrowserDriverExe() {
 		if(browserDriverExe != null){
 			browserDriverExe.driverBrowser();
 		}

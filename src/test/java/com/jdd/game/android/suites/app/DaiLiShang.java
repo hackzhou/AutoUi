@@ -3,7 +3,7 @@ package com.jdd.game.android.suites.app;
 //import org.testng.annotations.Listeners;
 //import com.jdd.game.android.report.MyReporter;
 import org.testng.annotations.Test;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IAppDriverExe;
 import com.jdd.game.android.suites.AbsParentTest;
 import com.paypal.selion.annotations.MobileTest;
 import com.jdd.pages.*;
@@ -16,7 +16,7 @@ public class DaiLiShang extends AbsParentTest {
 	@Test
 	@MobileTest
 	public void YeMianXianShi() {//页面元素显示
-		IDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 3, true);
+		IAppDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, 3, true);
 		WoDePage wdp = new WoDePage();
 		YaoQingHaoYouPage yqhyp = new YaoQingHaoYouPage();
 		WoDeHaoYouPage wdhyp = new WoDeHaoYouPage();

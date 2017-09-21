@@ -2,7 +2,6 @@ package com.jdd.game.android.driver.impl;
 
 import java.util.List;
 import java.util.Set;
-
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -13,17 +12,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import com.jdd.game.android.constants.Const;
-import com.jdd.game.android.driver.IDriverExe;
+import com.jdd.game.android.driver.IWapDriverExe;
 import com.jdd.game.android.exception.AutoException;
 import com.jdd.game.android.utils.DateUtil;
 import com.jdd.game.android.utils.PageUtil;
 import com.jdd.game.android.utils.SleepUtil;
 import com.paypal.selion.platform.grid.Grid;
-import com.paypal.selion.platform.mobile.android.UiObject;
-import com.paypal.selion.platform.mobile.android.UiTextView;
 import com.paypal.selion.reports.runtime.SeLionReporter;
 
-public class BrowserDriverExe implements IDriverExe {
+public class BrowserDriverExe implements IWapDriverExe {
 
 	private RemoteWebDriver rwd = null;
 	private long startTime = 0;
@@ -140,171 +137,17 @@ public class BrowserDriverExe implements IDriverExe {
 		}
 		return list;
 	}
-	
-	@Override
-	public void driverApp(){
-	}
 
-	@Override
-	public void swipePoint(int startx, int starty, int endx, int endy) {
-	}
-
-	@Override
-	public void swipeDirection(String direction, int num) {
-	}
-
-	@Override
-	public void swipeDirection(String direction, double per, int num) {
-	}
-
-	@Override
-	public void tapPoint(int x, int y) {
-	}
-
-	@Override
-	public void tapElement(UiObject ub, String message) {
-	}
-
-	@Override
-	public void foundTapElement(UiObject ub, String message) {
-	}
-
-	@Override
-	public void tapElementWebView(String xpath, String message) {
-	}
-
-	@Override
-	public void tapElementByXpath(String xpath, String message) {
-	}
-
-	@Override
-	public void tapElementByXpath(String xpath, Integer index, String message) {
-	}
-
-	@Override
-	public void tapElementByID(String name, String message) {
-	}
-
-	@Override
-	public void tapElementByName(String name, String message) {
-	}
-
-	@Override
-	public void tapElementsByName(String name, String message) {
-	}
-
-	@Override
-	public void appendTextField(UiTextView utv, String text) {
-	}
-
-	@Override
-	public void clear2SetTextField(UiTextView utv, String text) {
-	}
-
-	@Override
-	public void clearTextField(UiTextView utv) {
-	}
-
-	@Override
-	public boolean isTextInPage(String text) {
-		return false;
-	}
-
-	@Override
-	public boolean compareTextInPage(String textA, String textB) {
-		return false;
-	}
-
-	@Override
-	public void tapSpecifyDateElement(String dateStr, String message) {
-	}
-
-	@Override
-	public void tapSpecifyDateElement(int num, String message) {
-	}
-
-	@Override
-	public void tapCurrentDateElement(String message) {
-	}
-
-	@Override
-	public void tapRandomDateElement(int num, String message) {
-	}
-
-	@Override
-	public String tapAutoDateElement(String message) {
-		return null;
-	}
-
-	@Override
-	public void assertElement(UiObject ub, String message) {
-	}
-
-	@Override
-	public void assertPage(String text) {
-	}
-
-	@Override
-	public void assertPage(String text, String message) {
-	}
-
-	@Override
-	public int getIndexXpath(String xpath) {
-		return 0;
-	}
-
-	@Override
-	public String setIndexXpath(String xpath, int i) {
-		return null;
-	}
-
-	@Override
-	public String getNameByXpath(String xpath) {
-		return null;
-	}
-
-	@Override
-	public Integer getWindowWidth() {
-		return null;
-	}
-
-	@Override
-	public Integer getWindowHeight() {
-		return null;
-	}
-
-	@Override
-	public void context(String name) {
-	}
-
-	@Override
-	public void keyboardClick(int key) {
-	}
-
-	@Override
-	public void closeApp() {
-	}
-
-	@Override
-	public void launchApp() {
-	}
-
-	@Override
-	public void resetApp() {
-	}
-
-	@Override
-	public void quitApp() {
-	}
-	
-	/**
-	 * PC
-	 */
 	@Override
 	public void open(String url) {
 		this.getBrowserDriver().get(url);
 		this.waitPageLoad(2);
 		this.log("测试输出:《" + url + "》已打开！");
+	}
+	
+	@Override
+	public void click(String locator, String log) {
+		this.click(Const.LOCATIONTYPE_PC_XPATH, locator, log);
 	}
 	
 	@Override
@@ -318,6 +161,11 @@ public class BrowserDriverExe implements IDriverExe {
 			this.log("测试输出:《" + log + "》未找到！");
 		}
 	}
+	
+	@Override
+	public void foundClick(String locator, String log) {
+		this.foundClick(Const.LOCATIONTYPE_PC_XPATH, locator, log);
+	}
 
 	@Override
 	public void foundClick(String type, String locator, String log) {
@@ -328,6 +176,11 @@ public class BrowserDriverExe implements IDriverExe {
 		}else{
 			this.log("测试输出:《" + log + "》未找到！");
 		}
+	}
+	
+	@Override
+	public void clearText(String locator, String log) {
+		this.clearText(Const.LOCATIONTYPE_PC_XPATH, locator, log);
 	}
 
 	@Override
@@ -348,6 +201,11 @@ public class BrowserDriverExe implements IDriverExe {
 		this.log("测试输出:《" + text + "[" + bool + "]》结果验证");
 		return bool;
 	}
+	
+	@Override
+	public boolean value(String locator, String text) {
+		return this.value(Const.LOCATIONTYPE_PC_XPATH, locator, text);
+	}
 
 	@Override
 	public boolean value(String type, String locator, String text) {
@@ -362,6 +220,11 @@ public class BrowserDriverExe implements IDriverExe {
 			this.log("测试输出:《" + text + "[false]》值验证");
 		}
 		return false;
+	}
+	
+	@Override
+	public void sendKey(String locator, String text) {
+		this.sendKey(Const.LOCATIONTYPE_PC_XPATH, locator, text);
 	}
 
 	@Override
@@ -404,6 +267,11 @@ public class BrowserDriverExe implements IDriverExe {
 			}
 		}
 	}
+	
+	@Override
+	public String getElementValue(String locator, String log) {
+		return this.getElementValue(Const.LOCATIONTYPE_PC_XPATH, locator, log);
+	}
 
 	@Override
 	public String getElementValue(String type, String locator, String log) {
@@ -420,6 +288,11 @@ public class BrowserDriverExe implements IDriverExe {
 			}
 		}
 		return result;
+	}
+	
+	@Override
+	public void scroll(String locator, String log) {
+		this.scroll(Const.LOCATIONTYPE_PC_XPATH, locator, log);
 	}
 
 	@Override
@@ -492,6 +365,11 @@ public class BrowserDriverExe implements IDriverExe {
         alert.dismiss();
         this.log("测试输出:《弹框-取消》已点击");
 	}
+	
+	@Override
+	public void clickAndHold(String locator, String log) {
+		this.clickAndHold(Const.LOCATIONTYPE_PC_XPATH, locator, log);
+	}
 
 	@Override
 	public void clickAndHold(String type, String locator, String log) {
@@ -504,6 +382,11 @@ public class BrowserDriverExe implements IDriverExe {
 				this.log("测试输出:《" + log + "》光标移动");
 			}
 		}
+	}
+	
+	@Override
+	public void selectByValue(String locator, String log) {
+		this.selectByValue(Const.LOCATIONTYPE_PC_XPATH, locator, log);
 	}
 
 	@Override
