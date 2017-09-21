@@ -7,12 +7,6 @@ import com.paypal.selion.annotations.MobileTest;
 
 public class Okooo extends AbsParentTest{
 	private static final String TOKEN				= "77b2b07e84c88c707b7f124b41257ae0";
-	private static final String OKOOO_LOGIN			= "http://192.168.101.181/channel/newokooo/home/1102/#/loginPop";
-	private static final String OKOOO_TOKEN			= "http://192.168.101.181/channel/newokooo/home/1102/?token=" + TOKEN + "&type=jdd&status=login#/";
-	private static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/1102/#/";
-	private static final String OKOOO_BEI_BAO		= "http://192.168.101.181/channel/newokooo/home/1102/#/knapsack";
-	private static final String OKOOO_CHOU_JIANG	= "http://192.168.101.181/channel/newokooo/home/1102/#/luckdraw";
-	private static final String OKOOO_GE_REN		= "http://192.168.101.181/channel/newokooo/home/1102/#/personal";
 	private static final String JDDFUN_GAME			= "okooo";	//http://m.okooo.com/game/	http://192.168.101.181/channel/newokooo/home/1102/#/loginPop
 	private static final String DENG_LU				= "登录";			//1
 	private static final String YOU_XI_SHANG_CHENG	= "游戏商城";		//2
@@ -26,7 +20,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void DengLu() {//登录
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU, null, 0);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div/p[1]", "澳客登录");
 		driverExe.result("登录澳客账户");
@@ -35,7 +29,7 @@ public class Okooo extends AbsParentTest{
 		driverExe.sendKey("//*[@id='AuthCode']", "1234");
 		driverExe.click("//*[@id='loginObj']", "登录");
 		driverExe.waitPageLoad(3);
-		driverExe.open(OKOOO_TOKEN);
+		driverExe.open(String.format(OKOOO_TOKEN, TOKEN));
 		if(driverExe.result("澳客登录") && driverExe.result("快速试玩")){
 			driverExe.logOut("登录失败[TOKEN-已过期]", false);
 		}else{
@@ -63,54 +57,105 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiShangCheng() {//游戏-商城
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_SHANG_CHENG);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_SHANG_CHENG, null, 1);
 		driverExe.open(OKOOO_LOGIN);
-		
+		driverExe.click("//*[@id='router-content']/div/div/p[2]", "快速试玩");
+		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[1]/div[1]/div[2]/div/img[2]", "商城");
+		driverExe.result("商城");
+		driverExe.click("//*[@id='app']/div/div[5]/ul/li[1]/div[3]/a", "周卡");
+		driverExe.result("支付宝支付");
+		driverExe.result("微信支付");
+		driverExe.click("//*[@id='app']/div/div[1]/div[1]/img", "返回");
+		driverExe.waitPageLoad(2);
+		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[1]/div[1]/div[2]/div/img[2]", "商城");
+		driverExe.click("//*[@id='app']/div/div[2]/img", "充值送话费");
+		driverExe.waitPageLoad(2);
+		driverExe.click("//*[@id='router-content']/div/div[4]/div/div[2]/p[1]", "活动关闭");
+		driverExe.waitPageLoad(1);
 		endTest(JDDFUN_GAME, YOU_XI_SHANG_CHENG);
 	}
 	
 	@Test
 	@MobileTest
 	public void YouXiChongZhiHuiKui() {//游戏-充值回馈
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CHONG_ZHI);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CHONG_ZHI, null, 1);
 		driverExe.open(OKOOO_LOGIN);
-		
+		driverExe.click("//*[@id='router-content']/div/div/p[2]", "快速试玩");
+		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[1]/div[2]/ul/li[1]/div[2]", "充值送话费");
+		driverExe.click("//*[@id='router-content']/div/div[4]/div/div[2]/p[2]", "充值");
+		driverExe.waitPageLoad(1);
+		driverExe.result("支付宝支付");
+		driverExe.result("微信支付");
+		driverExe.getElementValue("//*[@id='app']/div/div[2]/div[1]/span[3]", "充值金额");
 		endTest(JDDFUN_GAME, YOU_XI_CHONG_ZHI);
 	}
 	
 	@Test
 	@MobileTest
 	public void YouXiRenWu() {//游戏-任务
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_REN_WU);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_REN_WU, null, 1);
 		driverExe.open(OKOOO_LOGIN);
-		
+		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[1]/div[2]/ul/li[2]/div", "任务");
+		driverExe.result("每日任务");
+		driverExe.result("前往");
+		driverExe.waitPageLoad(1);
+		driverExe.click("//*[@id='router-content']/div/div[3]/div[2]/div[1]/ul/li[2]", "成长任务");
+		driverExe.waitPageLoad(1);
+		driverExe.result("前往");
 		endTest(JDDFUN_GAME, YOU_XI_REN_WU);
 	}
 	
 	@Test
 	@MobileTest
 	public void YouXiPaiHangBang() {//游戏-排行榜
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_PAI_HANG_BANG);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_PAI_HANG_BANG, null, 1);
 		driverExe.open(OKOOO_LOGIN);
-		
+		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[2]/div[1]/a", "查看更多奖励");
+		driverExe.waitPageLoad(1);
+		driverExe.result("我的盈利");
+		driverExe.result("盈利榜");
+		driverExe.result("财富榜");
+		driverExe.getElementValue("//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/ul/li[1]/span[2]", "盈利");
+		driverExe.getElementValue("//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/ul/li[2]/span[2]", "奖励");
+		driverExe.click("//*[@id='router-content']/div/div[3]/div[2]/div/div[2]/ul/li[2]", "盈利榜");
+		driverExe.waitPageLoad(1);
+		driverExe.getElementValue("//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/div[2]/ul/li[1]/em", "我的排名");
+		driverExe.getElementValue("//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/div[2]/ul/li[2]/em", "我的奖励");
+		driverExe.click("//*[@id='router-content']/div/div[3]/div[2]/div/div[2]/ul/li[3]", "财富榜");
+		driverExe.waitPageLoad(1);
+		driverExe.getElementValue("//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/span", "排名");
+		driverExe.click("//*[@id='router-content']/div/div[3]/div[2]/a/img", "关闭");
 		endTest(JDDFUN_GAME, YOU_XI_PAI_HANG_BANG);
 	}
 	
 	@Test
 	@MobileTest
 	public void YouXiRuKou() {//游戏-入口
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_RU_KOU);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_RU_KOU, null, 1);
 		driverExe.open(OKOOO_LOGIN);
-		
+		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[4]/div/div/ul/li[1]", "游戏1");
+		driverExe.waitPageLoad(6);
+		driverExe.back();
+		driverExe.waitPageLoad(1);
 		endTest(JDDFUN_GAME, YOU_XI_RU_KOU);
 	}
 	
 	@Test
 	@MobileTest
 	public void YouXiCeBianLan() {//游戏-侧边栏
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CE_BIAN_LAM);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CE_BIAN_LAM, null, 1);
 		driverExe.open(OKOOO_LOGIN);
-		
+		driverExe.click("//*[@id='router-content']/div/div[3]/div/ul/li[1]/div/span/i", "超值特惠");
+		driverExe.waitPageLoad(2);
+		driverExe.click("//*[@id='router-content']/div/div[5]/div[2]/a/img", "关闭");
+		driverExe.click("//*[@id='router-content']/div/div[3]/div/ul/li[2]/div/span/i", "新手礼包");
+		driverExe.waitPageLoad(2);
+		driverExe.click("//*[@id='router-content']/div/div[4]/div[2]/a[1]/img", "关闭");
+		driverExe.click("//*[@id='router-content']/div/div[3]/div/ul/li[3]/div/span/i", "限时奖励");
+		driverExe.waitPageLoad(2);
+		driverExe.result("幸运转盘");
+		driverExe.click("//*[@id='router-content']/div/div[6]/div/div[1]/div/a/img", "返回");
+		driverExe.waitPageLoad(1);
 		endTest(JDDFUN_GAME, YOU_XI_CE_BIAN_LAM);
 	}
 	
@@ -129,7 +174,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void GeRen() {//个人
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, GE_REN);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, GE_REN, null, 4);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div/p[2]", "快速试玩");
 		driverExe.foundClick("//*[@id='router-content']/div/div[4]/div/div[2]/p[1]", "活动关闭");

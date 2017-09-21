@@ -47,6 +47,9 @@ public class LingJiangTai extends AbsParentTest {
 		driverExe.tapElement(ljtp.getShiwujiluUiObject(), "实物记录");
 		driverExe.waitPageLoad(2);
 		driverExe.logOut("查看实物记录", true);
+		driverExe.tapElement(ljtp.getShuomingUiObject(), "说明");
+		driverExe.waitPageLoad(2);
+		driverExe.logOut("说明", true);
 		endTest(JDDFUN_GAME, SUI_PIAN_SHI_WU);
 	}
 

@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
 import com.jdd.game.android.constants.Const;
 import com.jdd.game.android.driver.IWapDriverExe;
 import com.jdd.game.android.exception.AutoException;
@@ -199,12 +201,15 @@ public class BrowserDriverExe implements IWapDriverExe {
 		this.waitPageLoad(1);
 		boolean bool = (driver.getPageSource().indexOf(text) != -1);
 		this.log("测试输出:《" + text + "[" + bool + "]》结果验证");
+		Assert.assertEquals(true, bool, text);
 		return bool;
 	}
 	
 	@Override
 	public boolean value(String locator, String text) {
-		return this.value(Const.LOCATIONTYPE_PC_XPATH, locator, text);
+		boolean bool = this.value(Const.LOCATIONTYPE_PC_XPATH, locator, text);
+		Assert.assertEquals(true, bool, text);
+		return bool;
 	}
 
 	@Override
