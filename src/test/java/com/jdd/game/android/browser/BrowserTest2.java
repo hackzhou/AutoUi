@@ -12,7 +12,7 @@ public class BrowserTest2 extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void testWithBrowser() {
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI, null, 0);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YE_MIAN_XIAN_SHI);
 		driverExe.open("https://m.baidu.com/");
 		driverExe.sendKey(Const.LOCATIONTYPE_PC_XPATH, "//*[@id='index-kw']", "苏州");
 		driverExe.click(Const.LOCATIONTYPE_PC_XPATH, "//*[@id='index-bn']", "百度一下");

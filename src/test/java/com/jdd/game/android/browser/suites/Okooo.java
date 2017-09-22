@@ -20,8 +20,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void DengLu() {//登录
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU, null, 0);
-		driverExe.open(OKOOO_LOGIN);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU);
 		driverExe.click("//*[@id='router-content']/div/div/p[1]", "澳客登录");
 		driverExe.result("登录澳客账户");
 		driverExe.sendKey("//*[@id='UserName']", "13151815253");
@@ -57,7 +56,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiShangCheng() {//游戏-商城
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_SHANG_CHENG, null, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_SHANG_CHENG, 1);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div/p[2]", "快速试玩");
 		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[1]/div[1]/div[2]/div/img[2]", "商城");
@@ -78,7 +77,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiChongZhiHuiKui() {//游戏-充值回馈
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CHONG_ZHI, null, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CHONG_ZHI, 1);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div/p[2]", "快速试玩");
 		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[1]/div[2]/ul/li[1]/div[2]", "充值送话费");
@@ -93,7 +92,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiRenWu() {//游戏-任务
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_REN_WU, null, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_REN_WU, 1);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[1]/div[2]/ul/li[2]/div", "任务");
 		driverExe.result("每日任务");
@@ -108,7 +107,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiPaiHangBang() {//游戏-排行榜
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_PAI_HANG_BANG, null, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_PAI_HANG_BANG, 1);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[2]/div[1]/a", "查看更多奖励");
 		driverExe.waitPageLoad(1);
@@ -131,7 +130,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiRuKou() {//游戏-入口
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_RU_KOU, null, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_RU_KOU, 1);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div[1]/div/div/div[4]/div/div/ul/li[1]", "游戏1");
 		driverExe.waitPageLoad(6);
@@ -143,7 +142,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiCeBianLan() {//游戏-侧边栏
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CE_BIAN_LAM, null, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CE_BIAN_LAM, 1);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div[3]/div/ul/li[1]/div/span/i", "超值特惠");
 		driverExe.waitPageLoad(2);
@@ -174,7 +173,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void GeRen() {//个人
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, GE_REN, null, 4);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, GE_REN, 4);
 		driverExe.open(OKOOO_LOGIN);
 		driverExe.click("//*[@id='router-content']/div/div/p[2]", "快速试玩");
 		driverExe.foundClick("//*[@id='router-content']/div/div[4]/div/div[2]/p[1]", "活动关闭");
