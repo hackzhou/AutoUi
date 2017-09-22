@@ -1,0 +1,169 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+platform: "android"
+defaultLocale: "US"
+elements:
+  aokedengluUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div/p[1]" #澳客登录
+  kuaisushiwanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div/p[2]" #快速试玩
+  yonghumingUiObject:
+    locators:
+      US: "//*[@id='UserName']" #澳客登录-用户名
+  mimaUiObject:
+    locators:
+      US: "//*[@id='Password']" #澳客登录-密码
+  yanzhengmaUiObject:
+    locators:
+      US: "//*[@id='AuthCode']" #澳客登录-验证码
+  dengluUiObject:
+    locators:
+      US: "//*[@id='loginObj']" #澳客登录-登录
+  zhanghaoUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/p/span" #个人-账号
+  jinyezishuUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[2]/p[2]" #个人-金叶子数
+  chongzhiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[2]/p[2]/i" #个人-充值
+  touzhujiluUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/ul/li[1]/span" #个人-投注记录
+  zijinmingxiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/ul/li[2]/span" #个人-资金明细
+  wodexiaoxiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/ul/li[3]/a/span" #个人-我的消息
+  kefuzhuanquUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/ul/li[4]/a/span" #个人-客服专区
+  zhongjiangxinxiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[2]/ul/li[2]/span" #个人-中奖信息
+  fanhuigeren1UiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[1]/div[1]/div/a/img" #个人-返回1
+  fanhuigeren2UiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[1]/div/a/img" #个人-返回2
+  huanletaoquanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/ul/li[1]/div/img" #抽奖-欢乐套圈
+  bizhongtaoquanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/ul/li[2]/div/img" #抽奖-必中套圈
+  taoquandashenbangUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[2]/ul/li[2]/span" #抽奖-套圈大神榜
+  renwuUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div[2]/img[1]" #背包-任务
+  shuomingUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div[2]/img[2]" #背包-说明
+  huafeiquanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[2]/div[1]/div/div/ul/li[1]/div/img" #背包-话费券
+  wodehuafeiquanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[2]/div[2]/div[1]/span" #背包-我的话费券
+  jingdongquanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[2]/div[1]/div/div/ul/li[2]/div/img" #背包-京东券
+  wodejingdongkaUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[2]/div[2]/div[1]/span" #背包-我的京东卡
+  iphone7UiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[2]/div[2]/div/div/ul/li/div/div/img" #背包-iphone7
+  iphone7quanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[2]/div[2]/div[2]/span" #背包-iphone7券
+  hechengjiluUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[2]/div[2]/ul/li[2]" #背包-合成记录
+  guanbibeibaoUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div[2]/a/img" #背包-关闭
+  shangchengUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[1]/div[1]/div[2]/div/img[2]" #游戏-商城
+  zhoukaUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[3]/ul/li[1]/div[3]/a" #游戏-商城-周卡
+  pijiuqingliangUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[3]/ul/li[2]/div[3]/a" #游戏-商城-清凉啤酒
+  youxibiduihuanUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[2]/div[1]/span[3]" #游戏-商城-游戏币兑换金额
+  fanhuishangchengUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[1]/div[1]/img" #游戏-商城-返回
+  songhuafeiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[1]/div[2]/ul/li[1]/div[2]" #游戏-充值-送话费
+  chongzhiyouxiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[4]/div/div[2]/p[2]" #游戏-充值
+  chongzhijineUiObject:
+    locators:
+      US: "//*[@id='app']/div/div[2]/div[1]/span[3]" #游戏-充值-金额
+  renwuyouxiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[1]/div[2]/ul/li[2]/div" #游戏-任务
+  chengzhangrenwuUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div[1]/ul/li[2]" #游戏-任务-成长任务
+  chakangengduojiangliUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[2]/div[1]/a" #游戏-排行榜-查看更多奖励
+  yingliUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/ul/li[1]/span[2]" #游戏-排行榜-盈利
+  jiangliUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/ul/li[2]/span[2]" #游戏-排行榜-奖励
+  yinglibangUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[2]/ul/li[2]" #游戏-排行榜-盈利榜
+  wodepaimingUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/div[2]/ul/li[1]/em" #游戏-排行榜-我的排名
+  wodejiangliUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/div[2]/ul/li[2]/em" #游戏-排行榜-我的奖励
+  caifubangUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[2]/ul/li[3]" #游戏-排行榜-财富榜
+  paimingUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/span" #游戏-排行榜-排名
+  guanbipaihangbangUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div[2]/a/img" #游戏-排行榜-关闭
+  rukouyouxi1UiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[4]/div/div/ul/li[1]" #游戏-入口1
+  chaozhitehuiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div/ul/li[1]/div" #游戏-侧边栏-超值特惠
+  xinshoulibaoUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div/ul/li[2]/div" #游戏-侧边栏-新手礼包
+  xianshijiangliUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[3]/div/ul/li[3]/div/div/div/div/span[1]" #游戏-侧边栏-限时奖励
+  guanbichaozhiUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[5]/div[2]/a/img" #游戏-侧边栏-超值特惠-关闭
+  guanbixinshouUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[4]/div[2]/a[1]/img" #游戏-侧边栏-新手礼包-关闭
+  fanhuicebianlanUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[6]/div/div[1]/div/a/img" #游戏-侧边栏-返回

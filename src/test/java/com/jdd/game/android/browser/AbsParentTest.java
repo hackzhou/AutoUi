@@ -37,6 +37,8 @@ public abstract class AbsParentTest extends BrowserDriver{
 			driverExe.waitPageLoad(3);
 			if(page == 1){
 				openYouXi();
+				driverExe.foundClick("//*[@id='router-content']/div/div[6]/div[2]/a/img", "活动[金桂飘香]关闭");
+				driverExe.foundClick("//*[@id='router-content']/div/div[4]/div/div[2]/p[1]", "活动[首次充值]关闭");
 			}else if(page == 2){
 				openBeiBao();
 			}else if(page == 3){

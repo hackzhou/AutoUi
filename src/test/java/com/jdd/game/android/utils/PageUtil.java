@@ -23,8 +23,8 @@ public class PageUtil {
 	}
 	
 	public static void waitTillActivity2(RemoteWebDriver driver) {
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	/** 设置识别对象的超时时间 **/
-		driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);	/** 设置执行脚本的超时时间 **/
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	/** 设置识别对象的超时时间 **/
+		driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);	/** 设置执行脚本的超时时间 **/
 		driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);	/** 设置页面完全加载的超时时间 **/
 		//driver.manage().window().maximize();	/** PC最大化窗口 **/
 	}

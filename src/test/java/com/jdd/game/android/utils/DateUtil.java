@@ -76,7 +76,7 @@ public class DateUtil {
 		long s = (l / 1000 - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60);
 		String sStr = (s == 0) ? "" : s + "秒";
 		String result = dayStr + hourStr + minStr + sStr;
-		return result == "" ? "<1秒" : result;
+		return "".equals(result) ? "<1秒" : result;
 	}
 	
 }
