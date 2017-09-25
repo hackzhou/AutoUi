@@ -4,6 +4,7 @@ import com.jdd.game.android.driver.BrowserDriver;
 import com.jdd.game.android.driver.IWapDriverExe;
 
 public abstract class AbsParentTest extends BrowserDriver{
+	private static final Integer WAIT_LOAD_GAME		= 3;
 	protected static final String OKOOO_LOGIN		= "http://192.168.101.181/channel/newokooo/home/1102/#/loginPop";
 	protected static final String OKOOO_TOKEN		= "http://192.168.101.181/channel/newokooo/home/1102/?token=%s&type=jdd&status=login#/";
 	protected static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/1102/#/";
@@ -34,20 +35,35 @@ public abstract class AbsParentTest extends BrowserDriver{
 			}else{
 				driverExe.open(String.format(OKOOO_TOKEN, token));
 			}
-			driverExe.waitPageLoad(5);
-			if(page == 1){
-				openYouXi();
-				driverExe.foundClick("//*[@id='router-content']/div/div[6]/div[2]/a/img", "活动[金桂飘香]关闭");
-				driverExe.foundClick("//*[@id='router-content']/div/div[4]/div/div[2]/p[1]", "活动[首次充值]关闭");
-			}else if(page == 2){
-				openBeiBao();
-			}else if(page == 3){
-				openChouJiang();
-			}else if(page == 4){
-				openGeRen();
-			}
+			waitLoadGame(page);
 		}
 		return driverExe;
+	}
+	
+	private void waitLoadGame(Integer page) {
+		IWapDriverExe driverExe = getBrowserDriverExe();
+		for (int i = 0; i < WAIT_LOAD_GAME; i++) {
+			driverExe.waitPageLoad(1);
+			if(driverExe.isTextInPage("GameCanvas")){
+				driverExe.waitPageLoad(2);
+				openPage(page);
+			}
+		}
+	}
+	
+	private void openPage(Integer page){
+		IWapDriverExe driverExe = getBrowserDriverExe();
+		if(page == 1){
+			openYouXi();
+			driverExe.foundClick("//*[@id='router-content']/div/div[6]/div[2]/a/img", "活动[金桂飘香]关闭");
+			driverExe.foundClick("//*[@id='router-content']/div/div[4]/div/div[2]/p[1]", "活动[首次充值]关闭");
+		}else if(page == 2){
+			openBeiBao();
+		}else if(page == 3){
+			openChouJiang();
+		}else if(page == 4){
+			openGeRen();
+		}
 	}
 	
 	protected void endTest(String testName, String caseName) {

@@ -39,6 +39,8 @@ public interface IWapDriverExe {
 
 	public void clearText(String type, String locator, String log);
 	
+	public boolean isTextInPage(String text);
+	
 	public boolean result(String text);
 	
 	public boolean value(String locator, String text);

@@ -194,6 +194,11 @@ public class BrowserDriverExe implements IWapDriverExe {
 			this.log("测试输出:《" + log + "》清除值！");
 		}
 	}
+	
+	@Override
+	public boolean isTextInPage(String text) {
+		return (this.getBrowserDriver().getPageSource().indexOf(text) != -1);
+	}
 
 	@Override
 	public boolean result(String text) {
