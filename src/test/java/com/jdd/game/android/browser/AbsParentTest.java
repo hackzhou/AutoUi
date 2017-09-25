@@ -34,7 +34,7 @@ public abstract class AbsParentTest extends BrowserDriver{
 			}else{
 				driverExe.open(String.format(OKOOO_TOKEN, token));
 			}
-			driverExe.waitPageLoad(3);
+			driverExe.waitPageLoad(5);
 			if(page == 1){
 				openYouXi();
 				driverExe.foundClick("//*[@id='router-content']/div/div[6]/div[2]/a/img", "活动[金桂飘香]关闭");
