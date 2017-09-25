@@ -35,20 +35,23 @@ public abstract class AbsParentTest extends BrowserDriver{
 			}else{
 				driverExe.open(String.format(OKOOO_TOKEN, token));
 			}
-			waitLoadGame(page);
+			if(waitLoadGame()){
+				openPage(page);
+			}
 		}
 		return driverExe;
 	}
 	
-	private void waitLoadGame(Integer page) {
+	private boolean waitLoadGame() {
 		IWapDriverExe driverExe = getBrowserDriverExe();
 		for (int i = 0; i < WAIT_LOAD_GAME; i++) {
 			driverExe.waitPageLoad(1);
 			if(driverExe.isTextInPage("GameCanvas")){
 				driverExe.waitPageLoad(2);
-				openPage(page);
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	private void openPage(Integer page){
