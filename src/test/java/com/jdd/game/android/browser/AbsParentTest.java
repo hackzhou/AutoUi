@@ -4,7 +4,7 @@ import com.jdd.game.android.driver.BrowserDriver;
 import com.jdd.game.android.driver.IWapDriverExe;
 
 public abstract class AbsParentTest extends BrowserDriver{
-	private static final Integer WAIT_LOAD_GAME		= 3;
+	private static final Integer WAIT_LOAD_GAME		= 10;
 	protected static final String OKOOO_LOGIN		= "http://192.168.101.181/channel/newokooo/home/1102/#/loginPop";
 	protected static final String OKOOO_TOKEN		= "http://192.168.101.181/channel/newokooo/home/1102/?token=%s&type=jdd&status=login#/";
 	protected static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/1102/#/";
