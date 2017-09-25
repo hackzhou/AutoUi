@@ -97,10 +97,10 @@ elements:
       US: "//*[@id='router-content']/div/div[1]/div/div/div[1]/div[1]/div[2]/div/img[2]" #游戏-商城
   zhoukaUiObject:
     locators:
-      US: "//*[@id='app']/div/div[3]/ul/li[1]/div[3]/a" #游戏-商城-周卡
+      US: "//*[@id='app']/div/div[4]/ul/li[1]/div[3]/a" #游戏-商城-周卡
   pijiuqingliangUiObject:
     locators:
-      US: "//*[@id='app']/div/div[3]/ul/li[2]/div[3]/a" #游戏-商城-清凉啤酒
+      US: "//*[@id='app']/div/div[4]/ul/li[2]/div[3]/a" #游戏-商城-清凉啤酒
   youxibiduihuanUiObject:
     locators:
       US: "//*[@id='app']/div/div[2]/div[1]/span[3]" #游戏-商城-游戏币兑换金额
