@@ -10,6 +10,8 @@ public interface IWapDriverExe {
 	public void forward();
 	
 	public void refresh();
+
+	public String getCurrentUrl();
 	
 	public void waitPageLoad(long s);
 	

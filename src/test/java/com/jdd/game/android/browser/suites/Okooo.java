@@ -7,7 +7,7 @@ import com.jdd.pages.WapOkoooPage;
 import com.paypal.selion.annotations.MobileTest;
 
 public class Okooo extends AbsParentTest{
-	private static final String TOKEN				= "77b2b07e84c88c707b7f124b41257ae0";
+	private static final String TOKEN				= "1f5807b2acf83649040c9a259f8e4fba";
 	private static final String JDDFUN_GAME			= "okooo";	//http://m.okooo.com/game/	http://192.168.101.181/channel/newokooo/home/1102/#/loginPop
 	private static final String DENG_LU				= "登录";			//1
 	private static final String YOU_XI_SHANG_CHENG	= "游戏商城";		//2
@@ -23,28 +23,12 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void DengLu() {//登录
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU, 0);
 		WapOkoooPage wop = new WapOkoooPage();
-		driverExe.click(wop.getAokedengluUiObject().getLocator(), "澳客登录");
-		driverExe.result("登录澳客账户");
-		driverExe.sendKey(wop.getYonghumingUiObject().getLocator(), "13151815253");
-		driverExe.sendKey(wop.getMimaUiObject().getLocator(), "zhouzhou");
-		driverExe.sendKey(wop.getYanzhengmaUiObject().getLocator(), "1234");
-		driverExe.click(wop.getDengluUiObject().getLocator(), "登录");
-		driverExe.waitPageLoad(3);
-		driverExe.open(String.format(OKOOO_TOKEN, TOKEN));
-		if(driverExe.result("澳客登录") && driverExe.result("快速试玩")){
-			driverExe.logOut("登录失败[TOKEN-已过期]", false);
-		}else{
-			driverExe.logOut("登录成功[TOKEN-未过期]", false);
-		}
-		driverExe.waitPageLoad(3);
-		driverExe.open(OKOOO_LOGIN);
-		driverExe.click(wop.getKuaisushiwanUiObject().getLocator(), "快速试玩");
-		driverExe.waitPageLoad(2);
 		driverExe.open(OKOOO_YOU_XI);
 		driverExe.waitPageLoad(3);
 		driverExe.result("ID");
+		driverExe.getElementValue(wop.getYouxiidUiObject().getLocator(), "游戏ID");
 		driverExe.open(OKOOO_BEI_BAO);
 		driverExe.waitPageLoad(3);
 		driverExe.result("我的碎片包");
@@ -54,6 +38,22 @@ public class Okooo extends AbsParentTest{
 		driverExe.open(OKOOO_GE_REN);
 		driverExe.waitPageLoad(3);
 		driverExe.result("投注记录");
+		driverExe.open(OKOOO_LOGIN);
+		driverExe.waitPageLoad(3);
+		driverExe.click(wop.getAokedengluUiObject().getLocator(), "澳客登录");
+		driverExe.result("登录澳客账户");
+		driverExe.sendKey(wop.getYonghumingUiObject().getLocator(), "13151815253");
+		driverExe.sendKey(wop.getMimaUiObject().getLocator(), "zhouzhou");
+		driverExe.sendKey(wop.getYanzhengmaUiObject().getLocator(), "1234");
+		driverExe.click(wop.getDengluUiObject().getLocator(), "登录");
+		driverExe.waitPageLoad(3);
+		driverExe.open(String.format(OKOOO_TOKEN, TOKEN));
+		driverExe.waitPageLoad(3);
+		if(driverExe.isTextInPage("澳客登录") && driverExe.isTextInPage("快速试玩")){
+			driverExe.logOut("登录失败[TOKEN-已过期]", false);
+		}else{
+			driverExe.logOut("登录成功[TOKEN-未过期]", false);
+		}
 		endTest(JDDFUN_GAME, DENG_LU);
 	}
 	

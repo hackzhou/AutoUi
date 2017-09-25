@@ -89,6 +89,9 @@ elements:
   guanbibeibaoUiObject:
     locators:
       US: "//*[@id='router-content']/div/div[6]/div[2]/a/img" #背包-关闭
+  youxiidUiObject:
+    locators:
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[1]/div[1]/div[1]/span" #游戏-ID
   shangchengUiObject:
     locators:
       US: "//*[@id='router-content']/div/div[1]/div/div/div[1]/div[1]/div[2]/div/img[2]" #游戏-商城

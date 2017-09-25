@@ -61,6 +61,11 @@ public class BrowserDriverExe implements IWapDriverExe {
 	public void refresh() {
 		this.getBrowserDriver().navigate().refresh();
 	}
+	
+	@Override
+	public String getCurrentUrl() {
+		return this.getBrowserDriver().getCurrentUrl();
+	}
 
 	@Override
 	public void waitPageLoad(long s) {
