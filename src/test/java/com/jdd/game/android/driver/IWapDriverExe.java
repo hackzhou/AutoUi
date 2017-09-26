@@ -43,6 +43,8 @@ public interface IWapDriverExe {
 	
 	public boolean isTextInPage(String text);
 	
+	public boolean resultNot(String text);
+
 	public boolean result(String text);
 	
 	public boolean value(String locator, String text);

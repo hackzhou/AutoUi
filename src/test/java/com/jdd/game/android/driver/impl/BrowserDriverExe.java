@@ -204,6 +204,16 @@ public class BrowserDriverExe implements IWapDriverExe {
 	public boolean isTextInPage(String text) {
 		return (this.getBrowserDriver().getPageSource().indexOf(text) != -1);
 	}
+	
+	@Override
+	public boolean resultNot(String text) {
+		RemoteWebDriver driver = this.getBrowserDriver();
+		this.waitPageLoad(1);
+		boolean bool = (driver.getPageSource().indexOf(text) == -1);
+		this.log("测试输出:《" + text + "[" + bool + "]》结果验证[非]");
+		Assert.assertEquals(true, bool, text);
+		return bool;
+	}
 
 	@Override
 	public boolean result(String text) {

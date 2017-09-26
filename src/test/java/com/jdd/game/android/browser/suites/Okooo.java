@@ -190,6 +190,7 @@ public class Okooo extends AbsParentTest{
 		driverExe.click(wop.getGuanbibeibaoUiObject().getLocator(), "关闭");
 		driverExe.click(wop.getShuomingUiObject().getLocator(), "说明");
 		driverExe.result("碎片说明");
+		driverExe.resultNot("多多游戏");
 		driverExe.click(wop.getGuanbibeibaoUiObject().getLocator(), "关闭");
 		driverExe.result("奖励");
 		driverExe.result("领奖时间");
