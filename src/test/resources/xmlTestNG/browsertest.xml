@@ -4,15 +4,38 @@
 	skipfailedinvocationcounts="false" junit="false" parallel="false"
      data-provider-thread-count="50" annotations="JDK">
      
-	<parameter name="mobileNodeType" value="appium" />
-	<parameter name="seleniumhost" value="127.0.0.1" />
-	<parameter name="seleniumport" value="4723" />
+     <listeners>
+        <listener class-name="com.jdd.game.android.report.MyReporter"></listener>
+    </listeners>
 	
-    <test verbose="2" name="app-test-browser" annotations="JDK">
+	<!-- <parameter name="mobileNodeType" value="appium" />
+	<parameter name="seleniumhost" value="127.0.0.1" />
+	<parameter name="seleniumport" value="4723" /> -->
+	
+    <!-- <test verbose="2" name="app-test-browser" annotations="JDK">
         <classes>
             <class name="com.jdd.game.android.browser.BrowserTest">
                 <methods>
                     <include name="testWithBrowser" />
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    
+	<test verbose="2" name="app-test-browser" annotations="JDK">
+        <classes>
+            <class name="com.jdd.game.android.browser.suites.Okooo">
+                <methods>
+                    <include name="DengLu" />
+                    <include name="YouXiShangCheng" />
+                    <include name="YouXiChongZhiHuiKui" />
+                    <include name="YouXiRenWu" />
+                    <include name="YouXiPaiHangBang" />
+                    <include name="YouXiRuKou" />
+                    <include name="YouXiCeBianLan" />
+                    <include name="BeiBao" />
+                    <include name="ChouJiang" />
+                    <include name="GeRen" />
                 </methods>
             </class>
         </classes>

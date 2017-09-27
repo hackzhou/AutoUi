@@ -1,7 +1,15 @@
 package com.jdd.game.android.utils;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class AdbUtil {
 	public static final String ACTIVITY_FENXIANGQUAN = "com.jddfun.game/.act.ShareAct";
+	
+	public static void main(String[] args) {
+		System.out.println(getConnectUdid());
+	}
 	
 	public static void exeKeyboard0(){
 		exeAdb("adb shell ime set io.appium.android.ime/.UnicodeIME");
@@ -41,6 +49,42 @@ public class AdbUtil {
 				process.destroy();
 			}
 		}
+	}
+	
+	/**
+	 * 获取已连接设备UDID
+	 * @return
+	 */
+	public static String getConnectUdid(){
+		String str[] ={"cmd", "/c", "adb", "devices"};
+		String result = "";
+		Process process = null;
+		BufferedReader bufferedReader = null;
+		try {
+			process = Runtime.getRuntime().exec(str);
+			bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			String line;
+			while ((line=bufferedReader.readLine()) != null) {
+				if(line.contains("device") && !line.contains("devices")){
+					result += "," + line.replace("device", "").trim();
+				}
+			}
+			process.waitFor();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(bufferedReader != null){
+					bufferedReader.close();
+				}
+				if(process != null){
+					process.destroy();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return result.startsWith(",") ? result.substring(1) : result;
 	}
 
 }
