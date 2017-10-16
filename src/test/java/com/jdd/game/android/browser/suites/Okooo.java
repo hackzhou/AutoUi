@@ -7,8 +7,8 @@ import com.jdd.pages.WapOkoooPage;
 import com.paypal.selion.annotations.MobileTest;
 
 public class Okooo extends AbsParentTest{
-	private static final String TOKEN				= "1f5807b2acf83649040c9a259f8e4fba";
-	private static final String JDDFUN_GAME			= "okooo";	//http://m.okooo.com/game/	http://192.168.101.181/channel/newokooo/home/1102/#/loginPop
+	private static final String TOKEN				= "7e71236b3dda09e7c25ba814f9d426ef";
+	private static final String JDDFUN_GAME			= "okooo";	//http://m.okooo.com/game/	http://192.168.101.181/channel/newokooo/home/
 	private static final String DENG_LU				= "登录";			//1
 	private static final String YOU_XI_SHANG_CHENG	= "游戏商城";		//2
 	private static final String YOU_XI_CHONG_ZHI	= "游戏充值回馈";	//3
@@ -60,7 +60,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiShangCheng() {//游戏-商城
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_SHANG_CHENG, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_SHANG_CHENG, TOKEN, 1);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.click(wop.getShangchengUiObject().getLocator(), "商城");
 		driverExe.result("商城");
@@ -83,7 +83,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiChongZhiHuiKui() {//游戏-充值回馈
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CHONG_ZHI, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CHONG_ZHI, TOKEN, 1);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.click(wop.getSonghuafeiUiObject().getLocator(), "充值送话费");
 		driverExe.click(wop.getChongzhiyouxiUiObject().getLocator(), "充值");
@@ -97,22 +97,22 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiRenWu() {//游戏-任务
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_REN_WU, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_REN_WU, TOKEN, 1);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.click(wop.getRenwuyouxiUiObject().getLocator(), "任务");
 		driverExe.result("每日任务");
-		driverExe.result("前往");
+		driverExe.result("成就任务");
 		driverExe.waitPageLoad(1);
-		driverExe.click(wop.getChengzhangrenwuUiObject().getLocator(), "成长任务");
+		driverExe.click(wop.getChengzhangrenwuUiObject().getLocator(), "成就任务");
 		driverExe.waitPageLoad(1);
-		driverExe.result("前往");
+		//driverExe.result("前往");
 		endTest(JDDFUN_GAME, YOU_XI_REN_WU);
 	}
 	
 	@Test
 	@MobileTest
 	public void YouXiPaiHangBang() {//游戏-排行榜
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_PAI_HANG_BANG, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_PAI_HANG_BANG, TOKEN, 1);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.click(wop.getChakangengduojiangliUiObject().getLocator(), "查看更多奖励");
 		driverExe.waitPageLoad(1);
@@ -135,7 +135,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiRuKou() {//游戏-入口
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_RU_KOU, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_RU_KOU, TOKEN, 1);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.click(wop.getRukouyouxi1UiObject().getLocator(), "游戏入口1");
 		driverExe.waitPageLoad(6);
@@ -147,14 +147,14 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void YouXiCeBianLan() {//游戏-侧边栏
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CE_BIAN_LAM, 1);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, YOU_XI_CE_BIAN_LAM, TOKEN, 1);
 		WapOkoooPage wop = new WapOkoooPage();
-		driverExe.click(wop.getChaozhitehuiUiObject().getLocator(), "超值特惠");
+		driverExe.click(wop.getChaozhitehuiUiObject().getLocator(), "限时加奖");
 		driverExe.waitPageLoad(2);
 		driverExe.click(wop.getGuanbichaozhiUiObject().getLocator(), "关闭");
-		driverExe.click(wop.getXinshoulibaoUiObject().getLocator(), "新手礼包");
-		driverExe.waitPageLoad(2);
-		driverExe.click(wop.getGuanbixinshouUiObject().getLocator(), "关闭");
+//		driverExe.click(wop.getXinshoulibaoUiObject().getLocator(), "新手礼包");
+//		driverExe.waitPageLoad(2);
+//		driverExe.click(wop.getGuanbixinshouUiObject().getLocator(), "关闭");
 		driverExe.click(wop.getXianshijiangliUiObject().getLocator(), "限时奖励");
 		driverExe.waitPageLoad(2);
 		driverExe.result("幸运转盘");
@@ -166,7 +166,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void BeiBao() {//背包
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, BEI_BAO, 2);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, BEI_BAO, TOKEN, 2);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.result("我的碎片包");
 		driverExe.click(wop.getHuafeiquanUiObject().getLocator(), "话费券");
@@ -202,7 +202,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void ChouJiang() {//抽奖
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, CHOU_JIANG, 3);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, CHOU_JIANG, TOKEN, 3);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.click(wop.getHuanletaoquanUiObject().getLocator(), "欢乐套圈");
 		driverExe.waitPageLoad(4);
@@ -225,7 +225,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void GeRen() {//个人
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, GE_REN, 4);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, GE_REN, TOKEN, 4);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.getElementValue(wop.getZhanghaoUiObject().getLocator(), "账号");
 		driverExe.getElementValue(wop.getJinyezishuUiObject().getLocator(), "金叶子数");

@@ -121,7 +121,7 @@ elements:
       US: "//*[@id='router-content']/div/div[1]/div/div/div[1]/div[2]/ul/li[2]/div" #游戏-任务
   chengzhangrenwuUiObject:
     locators:
-      US: "//*[@id='router-content']/div/div[3]/div[2]/div[1]/ul/li[2]" #游戏-任务-成长任务
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div/div[1]/ul/li[2]" #游戏-任务-成就任务
   chakangengduojiangliUiObject:
     locators:
       US: "//*[@id='router-content']/div/div[1]/div/div/div[2]/div[1]/a" #游戏-排行榜-查看更多奖励
@@ -151,16 +151,16 @@ elements:
       US: "//*[@id='router-content']/div/div[3]/div[2]/a/img" #游戏-排行榜-关闭
   rukouyouxi1UiObject:
     locators:
-      US: "//*[@id='router-content']/div/div[1]/div/div/div[4]/div/div/ul/li[1]" #游戏-入口1
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[5]/div/div/ul/li[1]/a/img" #游戏-入口1
   chaozhitehuiUiObject:
     locators:
-      US: "//*[@id='router-content']/div/div[3]/div/ul/li[1]/div" #游戏-侧边栏-超值特惠
+      US: "//*[@id='router-content']/div/div[3]/div/ul/li[1]/div" #游戏-侧边栏-限时加奖
   xinshoulibaoUiObject:
     locators:
       US: "//*[@id='router-content']/div/div[3]/div/ul/li[2]/div" #游戏-侧边栏-新手礼包
   xianshijiangliUiObject:
     locators:
-      US: "//*[@id='router-content']/div/div[3]/div/ul/li[3]/div/div/div/div/span[1]" #游戏-侧边栏-限时奖励
+      US: "//*[@id='router-content']/div/div[3]/div/ul/li[2]/div/div/div/div/span[1]" #游戏-侧边栏-限时奖励
   guanbichaozhiUiObject:
     locators:
       US: "//*[@id='router-content']/div/div[5]/div[2]/a/img" #游戏-侧边栏-超值特惠-关闭

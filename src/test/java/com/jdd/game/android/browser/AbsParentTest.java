@@ -5,12 +5,12 @@ import com.jdd.game.android.driver.IWapDriverExe;
 
 public abstract class AbsParentTest extends BrowserDriver{
 	private static final Integer WAIT_LOAD_GAME		= 10;
-	protected static final String OKOOO_LOGIN		= "http://192.168.101.181/channel/newokooo/home/1102/#/loginPop";
+	protected static final String OKOOO_LOGIN		= "http://192.168.101.181/channel/newokooo/home/";
 	protected static final String OKOOO_TOKEN		= "http://192.168.101.181/channel/newokooo/home/?token=%s&type=jdd&status=bind#/";
-	protected static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/1102/#/";
-	protected static final String OKOOO_BEI_BAO		= "http://192.168.101.181/channel/newokooo/home/1102/#/knapsack";
-	protected static final String OKOOO_CHOU_JIANG	= "http://192.168.101.181/channel/newokooo/home/1102/#/luckdraw";
-	protected static final String OKOOO_GE_REN		= "http://192.168.101.181/channel/newokooo/home/1102/#/personal";
+	protected static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/1119/#/";
+	protected static final String OKOOO_BEI_BAO		= "http://192.168.101.181/channel/newokooo/home/1119/#/knapsack";
+	protected static final String OKOOO_CHOU_JIANG	= "http://192.168.101.181/channel/newokooo/home/1119/#/luckdraw";
+	protected static final String OKOOO_GE_REN		= "http://192.168.101.181/channel/newokooo/home/1119/#/personal";
 
 	protected IWapDriverExe startTest(String testName, String caseName) {
 		return this.startTest(testName, caseName, false, null, 0);
