@@ -124,7 +124,7 @@ elements:
       US: "//*[@id='router-content']/div/div[3]/div[2]/div/div/div[1]/ul/li[2]" #游戏-任务-成就任务
   chakangengduojiangliUiObject:
     locators:
-      US: "//*[@id='router-content']/div/div[1]/div/div/div[2]/div[1]/a" #游戏-排行榜-查看更多奖励
+      US: "//*[@id='router-content']/div/div[1]/div/div/div[3]/div[1]/a" #游戏-排行榜-查看更多奖励
   yingliUiObject:
     locators:
       US: "//*[@id='router-content']/div/div[3]/div[2]/div/div[3]/div[1]/ul/li[1]/span[2]" #游戏-排行榜-盈利
@@ -163,7 +163,7 @@ elements:
       US: "//*[@id='router-content']/div/div[3]/div/ul/li[2]/div/div/div/div/span[1]" #游戏-侧边栏-限时奖励
   guanbichaozhiUiObject:
     locators:
-      US: "//*[@id='router-content']/div/div[5]/div[2]/a/img" #游戏-侧边栏-超值特惠-关闭
+      US: "//*[@id='router-content']/div/div[3]/div[2]/div/div/p[1]" #游戏-侧边栏-限时加奖-关闭
   guanbixinshouUiObject:
     locators:
       US: "//*[@id='router-content']/div/div[4]/div[2]/a[1]/img" #游戏-侧边栏-新手礼包-关闭

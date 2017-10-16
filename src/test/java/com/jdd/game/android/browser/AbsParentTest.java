@@ -4,13 +4,14 @@ import com.jdd.game.android.driver.BrowserDriver;
 import com.jdd.game.android.driver.IWapDriverExe;
 
 public abstract class AbsParentTest extends BrowserDriver{
-	private static final Integer WAIT_LOAD_GAME		= 10;
-	protected static final String OKOOO_LOGIN		= "http://192.168.101.181/channel/newokooo/home/";
+	private static final Integer WAIT_LOAD_GAME		= 5;
+	protected static final String OKOOO_VERSION		= "1121";
+	protected static final String OKOOO_LOGIN		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/loginPop";
 	protected static final String OKOOO_TOKEN		= "http://192.168.101.181/channel/newokooo/home/?token=%s&type=jdd&status=bind#/";
-	protected static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/1119/#/";
-	protected static final String OKOOO_BEI_BAO		= "http://192.168.101.181/channel/newokooo/home/1119/#/knapsack";
-	protected static final String OKOOO_CHOU_JIANG	= "http://192.168.101.181/channel/newokooo/home/1119/#/luckdraw";
-	protected static final String OKOOO_GE_REN		= "http://192.168.101.181/channel/newokooo/home/1119/#/personal";
+	protected static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/";
+	protected static final String OKOOO_BEI_BAO		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/knapsack";
+	protected static final String OKOOO_CHOU_JIANG	= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/luckdraw";
+	protected static final String OKOOO_GE_REN		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/personal";
 
 	protected IWapDriverExe startTest(String testName, String caseName) {
 		return this.startTest(testName, caseName, false, null, 0);
@@ -35,23 +36,20 @@ public abstract class AbsParentTest extends BrowserDriver{
 			}else{
 				driverExe.open(String.format(OKOOO_TOKEN, token));
 			}
-			if(waitLoadGame()){
-				openPage(page);
-			}
+			waitLoadGame();
+			openPage(page);
 		}
 		return driverExe;
 	}
 	
-	private boolean waitLoadGame() {
+	private void waitLoadGame() {
 		IWapDriverExe driverExe = getBrowserDriverExe();
 		for (int i = 0; i < WAIT_LOAD_GAME; i++) {
 			driverExe.waitPageLoad(1);
 			if(driverExe.isTextInPage("GameCanvas")){
 				driverExe.waitPageLoad(2);
-				return true;
 			}
 		}
-		return false;
 	}
 	
 	private void openPage(Integer page){

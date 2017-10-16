@@ -7,7 +7,7 @@ import com.jdd.pages.WapOkoooPage;
 import com.paypal.selion.annotations.MobileTest;
 
 public class Okooo extends AbsParentTest{
-	private static final String TOKEN				= "7e71236b3dda09e7c25ba814f9d426ef";
+	private static final String TOKEN				= "d93992e3294f878c737178b0c65d68e7";
 	private static final String JDDFUN_GAME			= "okooo";	//http://m.okooo.com/game/	http://192.168.101.181/channel/newokooo/home/
 	private static final String DENG_LU				= "登录";			//1
 	private static final String YOU_XI_SHANG_CHENG	= "游戏商城";		//2
@@ -23,7 +23,7 @@ public class Okooo extends AbsParentTest{
 	@Test
 	@MobileTest
 	public void DengLu() {//登录
-		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU, 0);
+		IWapDriverExe driverExe = startTest(JDDFUN_GAME, DENG_LU, TOKEN, 0);
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.open(OKOOO_YOU_XI);
 		driverExe.waitPageLoad(3);
@@ -87,7 +87,7 @@ public class Okooo extends AbsParentTest{
 		WapOkoooPage wop = new WapOkoooPage();
 		driverExe.click(wop.getSonghuafeiUiObject().getLocator(), "充值送话费");
 		driverExe.click(wop.getChongzhiyouxiUiObject().getLocator(), "充值");
-		driverExe.waitPageLoad(1);
+		driverExe.waitPageLoad(3);
 		driverExe.result("支付宝支付");
 		driverExe.result("微信支付");
 		driverExe.getElementValue(wop.getChongzhijineUiObject().getLocator(), "充值金额");
