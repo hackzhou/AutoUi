@@ -26,7 +26,7 @@
         <classes>
             <class name="com.jdd.game.android.browser.suites.Okooo">
                 <methods>
-                    <!-- <include name="DengLu" /> -->
+                    <include name="DengLu" />
                     <include name="YouXiShangCheng" />
                     <include name="YouXiChongZhiHuiKui" />
                     <include name="YouXiRenWu" />
