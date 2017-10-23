@@ -8,7 +8,7 @@ import com.paypal.selion.annotations.MobileTest;
 
 public class Okooo extends AbsParentTest{
 	private static final String TOKEN				= "d93992e3294f878c737178b0c65d68e7";
-	private static final String JDDFUN_GAME			= "okooo";	//http://m.okooo.com/game/	http://192.168.101.181/channel/newokooo/home/
+	private static final String JDDFUN_GAME			= "okooo";	//http://m.okooo.com/game/	http://10.33.85.181/channel/newokooo/home/
 	private static final String DENG_LU				= "登录";			//1
 	private static final String YOU_XI_SHANG_CHENG	= "游戏商城";		//2
 	private static final String YOU_XI_CHONG_ZHI	= "游戏充值回馈";	//3

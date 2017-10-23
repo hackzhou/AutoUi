@@ -6,12 +6,13 @@ import com.jdd.game.android.driver.IWapDriverExe;
 public abstract class AbsParentTest extends BrowserDriver{
 	private static final Integer WAIT_LOAD_GAME		= 5;
 	protected static final String OKOOO_VERSION		= "1121";
-	protected static final String OKOOO_LOGIN		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/loginPop";
-	protected static final String OKOOO_TOKEN		= "http://192.168.101.181/channel/newokooo/home/?token=%s&type=jdd&status=bind#/";
-	protected static final String OKOOO_YOU_XI		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/";
-	protected static final String OKOOO_BEI_BAO		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/knapsack";
-	protected static final String OKOOO_CHOU_JIANG	= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/luckdraw";
-	protected static final String OKOOO_GE_REN		= "http://192.168.101.181/channel/newokooo/home/" + OKOOO_VERSION + "/#/personal";
+	protected static final String OKOOO_IP			= "10.33.85.181";
+	protected static final String OKOOO_LOGIN		= "http://" + OKOOO_IP + "/channel/newokooo/home/" + OKOOO_VERSION + "/#/loginPop";
+	protected static final String OKOOO_TOKEN		= "http://" + OKOOO_IP + "/channel/newokooo/home/?token=%s&type=jdd&status=bind#/";
+	protected static final String OKOOO_YOU_XI		= "http://" + OKOOO_IP + "/channel/newokooo/home/" + OKOOO_VERSION + "/#/";
+	protected static final String OKOOO_BEI_BAO		= "http://" + OKOOO_IP + "/channel/newokooo/home/" + OKOOO_VERSION + "/#/knapsack";
+	protected static final String OKOOO_CHOU_JIANG	= "http://" + OKOOO_IP + "/channel/newokooo/home/" + OKOOO_VERSION + "/#/luckdraw";
+	protected static final String OKOOO_GE_REN		= "http://" + OKOOO_IP + "/channel/newokooo/home/" + OKOOO_VERSION + "/#/personal";
 
 	protected IWapDriverExe startTest(String testName, String caseName) {
 		return this.startTest(testName, caseName, false, null, 0);
